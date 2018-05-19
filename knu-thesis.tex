@@ -1,0 +1,25 @@
+\startenvironment knu-thesis
+    \setupinteraction[state=start,focus=standard,color=,contrastcolor=]
+    \setuppapersize[A4]
+    \setuplayout[leftmargin=30mm
+               ,leftmargindistance=0mm
+               ,backspace=30mm
+               ,rightmargin=15mm
+               ,rightmargindistance=0mm
+               ,topspace=5mm
+               ,top=5mm
+               ,bottom=5mm
+               ,header=15mm
+               ,footer=15mm
+               ,height=287mm
+               ,width=165mm]
+    \setupbodyfont[14pt]
+    \setuppagenumbering[location={header, right}]
+    \setupinterlinespace[1.5]
+    \setuplabeltext[appendix=Appendix~
+                   ,figure=Fig.~]
+
+    \noexpand\def\ChapNum#1{#1.~}
+    \setuphead[chapter,section][numbercommand=\ChapNum]
+    \definereferenceformat[ineq][left=(,right=)]
+\stopenvironment

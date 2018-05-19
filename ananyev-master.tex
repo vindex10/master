@@ -1,0 +1,33 @@
+\usebtxdataset[literature.bib]
+\setupexternalfigures[location=global,directory={img}]
+
+\startproduct ananyev-master
+
+\environment knu-thesis
+\environment macros
+
+\startfrontmatter
+    \component title
+    \completecontent
+    \component intro
+\stopfrontmatter
+
+\startbodymatter
+    \component chap1
+        \component chap1.1
+    \component chap2
+\stopbodymatter
+
+\startbackmatter
+    \component outro
+
+    \chapter{Bibliography}
+        \placelistofpublications
+\stopbackmatter
+
+\startappendices
+    \component app1
+    \component app2
+\stopappendices
+
+\stopproduct
