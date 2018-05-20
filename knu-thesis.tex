@@ -1,5 +1,5 @@
 \startenvironment knu-thesis
-    \setupinteraction[state=start,focus=standard,color=,contrastcolor=]
+    \setupinteraction[state=start,color=,contrastcolor=,style=normal]
     \setuppapersize[A4]
     \setuplayout[leftmargin=30mm
                ,leftmargindistance=0mm
@@ -14,6 +14,7 @@
                ,height=287mm
                ,width=165mm]
     \setupbodyfont[14pt]
+    \setupindenting[yes,big]
     \setuppagenumbering[location={header, right}]
     \setupinterlinespace[1.5]
     \setuplabeltext[appendix=Appendix~
@@ -22,4 +23,5 @@
     \noexpand\def\ChapNum#1{#1.~}
     \setuphead[chapter,section][numbercommand=\ChapNum]
     \definereferenceformat[ineq][left=(,right=)]
+    \definereferenceformat[infig][left=(Fig.~,right=)]
 \stopenvironment
