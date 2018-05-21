@@ -1,4 +1,8 @@
-/*.pdf
-/*.synctex.gz
-/*.tuc
-/*.log
+*.pdf
+*.synctex.gz
+*.tuc
+*.log
+*.fdb_latexmk
+*.aux
+*.fls
+!/img/*

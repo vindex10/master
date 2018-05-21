@@ -1,0 +1,35 @@
+\RequirePackage{luatex85}
+\documentclass[tikz]{standalone}
+
+\usepackage{tikz-feynman}
+
+\begin{document}
+\begin{tikzpicture}[xscale=-1]
+    \begin{feynman}
+        \diagram [vertical=EEG1 to EEG2] {
+            b [particle=\(b\)] -- [fermion] EEG1 -- [fermion] c [particle=\(c\)],
+            EEG1 -- [photon, edge label=\(\gamma\)] GCC -- [photon, opacity=0] EEG2,
+            qbarin [particle=\(\bar{q}\)] -- [anti fermion] EEG2 -- [anti fermion] qbarout [particle=\(\bar{q}\)],
+            cbar [particle=\(\bar{c}\)] -- [fermion] GCC -- [fermion] s [particle=\(s\)],
+            b -- [plain, opacity=0] qbarin,
+            %ein -- [plain, opacity=0.1] eout,
+            c -- [plain, opacity=0] qbarout,
+            %ebarin -- [plain, opacity=0.1] ebarout,
+            c -- [plain, opacity=0] cbar,
+            qbarout -- [plain, opacity=0] s,
+            cbar -- [plain, opacity=0] s,
+            %EEG1 -- [plain, opacity=0.1] EEG2,
+        };
+    \end{feynman}
+
+    \begin{scope}[shift={(-4.7cm, 0.2cm)}]
+        \draw[dashed, rotate=-55] ellipse (0.4cm and 1.5cm);
+        \draw[opacity=0] ellipse (0.4cm and 1cm);
+    \end{scope}
+
+    \begin{scope}[shift={(0, -1.3cm)}]
+        \draw ellipse (0.4cm and 1.8cm);
+        \node at (-0.7cm, 0) {B};
+    \end{scope}
+\end{tikzpicture}
+\end{document}

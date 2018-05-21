@@ -1,0 +1,18 @@
+\RequirePackage{luatex85}
+\documentclass[tikz]{standalone}
+
+\usepackage{tikz-feynman}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{feynman}
+        \diagram [horizontal=EEG to GCC,large] {
+            e [particle=\(e^-\)] -- [fermion] EEG -- [fermion] ebar [particle=\(e^+\)],
+            EEG -- [photon, edge label=\(\gamma\)] GCC,
+            cbar [particle=\(\bar{c}\)] -- [fermion] GCC -- [fermion] c [particle=\(c\)],
+        };
+    \end{feynman}
+
+    \draw[dashed] (4.9cm,1.6cm) ellipse (0.5cm and 2cm);
+\end{tikzpicture}
+\end{document}

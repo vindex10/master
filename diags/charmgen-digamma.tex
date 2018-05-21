@@ -1,0 +1,27 @@
+\RequirePackage{luatex85}
+\documentclass[tikz]{standalone}
+
+\usepackage{tikz-feynman}
+
+\begin{document}
+\begin{tikzpicture}[xscale=-1]
+    \begin{feynman}
+        \diagram [vertical=EEG1 to EEG2] {
+            ein [particle=\(e^-\)] -- [fermion] EEG1 -- [fermion] eout [particle=\(e^-\)],
+            EEG1 -- [photon, edge label=\(\gamma\)] GCC -- [photon, edge label=\(\gamma\)] EEG2,
+            ebarin [particle=\(e^+\)] -- [anti fermion] EEG2 -- [anti fermion] ebarout [particle=\(e^+\)],
+            cbar [particle=\(\bar{c}\)] -- [fermion] GCC -- [fermion] c [particle=\(c\)],
+            ein -- [plain, opacity=0] ebarin,
+            %ein -- [plain, opacity=0.1] eout,
+            eout -- [plain, opacity=0] ebarout,
+            %ebarin -- [plain, opacity=0.1] ebarout,
+            eout -- [plain, opacity=0] cbar,
+            ebarout -- [plain, opacity=0] c,
+            cbar -- [plain, opacity=0] c,
+            %EEG1 -- [plain, opacity=0.1] EEG2,
+        };
+    \end{feynman}
+
+    \draw[dashed] (-5.3cm,-1.2cm) ellipse (0.4cm and 1.5cm);
+\end{tikzpicture}
+\end{document}
