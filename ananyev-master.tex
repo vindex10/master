@@ -1,33 +1,110 @@
-\usebtxdataset[literature.bib]
-\setupexternalfigures[location=global,directory={img, diags}]
+\documentclass{latex-mimosis/mimosis}
 
-\startproduct ananyev-master
+\usepackage{metalogo}
 
-\environment knu-thesis
-\environment macros
+% Vindex10 adj
+\KOMAoptions{twoside=false}
+\graphicspath{{img/}{diags/}}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{physics}
+\include{macros}
 
-\startfrontmatter
-    \component title
-    \completecontent
-    \component intro
-\stopfrontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some of my favourite personal adjustments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% These are the adjustments that I consider necessary for typesetting
+% a nice thesis. However, they are *not* included in the template, as
+% I do not want to force you to use them.
 
-\startbodymatter
-    \component chap1
-        \component chap1.1
-    \component chap2
-\stopbodymatter
+% This ensures that I am able to typeset bold font in table while still aligning the numbers
+% correctly.
+\usepackage{etoolbox}
 
-\startbackmatter
-    \component outro
+\usepackage[binary-units=true]{siunitx}
+\DeclareSIUnit\px{px}
 
-    \chapter{Bibliography}
-        \placelistofpublications
-\stopbackmatter
+\sisetup{%
+  detect-all           = true,
+  detect-family        = true,
+  detect-mode          = true,
+  detect-shape         = true,
+  detect-weight        = true,
+  detect-inline-weight = math,
+}
 
-\startappendices
-    \component app1
-    \component app2
-\stopappendices
 
-\stopproduct
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyperlinks & bookmarks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[%
+  colorlinks = true,
+  citecolor  = RoyalBlue,
+  linkcolor  = RoyalBlue,
+  urlcolor   = RoyalBlue,
+  ]{hyperref}
+
+\usepackage{bookmark}
+\usepackage{cleveref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% I like the bibliography to be extremely plain, showing only a numeric
+% identifier and citing everything in simple brackets. The first names,
+% if present, will be initialized. DOIs and URLs will be preserved.
+
+\usepackage[%
+  autocite     = plain,
+  backend      = bibtex,
+  doi          = true,
+  url          = true,
+  giveninits   = true,
+  hyperref     = true,
+  maxbibnames  = 99,
+  maxcitenames = 99,
+  sortcites    = true,
+  style        = numeric,
+  ]{biblatex}
+
+\DeclareLanguageMappingSuffix{latex-mimosis/}
+\input{latex-mimosis/bibliography-mimosis}
+\bibliography{literature}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeindex
+\makeglossaries
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Incipit
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Application of Light-by-Light sumrules to charmonia radiative transiotions}
+\subtitle{ }
+\author{Victor Ananyev}
+
+\begin{document}
+
+\frontmatter
+  \input{title}
+  \tableofcontents
+
+\mainmatter
+
+  \input{intro}
+
+% This ensures that the subsequent sections are being included as root
+% items in the bookmark structure of your PDF reader.
+\bookmarksetup{startatroot}
+\backmatter
+  \printbibliography
+
+  \appendix
+  \input{app1}
+
+\end{document}

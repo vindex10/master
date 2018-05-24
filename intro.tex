@@ -1,127 +1,128 @@
-\startcomponent intro
-
-\product ananyev-master
-
 \chapter{Introduction}
-Quarks --- strongly interacting subatomic particles independently hypothesized by Murray Gell-Mann \cite[gellmann-quarks] and George Zweig \cite[zweig-quarks] in 1964. The idea described successfully all known hadrons at that time and also predicted additional states which were subsequently discovered.
+Quarks --- strongly interacting subatomic particles independently hypothesized by Murray Gell-Mann~\cite{gellmann-quarks} and George Zweig~\cite{zweig-quarks} in 1964. The idea described successfully all known hadrons at that time and also predicted additional states which were subsequently discovered.
 
-According to the model, nowadays known as \quotation{Constituent quark model} (CQM), quarks are distinguished by three generations (first, second, third) and two types (with charges $-\frac{1}{3}e$ and $\frac{2}{3}e$). In CQM quarks can form $q \bar{q}$ pairs named mesons and $qqq$ triplets named baryons. Interaction between quarks is described by Quantum Chromodynamics(QCD), which is a non-abelian theory with additional $SU(3)$ charge (color) and  interaction carriers named gluons. Main features of QCD are color confinement (states that one can not observe isolated color charge) and asymptotic freedom (quarks and gluons do not interact at high energies).
-While in 1960s QCD based phenomenological models showed up well in describing known hadrons, since that time more complicated states than $q\bar{q}$ and $qqq$ were discovered. They have been mentioned by Hell-Mann in his article and now show signs at experiments \cite[Xbabar,Xbelle,Ybabar]. As far as non-perturbative effects play a crucial role in low energy QCD processes, only effective models are possible to verify at experiment. At the same time, due to complex structure of new states, there are dozens of effective models possible.
+According to the model, nowadays known as ``Constituent quark model'' (CQM), quarks are distinguished by three generations (first, second, third) and two types (with charges $-\frac{1}{3}e$ and $\frac{2}{3}e$). In CQM quarks can form $q \bar{q}$ pairs named mesons and $qqq$ triplets named baryons. Interaction between quarks is described by Quantum Chromodynamics(QCD), which is a non-abelian theory with additional $SU(3)$ charge (color) and  interaction carriers named gluons. Main features of QCD are color confinement (states that one can not observe isolated color charge) and asymptotic freedom (quarks and gluons do not interact at high energies).
+While in 1960s QCD based phenomenological models showed up well in describing known hadrons, since that time more complicated states than $q\bar{q}$ and $qqq$ were discovered. They have been mentioned by Hell-Mann in his article and now show signs at experiments~\cite{Xbabar,Xbelle,Ybabar}. As far as non-perturbative effects play a crucial role in low energy QCD processes, only effective models are possible to verify at experiment. At the same time, due to complex structure of new states, there are dozens of effective models possible.
 
 In our work we are establishing a new channel between experimental observables and theoretical predictions by applying sumrules emerging from Light-by-Light scattering to radiative transitions of charmonium.
 
-\subject{Charmonium system}
+\paragraph{Charmonium system}
 Charmonium is a meson built from $c$-quark and its anti-quark $\bar{c}$. At low energies one can apply non-relativistic Shrodinger equation to solve Coulomb-like problem and classify some low-lying states. By analogy to Coulomb problem, charmonium states are characterized by radial quantum number $n$, the relative orbital momentum between quark and anti-quark $L$, total spin of the system $S$, total angular momentum $J$ and its projections. Usually people label values of $L$ as S, P, D, F,~…  which correspond to 0, 1, 2, 3,~…. Then, a state with specific spin, orbital momentum, orbital quantum number and total angular momentum (excluding hyperfine splitting over total angular momentum projections) is labeled as $n^{(2S+1)} L_J$. There is another taxonomy, when people are interested in parities. Space parity is denoted by $P = (-1)^{L+1}$ and charge eigenvalue is $C = (-1)^{L+S}$. Together with the total angular momentum they form a symbol: $J^{P C}$.
 
-To discuss the motivation for investigating charmonium, we present a diagram \infig[fig:charm-states] with its energy levels. There are $D\bar{D}$ thresholds shown there, which correspond to an energy of $c \bar{c}$ which is enough to decay into a pair of real mesons. Such a process is relativistic by its nature, so the threshold is treated as a limit above which states are not obliged to respect non-relativistic equations. It is important to mention that all states below $D\bar{D}$ have been already observed.
+To discuss the motivation for investigating charmonium, we present a diagram \cref{fig:charm-states} with its energy levels. There are $D\bar{D}$ thresholds shown there, which correspond to an energy of $c \bar{c}$ which is enough to decay into a pair of real mesons. Such a process is relativistic by its nature, so the threshold is treated as a limit above which states are not obliged to respect non-relativistic equations. It is important to mention that all states below $D\bar{D}$ have been already observed.
 
-\placefigure[here][fig:charm-states]
-    {The status of charmonium spectrum in August 2017. Red dashed lines represent theoretical predictions based on Godfrey-Isgur model with relativistic corrections to higher-excited states \cite[gbs-model]. Black solid lines are experimentally measured energy levels. Here are also shown measured transitions. We are interested in radiative transitions which are represented by green dashed lines: thick for E1 and thin for M1. Source: Olsen, Skwarnicki, Zieminska \cite[heavy-quark_pics] }
-    { \externalfigure[charmoniumExotic.pdf][width=16cm] }
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{charmoniumExotic.pdf}
+    \caption{The status of charmonium spectrum in August 2017. Red dashed lines represent theoretical predictions based on Godfrey-Isgur model with relativistic corrections to higher-excited states~\cite{gbs-model}. Black solid lines are experimentally measured energy levels. Here are also shown measured transitions. We are interested in radiative transitions which are represented by green dashed lines: thick for E1 and thin for M1. Source: Olsen, Skwarnicki, Zieminska~\cite{heavy-quark_pics}} \label{fig:charm-states}
+\end{figure}
 
-Regarding arguments for investigating charmonium. Charmonium is a two-particle system, the simplest possible system consisting of quarks. Constituent $c$-quarks possess huge mass ($\approx 1.27 GeV$) in comparison to $u$, $d$ and $s$ quarks ($\approx 0.1 GeV$). This allows us to apply non-relativistic phenomenological models for description of low-lying states. Moreover, the system is compact (we can estimate by order of magnitude $R \approx \alpha_a \cdot m_cS \approx 1 Fm$), so asymptotic freedom assumption is applicable as a boundary condition for the potentials.\cite[charm-slides]
+Regarding arguments for investigating charmonium. Charmonium is a two-particle system, the simplest possible system consisting of quarks. Constituent $c$-quarks possess huge mass ($\approx 1.27 GeV$) in comparison to $u$, $d$ and $s$ quarks ($\approx 0.1 GeV$). This allows us to apply non-relativistic phenomenological models for description of low-lying states. Moreover, the system is compact (we can estimate by order of magnitude $R \approx \alpha_a \cdot m_cS \approx 1 Fm$), so asymptotic freedom assumption is applicable as a boundary condition for the potentials.\cite{charm-slides}
 
-Nevertheless, as one can see from the plot \infig[fig:charm-states], even low-lying states like $\chi_c0(1P)$ have dramatic discrepancies with experiment. This gives a clue that there is something beyond Coulomb model even in non-relativistic description of charmonium states.
+Nevertheless, as one can see from the plot \cref{fig:charm-states}, even low-lying states like $\chi_c0(1P)$ have dramatic discrepancies with experiment. This gives a clue that there is something beyond Coulomb model even in non-relativistic description of charmonium states.
 
-\subject{Multiquark states}
-Beyond to some extent well known mesons and baryons there are also 4-quark states. They firstly were observed not so long time ago, in 2003 by Belle collaboration. There are two widely spread approaches have been described in literature~\infig[charm-models]: molecular state~\cite[molecular-model] and tetraquark~\cite[tetraquark-model].
+\paragraph{Multiquark states}
+Beyond to some extent well known mesons and baryons there are also 4-quark states. They firstly were observed not so long time ago, in 2003 by Belle collaboration. There are two widely spread approaches have been described in literature~\cref{fig:charm-models}: molecular state~\cite{molecular-model} and tetraquark~\cite{tetraquark-model}.
 
-\placefigure[here][charm-models]
-{Multiquark models. left - molecular state, top - tetraquark, right - hybrid state}
-{\externalfigure[charm-models.eps][width=12cm]}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{charm-models.eps}
+    \caption{Multiquark models. left - molecular state, top - tetraquark, right - hybrid state\label{fig:charm-models}}
+\end{figure}
 
 Tetraquark state is modeled as an interaction of two pairs of quarks. Pairs don't carry integer charge, so can't be observed in a free state. Such a configuration assures tight-binding.
 
 According to molecular model, quarks in 4-quark system are paired into meson-states which then interact with each other. They form a kind of a mesonic molecule. Our sumrules approach can find an application to or at least acquires some corrections from states with this kind of binding, because one of constituent mesons could appear to be charmonium state, and will contribute to sumrules.
 
-The third model is not in the list of multiquark, but it is another way towards \quotation{exotic} states. The model named \quotation{hybrid}, because apart of quarks it takes into account excited gluon mode, so it describes hybrid of quarks and gluons. Besides analytical calculations developed in this workflow~\cite[hybrid-th], there are also motivating lattice works~\cite[hybrid-lattice1, hybrid-lattice2]. 
+The third model is not in the list of multiquark, but it is another way towards ``exotic'' states. The model named ``hybrid'', because apart of quarks it takes into account excited gluon mode, so it describes hybrid of quarks and gluons. Besides analytical calculations developed in this workflow~\cite{hybrid-th}, there are also motivating lattice works~\cite{hybrid-lattice1, hybrid-lattice2}. 
 
-\subject{Experimental progress}
-Plethora of new states has become accessible to experimentalists owing to B-factories --- high-luminocity $e^+ e^-$-colliders developed for testing $CP$-violation in Standard Model. They produce large number of $B\bar{B}$ coherent pairs. There are several ways to produce charmonium from such pairs excellently reviewed by Stephen Godfrey and Stephen Olsen in their paper \quotation{The Exotic XYZ Charmonium-like Mesons}~\cite[godfrey-olsen].
+\paragraph{Experimental progress}
+Plethora of new states has become accessible to experimentalists owing to B-factories --- high-luminocity $e^+ e^-$-colliders developed for testing $CP$-violation in Standard Model. They produce large number of $B\bar{B}$ coherent pairs. There are several ways to produce charmonium from such pairs excellently reviewed by Stephen Godfrey and Stephen Olsen in their paper ``The Exotic XYZ Charmonium-like Mesons''~\cite{godfrey-olsen}.
 
-The dominant decay mechanism of a $B$ meson is through the $W$-boson with emission of a charm quark. A schematic diagram of the process is presented in the figure~\insubfig[fig:charmgen-bdecay_and_isr]a).
+The dominant decay mechanism of a $B$ meson is through the $W$-boson with emission of a charm quark. A schematic diagram of the process is presented in the figure~\cref{fig:charmgen-bdecay}.
 
-\placefigure[here][fig:charmgen-bdecay_and_isr]
-{Production of charmonium from $B$-decays. a - direct $B$-decay, b - ISR}
-{\startcombination[nx=2, ny=1]
-        {\externalfigure[charmgen-bdecay.pdf]} {a}
-        {\externalfigure[charmgen-isr.pdf]} {b}
-\stopcombination}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{charmgen-bdecay.pdf}
+        \caption{direct $B$-decay} \label{fig:charmgen-bdecay}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{charmgen-isr.pdf}
+        \caption{ISR} \label{fig:charmgen-isr}
+    \end{subfigure}
+    \caption{Production of charmonium}
+\end{figure}
 
-In case if $c$ and $\bar{c}$ quarks are produced close to each other, there is a probability for them to generate a bound state of charmonium. In such a process not all parity configurations are allowed. In the list of allowed ones are: $0^{-+}$, $1^{--}$, $1^{++}$. Thanks to this scheme Belle collaboration discovered $\eta^\prime_c$ meson in 2002.~\cite[bdecay-etacprime]
+In case if $c$ and $\bar{c}$ quarks are produced close to each other, there is a probability for them to generate a bound state of charmonium. In such a process not all parity configurations are allowed. In the list of allowed ones are: $0^{-+}$, $1^{--}$, $1^{++}$. Thanks to this scheme Belle collaboration discovered $\eta^\prime_c$ meson in 2002.~\cite{bdecay-etacprime}
 
-Another scheme is shown in~\insubfig[fig:charmgen-bdecay_and_isr]b). According to the diagram, charmonium is produced by photon, which is emitted due to annihilation of initial state electrons. For this reason, the process is named \quotation{Initial State Radiation}(ISR). Center of mass energy of the radiated $\gamma$-ray should be $4000-5000\;MeV$, then production of charmonium $1^{--}$ will become possible. BaBar group uses ISR method to make measurement involving $J/\psi$ meson.~\cite[isr-jpsi]
+Another scheme is shown in~\cref{fig:charmgen-isr}. According to the diagram, charmonium is produced by photon, which is emitted due to annihilation of initial state electrons. For this reason, the process is named ``Initial State Radiation''(ISR). Center of mass energy of the radiated $\gamma$-ray should be $4000-5000\;MeV$, then production of charmonium $1^{--}$ will become possible. BaBar group uses ISR method to make measurement involving $J/\psi$ meson.~\cite{isr-jpsi}
 
-\placefigure[here][fig:charmgen-assoc_and_digamma]
-{Production of charmonium from $B$-decays. a - associated production, b - double-$\gamma$ production}
-{\startcombination[nx=2, ny=1]
-        {\externalfigure[charmgen-assoc.pdf]} {a}
-        {\externalfigure[charmgen-digamma.pdf]} {b}
-\stopcombination}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{charmgen-assoc.pdf}
+        \caption{Associated production} \label{fig:charmgen-assoc}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{charmgen-digamma.pdf}
+        \caption{Double-$\gamma$ scheme} \label{fig:charmgen-digamma}
+    \end{subfigure}
+    \caption{Production of charmonium}
+\end{figure}
 
-Initial state radiation scheme can be extended to higher energies. According to observations of Belle group, when $J/\psi$ in final state has been observed then there is a high probability to find another charmonium state alongside~\insubfig[fig:charmgen-assoc_and_digamma]a). Due to such a \quotation{partnership} this method got its name \quotation{Associatied production}. Despite the fact that cross-section of such a process is very low, high luminosity of $B$-factories compensates  the shortage. Regarding parities, only $C=+$ is allowed. Experimentally only $0^{++}$ $\eta_c$ and $\eta_c^\prime$ have been observed, but $1^{++}$ and $2^{++}$ are not seen still.~\cite[assoc-prod]
+Initial state radiation scheme can be extended to higher energies. According to observations of Belle group, when $J/\psi$ in final state has been observed then there is a high probability to find another charmonium state alongside~\cref{fig:charmgen-assoc}. Due to such a ``partnership'' this method got its name ``Associatied production''. Despite the fact that cross-section of such a process is very low, high luminosity of $B$-factories compensates  the shortage. Regarding parities, only $C=+$ is allowed. Experimentally only $0^{++}$ $\eta_c$ and $\eta_c^\prime$ have been observed, but $1^{++}$ and $2^{++}$ are not seen still.~\cite{assoc-prod}
 
-Finally, we arrive to completely different production scheme \quotation{Two photon scheme}~\insubfig[fig:charmgen-assoc_and_digamma]b). $J^{PC}$ in that process allows $0^{-+}$, $0^{++}$, $2^{-+}$ and $2^{++}$. Thanks to this production scheme CLEO group has confirmed $\eta_c^\prime$ meson.~\cite[digamma]
+Finally, we arrive to completely different production scheme ``Two photon scheme''~\cref{fig:charmgen-digamma}. $J^{PC}$ in that process allows $0^{-+}$, $0^{++}$, $2^{-+}$ and $2^{++}$. Thanks to this production scheme CLEO group has confirmed $\eta_c^\prime$ meson.~\cite{digamma}
 
-\subject{Superconvergent summation rule}
+\paragraph{Superconvergent summation rule}
 After the brief discussion of phenomenology and experimental facilities, let's have a look at the tool we are going to apply at the theoretical side of the work.
 
-Originally,  the idea of sumrules comes from Gerasimov and Drell~\cite[gdh-gd-orig] and independently Hearn~\cite[gdh-h-orig] in application to forward Compton scattering. Well structured review on this topic has been provided by Klaus Halbing~\cite[ghd-helbing]. In 2010 a new application of the same scheme emerged. Marc Vanderhaeghen and Vladimir Pascalutsa applied GDH approach to Light-by-Light scattering process~\cite[lbl-sum1]. Firstly, it was developed for on-shell photons, but in 2012 together with Vladislav Pauk they published an article~\cite[lbl-sum2], where sumrules emerge in LBL-scattering involving virtual photons. 
+Originally,  the idea of sumrules comes from Gerasimov and Drell~\cite{gdh-gd-orig} and independently Hearn~\cite{gdh-h-orig} in application to forward Compton scattering. Well structured review on this topic has been provided by Klaus Halbing~\cite{ghd-helbing}. In 2010 a new application of the same scheme emerged. Marc Vanderhaeghen and Vladimir Pascalutsa applied GDH approach to Light-by-Light scattering process~\cite{lbl-sum1}. Firstly, it was developed for on-shell photons, but in 2012 together with Vladislav Pauk they published an article~\cite{lbl-sum2}, where sumrules emerge in LBL-scattering involving virtual photons. 
 
-\placeformula[lbl-scatt]
-    $$ \gamma^\star_1(\lambda_1, q_1) + \gamma^\star_2(\lambda_2, q_2) \rightarrow \gamma^\star_1(\lambda_1^\prime, q_1) + \gamma^\star_2(\lambda_2^\prime, q_2) $$
+\begin{align} \label{eq:lbl-scatt}
+    \gamma^\star_1(\lambda_1, q_1) + \gamma^\star_2(\lambda_2, q_2) \rightarrow \gamma^\star_1(\lambda_1^\prime, q_1) + \gamma^\star_2(\lambda_2^\prime, q_2) 
+\end{align}
 
-\placefigure[here][lbl-scatt]
-    {Forward Light-by-Light scattering with virtual photons}
-    {\externalfigure[lbl-scatt.pdf][width=10cm]}
+\begin{figure}
+    \centering
+    \includegraphics[width=10cm]{lbl-scatt.pdf}
+    \caption{Forward Light-by-Light scattering with virtual photons \label{fig:lbl-scatt}}
+\end{figure}
 
 First step of the derivation makes use of unitarity of the $S$-matrix and generates an optical theorem in case of forward scattering:
 
-\placeformula
-    \startformula \startalign
-        \NC \SS^\dag \SS \NC = \EE \NR[+]
-        \NC \SS \NC = \EE + \ii \TT \NR[+]
-        \NC \TT^\dag \TT \NC = -\ii(\TT - \TT^\dag) \NR[+]
-    \stopalign \stopformula
+\begin{align}
+    & \Scal^\dag \Scal = \Erm \\
+    & \Scal = \Erm + \ii \Tcal \\
+    & \Tcal^\dag \Tcal = -\ii(\Tcal - \Tcal^\dag)
+\end{align}
 
-After inserting an operator identity at the lhs: $\TT^\dag \TT = \sum_{n} \TT^\dag \ket{n}\bra{n} \TT$ we arrive to the following expression:
+After inserting an operator identity at the lhs: $\Tcal^\dag \Tcal = \sum_{n} \Tcal^\dag \ket{n}\bra{n} \Tcal$ we arrive to the following expression:
 
-\placeformula
-    \startformula \startalign
-        \NC \sum_{n} \bra{out} \TT^\dag \ket{n}\bra{n} \TT \ket{in} \NC = -\ii \left( \bra{out} \TT \ket{in} - \bra{out} \TT^\dag \bra{in} \right) \NR[+]
-    \stopalign \stopformula
+\begin{align}
+    & \sum_{n} \bra{out} \Tcal^\dag \ket{n}\bra{n} \Tcal \ket{in} = -\ii \left( \bra{out} \Tcal \ket{in} - \bra{out} \Tcal^\dag \bra{in} \right)
+\end{align}
 
 Let's recall that matrix element in QFT is actually a $T$-matrix element:
 
-\startformulas
-    \placeformula
-    \startformula
-        \bra{out} \TT \ket{in} = \MM(in \rightarrow out)
-    \stopformula
-    \placeformula
-    \startformula
-        \bra{out} \TT^\dag \ket{in} = \MM^\star(in \rightarrow out)
-    \stopformula
-\stopformulas
+\begin{align}
+    & \bra{out} \Tcal \ket{in} = \Mcal(in \rightarrow out) \qquad &\bra{out} \Tcal^\dag \ket{in} = \Mcal^\star(in \rightarrow out)
+\end{align}
 
-\placeformula
-    \startformula \startalign
-        \NC \sum_{n} \MM(in \rightarrow n)  \MM(n \rightarrow out) \NC = 2 \Im \MM(in \rightarrow out) \NR[+]
-        \NC \int \lips{p} \abs{\MM(in \rightarrow \vec{p})}^2 \NC = 2 \Im \MM(in \rightarrow in) \NR[+]
-    \stopalign \stopformula
+\begin{align}
+        & \sum_{n} \Mcal(in \rightarrow n)  \Mcal(n \rightarrow out) = 2 \Im \Mcal(in \rightarrow out) \\
+        & \int \lips{p} \abs{\Mcal(in \rightarrow \vec{p})}^2 = 2 \Im \Mcal(in \rightarrow in)
+\end{align}
 
 One should assume integration over all final momenta. Then, lhs can be expressed in the form of the total cross-section:
 
-\placeformula
-    \startformula
-        \sigma_{tot}(in \rightarrow \forall) = 2 E_{c.m.} p_{c.m.} \Im \MM(in \rightarrow in)
-    \stopformula
+\begin{align}
+    & \sigma_{tot}(in \rightarrow \forall) = 2 E_{c.m.} p_{c.m.} \Im \Mcal(in \rightarrow in)
+\end{align}
 
-Another ingredient of sumrules \quotation{cocktail} is the analyticity of amplitudes. We assume that $\MM$ doesn't contain any poles except physical ones, which correspond to bound states of the system. Formally, this statement is expressed by Cauchy theorem:
+Another ingredient of sumrules ``cocktail'' is the analyticity of amplitudes. We assume that $\Mcal$ doesn't contain any poles except physical ones, which correspond to bound states of the system. Formally, this statement is expressed by Cauchy theorem:
 
-\placeformula
-    \startformula
-        \MM(s) = \int \frac{\MM(s^\prime)}{s^\prime - s} \dd{s^\prime}
-    \stopformula
-
-\stopcomponent
+\begin{align}
+    & \Mcal(s) = \int \frac{\Mcal(s^\prime)}{s^\prime - s} \dd{s^\prime}
+\end{align}

@@ -1,9 +1,21 @@
-\startcomponent title
-
-\product ananyev-master
-\noheaderandfooterlines
-
-\title{Title}
-Title Page
-
-\stopcomponent
+\begin{titlepage}
+  \vspace*{5cm}
+  \makeatletter
+  \begin{center}
+    \begin{Huge}
+      \@title
+    \end{Huge}\\
+    %
+    \begin{Large}
+      \@subtitle
+    \end{Large}\\
+    %
+    \emph{by}\\
+    \@author
+    %
+    \vfill
+    \textit{Master Thesis}\\
+    \textsc{Taras Shevchenko National University of Kyiv}
+  \end{center}
+  \makeatother
+\end{titlepage}
