@@ -118,11 +118,51 @@ Let's recall that matrix element in QFT is actually a $T$-matrix element:
 One should assume integration over all final momenta. Then, lhs can be expressed in the form of the total cross-section:
 
 \begin{align}
-    & \sigma_{tot}(in \rightarrow \forall) = 2 E_{c.m.} p_{c.m.} \Im \Mcal(in \rightarrow in)
+    & \sigma_{tot}(in \rightarrow \forall) = 2 E_{c.m.} p_{c.m.} \Im \Mcal(in \rightarrow in) \label{eq:optical-th}
 \end{align}
 
-Another ingredient of sumrules ``cocktail'' is the analyticity of amplitudes. We assume that $\Mcal$ doesn't contain any poles except physical ones, which correspond to bound states of the system. Formally, this statement is expressed by Cauchy theorem:
+Another ingredient of sumrules ``cocktail'' is the analyticity of amplitudes. We assume that $\Mcal$ doesn't contain any poles except physical ones, which correspond to bound states of the system. Formally, this statement can be expressed by Cauchy's theorem:
 
 \begin{align}
-    & \Mcal(s) = \int \frac{\Mcal(s^\prime)}{s^\prime - s} \dd{s^\prime}
+    & \Mcal(s) = \frac{1}{\ii \pi} \fint \frac{\Mcal(s^\prime)}{s^\prime - s} \dd{s^\prime} \\
+    & \Re \Mcal(s) = \frac{1}{\pi} \fint \frac{\Im \Mcal(s^\prime)}{s^\prime - s} \dd{s^\prime} \label{eq:disp-rel-gen}
 \end{align}
+
+In case of forward scattering matrix element acquires a beautiful parity structure. This will help us to simplify the dispersion relation above. Parity relations involve helicities of initial and final photons, that is why working in terms amplitudes with defined helicities is convenient.
+
+We denote $\Mcal_{\lambda^\prime_1 \lambda^\prime_2 \lambda_1 \lambda_2}$ an amplitude, where the first photon ($\gamma_1$) has helicity $\lambda_1$ in the initial state and $\lambda_1^\prime$ in the final state. The same holds for the second photon $\gamma_2$. As photons are virtual, possible values for $\lambda$ include $\lambda=0$ besides usual $\lambda=\pm1$.
+
+In this terms we can express symmetry under parity and time reversion:
+
+\begin{align}
+    & \mathcal{P}:\quad \Mcal_{\lambda_1^\prime \lambda_2^\prime \lambda_1 \lambda_2} = \Mcal_{-\lambda_1^\prime -\lambda_2^\prime -\lambda_1 -\lambda_2} \\
+    & \mathcal{T}:\quad \Mcal_{\lambda_1^\prime \lambda_2^\prime \lambda_1 \lambda_2} = \Mcal_{\lambda_1 \lambda_2 \lambda_1^\prime \lambda_2^\prime}
+\end{align}
+
+To make use of crossing symmetry, it is convenient to parametrize amplitudes in terms of variable $\nu = \frac{1}{2} (s - u) = q_1 q_2$, which only changes sign under crossing transformation of one of the photons.
+
+\begin{align}
+    & \text{Crossing:}\quad \Mcal_{\lambda_1^\prime \lambda_2^\prime \lambda_1 \lambda_2}(\nu) = \Mcal_{\lambda_1^\prime -\lambda_2^\prime \lambda_1 -\lambda_2}(-\nu)
+\end{align}
+
+Taking into account parity and time reversal symmetry, there are only eight independent amplitudes left. They can be combined into even and odd under parity:
+
+\begin{align}
+    &\text{Even:} && \\ \nonumber
+    &(\Mcal_{++,++}-\Mcal_{+-,+-}) &\Mcal_{++,--}\qquad &\Mcal_{00,00}\\
+    &\Mcal_{+0,+0} &\Mcal_{0+,0+}\qquad &(\Mcal_{++,00} + \Mcal_{0+,-0})\\
+    &\text{Odd:} && \\ \nonumber
+    &(\Mcal_{++,++} - \Mcal_{+-,+-}) & &(\Mcal_{++,00} - \Mcal_{0+,-0})
+\end{align}
+
+For the sake of generality we'll use $f^{(+)}$ and $f^{(-)}$ for even and odd amplitudes correspondingly. Then, it is possible to simplify dispersion relation~\cref{eq:disp-rel-gen}:
+
+\begin{align}
+    \Re f^{(+)}(\nu) = \frac{2}{\pi} \int_{\nu_0}^{\infty} \dd{\nu^\prime} \frac{\nu^\prime}{\nu^{\prime 2} - \nu^2 - \ii 0^+} \Im f^{(+)}(\nu^\prime) \\
+    \Re f^{(-)}(\nu) = \frac{2\nu}{\pi} \int_{\nu_0}^{\infty} \dd{\nu^\prime} \frac{1}{\nu^{\prime 2} - \nu^2 - \ii 0^+} \Im f^{(-)}(\nu^\prime)
+\end{align}
+
+Where $\nu_0$ is the threshold at which final particle state becomes forbidden.
+
+At this point we find out eight relations connecting real part of helicity amplitudes to their imaginary part, and according to the optical theorem~\cref{eq:optical-th} to corresponding helicity cross-sections. We'll focus on the odd amplitude $\Mcal_{++,--} - \Mcal_{+-,+-}$, because there exists low energy theorem, an estimation for the value of $\frac{f^{(-)}(\nu)}{\nu}$ in the limit of $\nu \rightarrow \nu_0$.
+
