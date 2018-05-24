@@ -1,0 +1,3 @@
+[submodule "latex-mimosis"]
+	path = latex-mimosis
+	url = https://github.com/Submanifold/latex-mimosis.git
