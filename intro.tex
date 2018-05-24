@@ -13,7 +13,7 @@ To discuss the motivation for investigating charmonium, we present a diagram \cr
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=12cm]{charmoniumExotic.pdf}
+    \includegraphics[width=15cm]{charmoniumExotic.pdf}
     \caption{The status of charmonium spectrum in August 2017. Red dashed lines represent theoretical predictions based on Godfrey-Isgur model with relativistic corrections to higher-excited states~\cite{gbs-model}. Black solid lines are experimentally measured energy levels. Here are also shown measured transitions. We are interested in radiative transitions which are represented by green dashed lines: thick for E1 and thin for M1. Source: Olsen, Skwarnicki, Zieminska~\cite{heavy-quark_pics}} \label{fig:charm-states}
 \end{figure}
 
@@ -93,21 +93,21 @@ Originally,  the idea of sumrules comes from Gerasimov and Drell~\cite{gdh-gd-or
 First step of the derivation makes use of unitarity of the $S$-matrix and generates an optical theorem in case of forward scattering:
 
 \begin{align}
-    & \Scal^\dag \Scal = \Erm \\
-    & \Scal = \Erm + \ii \Tcal \\
-    & \Tcal^\dag \Tcal = -\ii(\Tcal - \Tcal^\dag)
+    & S^\dag S = \Erm \\
+    & S = \Erm + \ii T \\
+    & T^\dag T = -\ii(T - T^\dag)
 \end{align}
 
-After inserting an operator identity at the lhs: $\Tcal^\dag \Tcal = \sum_{n} \Tcal^\dag \ket{n}\bra{n} \Tcal$ we arrive to the following expression:
+After inserting an operator identity at the lhs: $T^\dag T = \sum_{n} T^\dag \ket{n}\bra{n} T$ we arrive to the following expression:
 
 \begin{align}
-    & \sum_{n} \bra{out} \Tcal^\dag \ket{n}\bra{n} \Tcal \ket{in} = -\ii \left( \bra{out} \Tcal \ket{in} - \bra{out} \Tcal^\dag \bra{in} \right)
+    & \sum_{n} \bra{out} T^\dag \ket{n}\bra{n} T \ket{in} = -\ii \left( \bra{out} T \ket{in} - \bra{out} T^\dag \bra{in} \right)
 \end{align}
 
 Let's recall that matrix element in QFT is actually a $T$-matrix element:
 
 \begin{align}
-    & \bra{out} \Tcal \ket{in} = \Mcal(in \rightarrow out) \qquad &\bra{out} \Tcal^\dag \ket{in} = \Mcal^\star(in \rightarrow out)
+    & \bra{out} T \ket{in} = \Mcal(in \rightarrow out) \qquad &\bra{out} T^\dag \ket{in} = \Mcal^\star(in \rightarrow out)
 \end{align}
 
 \begin{align}
