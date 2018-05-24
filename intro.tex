@@ -63,4 +63,65 @@ Initial state radiation scheme can be extended to higher energies. According to 
 
 Finally, we arrive to completely different production scheme \quotation{Two photon scheme}~\insubfig[fig:charmgen-assoc_and_digamma]b). $J^{PC}$ in that process allows $0^{-+}$, $0^{++}$, $2^{-+}$ and $2^{++}$. Thanks to this production scheme CLEO group has confirmed $\eta_c^\prime$ meson.~\cite[digamma]
 
+\subject{Superconvergent summation rule}
+After the brief discussion of phenomenology and experimental facilities, let's have a look at the tool we are going to apply at the theoretical side of the work.
+
+Originally,  the idea of sumrules comes from Gerasimov and Drell~\cite[gdh-gd-orig] and independently Hearn~\cite[gdh-h-orig] in application to forward Compton scattering. Well structured review on this topic has been provided by Klaus Halbing~\cite[ghd-helbing]. In 2010 a new application of the same scheme emerged. Marc Vanderhaeghen and Vladimir Pascalutsa applied GDH approach to Light-by-Light scattering process~\cite[lbl-sum1]. Firstly, it was developed for on-shell photons, but in 2012 together with Vladislav Pauk they published an article~\cite[lbl-sum2], where sumrules emerge in LBL-scattering involving virtual photons. 
+
+\placeformula[lbl-scatt]
+    $$ \gamma^\star_1(\lambda_1, q_1) + \gamma^\star_2(\lambda_2, q_2) \rightarrow \gamma^\star_1(\lambda_1^\prime, q_1) + \gamma^\star_2(\lambda_2^\prime, q_2) $$
+
+\placefigure[here][lbl-scatt]
+    {Forward Light-by-Light scattering with virtual photons}
+    {\externalfigure[lbl-scatt.pdf][width=10cm]}
+
+First step of the derivation makes use of unitarity of the $S$-matrix and generates an optical theorem in case of forward scattering:
+
+\placeformula
+    \startformula \startalign
+        \NC \SS^\dag \SS \NC = \EE \NR[+]
+        \NC \SS \NC = \EE + \ii \TT \NR[+]
+        \NC \TT^\dag \TT \NC = -\ii(\TT - \TT^\dag) \NR[+]
+    \stopalign \stopformula
+
+After inserting an operator identity at the lhs: $\TT^\dag \TT = \sum_{n} \TT^\dag \ket{n}\bra{n} \TT$ we arrive to the following expression:
+
+\placeformula
+    \startformula \startalign
+        \NC \sum_{n} \bra{out} \TT^\dag \ket{n}\bra{n} \TT \ket{in} \NC = -\ii \left( \bra{out} \TT \ket{in} - \bra{out} \TT^\dag \bra{in} \right) \NR[+]
+    \stopalign \stopformula
+
+Let's recall that matrix element in QFT is actually a $T$-matrix element:
+
+\startformulas
+    \placeformula
+    \startformula
+        \bra{out} \TT \ket{in} = \MM(in \rightarrow out)
+    \stopformula
+    \placeformula
+    \startformula
+        \bra{out} \TT^\dag \ket{in} = \MM^\star(in \rightarrow out)
+    \stopformula
+\stopformulas
+
+\placeformula
+    \startformula \startalign
+        \NC \sum_{n} \MM(in \rightarrow n)  \MM(n \rightarrow out) \NC = 2 \Im \MM(in \rightarrow out) \NR[+]
+        \NC \int \lips{p} \abs{\MM(in \rightarrow \vec{p})}^2 \NC = 2 \Im \MM(in \rightarrow in) \NR[+]
+    \stopalign \stopformula
+
+One should assume integration over all final momenta. Then, lhs can be expressed in the form of the total cross-section:
+
+\placeformula
+    \startformula
+        \sigma_{tot}(in \rightarrow \forall) = 2 E_{c.m.} p_{c.m.} \Im \MM(in \rightarrow in)
+    \stopformula
+
+Another ingredient of sumrules \quotation{cocktail} is the analyticity of amplitudes. We assume that $\MM$ doesn't contain any poles except physical ones, which correspond to bound states of the system. Formally, this statement is expressed by Cauchy theorem:
+
+\placeformula
+    \startformula
+        \MM(s) = \int \frac{\MM(s^\prime)}{s^\prime - s} \dd{s^\prime}
+    \stopformula
+
 \stopcomponent
