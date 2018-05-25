@@ -118,13 +118,13 @@ Let's recall that matrix element in QFT is actually a $T$-matrix element:
 One should assume integration over all final momenta. Then, lhs can be expressed in the form of the total cross-section:
 
 \begin{align}
-    & \sigma_{tot}(in \rightarrow \forall) = 2 E_{c.m.} p_{c.m.} \Im \Mcal(in \rightarrow in) \label{eq:optical-th}
+    & 2 E_{c.m.} p_{c.m.} \sigma_{tot}(in \rightarrow \forall) =  \Im \Mcal(in \rightarrow in) \label{eq:optical-th}
 \end{align}
 
 Another ingredient of sumrules ``cocktail'' is the analyticity of amplitudes. We assume that $\Mcal$ doesn't contain any poles except physical ones, which correspond to bound states of the system. Formally, this statement can be expressed by Cauchy's theorem:
 
 \begin{align}
-    & \Mcal(s) = \frac{1}{\ii \pi} \fint \frac{\Mcal(s^\prime)}{s^\prime - s} \dd{s^\prime} \\
+    & \Mcal(s) = \frac{1}{\pi \ii} \fint \frac{\Mcal(s^\prime)}{s^\prime - s} \dd{s^\prime} \\
     & \Re \Mcal(s) = \frac{1}{\pi} \fint \frac{\Im \Mcal(s^\prime)}{s^\prime - s} \dd{s^\prime} \label{eq:disp-rel-gen}
 \end{align}
 
@@ -139,21 +139,17 @@ In this terms we can express symmetry under parity and time reversion:
     & \mathcal{T}:\quad \Mcal_{\lambda_1^\prime \lambda_2^\prime \lambda_1 \lambda_2} = \Mcal_{\lambda_1 \lambda_2 \lambda_1^\prime \lambda_2^\prime}
 \end{align}
 
-To make use of crossing symmetry, it is convenient to parametrize amplitudes in terms of variable $\nu = \frac{1}{2} (s - u) = q_1 q_2$, which only changes sign under crossing transformation of one of the photons.
+Taking into account above symmetries, there are only eight independent amplitudes left. They can be combined into even and odd under parity.
 
 \begin{align}
-    & \text{Crossing:}\quad \Mcal_{\lambda_1^\prime \lambda_2^\prime \lambda_1 \lambda_2}(\nu) = \Mcal_{\lambda_1^\prime -\lambda_2^\prime \lambda_1 -\lambda_2}(-\nu)
-\end{align}
-
-Taking into account parity and time reversal symmetry, there are only eight independent amplitudes left. They can be combined into even and odd under parity:
-
-\begin{align}
-    &\text{Even:} && \\ \nonumber
+    &\text{Even:}~f^{(+)}(\nu) = f^{\star(+)}(-\nu) && \\ \nonumber
     &(\Mcal_{++,++}-\Mcal_{+-,+-}) &\Mcal_{++,--}\qquad &\Mcal_{00,00}\\
     &\Mcal_{+0,+0} &\Mcal_{0+,0+}\qquad &(\Mcal_{++,00} + \Mcal_{0+,-0})\\
-    &\text{Odd:} && \\ \nonumber
+    &\text{Odd:}~f^{(-)}(\nu) = -f^{\star(-)}(-\nu) && \\ \nonumber
     &(\Mcal_{++,++} - \Mcal_{+-,+-}) & &(\Mcal_{++,00} - \Mcal_{0+,-0})
 \end{align}
+
+To make use of crossing symmetry, it is convenient to parametrize amplitudes in terms of variable $\nu = \frac{1}{2} (s - u) = q_1 q_2$, which only changes sign under crossing transformation of one of the photons.
 
 For the sake of generality we'll use $f^{(+)}$ and $f^{(-)}$ for even and odd amplitudes correspondingly. Then, it is possible to simplify dispersion relation~\cref{eq:disp-rel-gen}:
 
@@ -162,7 +158,33 @@ For the sake of generality we'll use $f^{(+)}$ and $f^{(-)}$ for even and odd am
     \Re f^{(-)}(\nu) = \frac{2\nu}{\pi} \int_{\nu_0}^{\infty} \dd{\nu^\prime} \frac{1}{\nu^{\prime 2} - \nu^2 - \ii 0^+} \Im f^{(-)}(\nu^\prime)
 \end{align}
 
-Where $\nu_0$ is the threshold at which final particle state becomes forbidden.
+Where we used crossing symmetry relation to map negative half-plane onto positive:
 
-At this point we find out eight relations connecting real part of helicity amplitudes to their imaginary part, and according to the optical theorem~\cref{eq:optical-th} to corresponding helicity cross-sections. We'll focus on the odd amplitude $\Mcal_{++,--} - \Mcal_{+-,+-}$, because there exists low energy theorem, an estimation for the value of $\frac{f^{(-)}(\nu)}{\nu}$ in the limit of $\nu \rightarrow \nu_0$.
+\begin{align}
+    & \text{Crossing:}\quad \Mcal_{\lambda_1^\prime \lambda_2^\prime \lambda_1 \lambda_2}(\nu) = \Mcal^\star_{\lambda_1^\prime -\lambda_2 \lambda_1 -\lambda_2^\prime}(-\nu)
+\end{align}
+
+
+We introduced $\nu_0$, a threshold at which final particle state becomes forbidden.
+
+At this point we find out eight relations connecting real part of helicity amplitudes to their imaginary part, and according to the optical theorem~\cref{eq:optical-th} to corresponding helicity cross-sections. We'll focus on the odd amplitude $(\Mcal_{++,--} - \Mcal_{+-,+-})$, because there exists low energy theorem, an estimation for the value of $\frac{f^{(-)}(\nu)}{\nu}$ in the limit of $\nu \rightarrow \nu_0$. By analogy to GDH sumrule for the Compton scattering based on perturbation theory, value of the latter expression can be expressed in terms of anomalous magnetic moment ($a$) and mass ($m$) of the vector meson:
+
+\begin{align}
+    \frac{f^{(-)}(\nu)}{\nu} \rightarrow 16 \pi \frac{\alpha_{EM}}{m^2} a^2 \approx 70 nb \text{\quad \textit{for charmonium}}
+\end{align}
+
+This is quite small number when comparing to magnitudes of partial decay width for transitions contributing into sumrule. We assume it negligibly small and, finally, arrive to the superconvergent relation:
+
+\begin{center}
+\fbox{
+    \parbox{10cm}{
+        \centering
+        \begin{equation}
+            \large
+            \int_{s_0}^\infty \frac{\sigma_2(s) - \sigma_0(s)}{s - m} \dd{s} = 0
+        \end{equation}
+    }
+}
+\end{center}
+
 
