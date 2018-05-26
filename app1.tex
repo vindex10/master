@@ -1,6 +1,6 @@
 \section{Cross-section $2 \rightarrow 1$ in terms of decay width}
 
-It is possible to express corss-section $2 \rightarrow 1$ in terms of decay width $1 \rightarrow 2$. We use center of mass frame. For decay width there is a well known expression~\ref{pdg}:
+It is possible to express corss-section $2 \rightarrow 1$ in terms of decay width $1 \rightarrow 2$. We use center of mass frame. For decay width there is a well known expression~\cite{pdg}:
 
 \begin{align}
     \dd{\Gamma} = \frac{\vec{p}_{c.m.}}{32 \pi^2 m^2} \abs{\Mcal}^2 \dd{\Omega}
@@ -27,4 +27,25 @@ Finally, we can re-express cross-section in terms of decay width:
 
 \begin{align} \label{eq:app:crsc-dw}
     \sigma = \frac{16 \pi^2 m_f^3}{(m_f^2 - m_i^2)^2} (2J_f + 1) \Gamma \delta(s - m_f^2)
+\end{align}
+
+\paragraph{Subthreshold pole} Here we assumed final states being heavier then initial vector meson. If this is not true we get a modified expression for decay width, because we still want to keep it physical. Natural physical value corresponding to such a process is decay of vector meson into the bound state with photon emission. Actually, when comparing to previous formula it means interchanging of $m_i$ width $m_f$, $\lambda_i$ with $\lambda_f$, and $J_f$ with $J_i$:
+
+\begin{align}
+        \Gamma = \frac{m_i^2 - m_f^2}{16 \pi m_i^3} \frac{1}{2J_i + 1} \sum_{\lambda_i} \abs{\Mcal_{\lambda_i, \lambda_f \lambda_\gamma}}^2 \\
+        \sigma = \frac{\pi}{m_f^2 - m_i^2} \delta(s - m_f^2) \sum_{\lambda_f} \abs{\Mcal_{\lambda_i \lambda_\gamma, \lambda_f}}^2
+\end{align}
+
+At the first sight, one can notice that matrix element now contributes to decay width in a completely different way comparing to cross-section. We can reduce this difference by making use of parity, time reversal and crossing symmetry:
+
+\begin{align}
+    &\text{Crossing $i \leftrightarrow r$:}\qquad &\sum_{\lambda_i} \abs{\Mcal_{\lambda_f, \lambda_\gamma \lambda_i}}^2 \rightarrow \sum_{\lambda_i} \abs{\Mcal_{-\lambda_i, \lambda_\gamma (-\lambda_f)}}^2 \\
+    &\mathcal{P}:\qquad &\sum_{\lambda_i} \abs{\Mcal_{-\lambda_i, \lambda_\gamma (-\lambda_f)}}^2 \rightarrow \sum_{\lambda_i} \abs{\Mcal_{\lambda_i, (-\lambda_\gamma) \lambda_f}}^2\\
+    &\mathcal{T}:\qquad &\sum_{\lambda_i} \abs{\Mcal_{\lambda_i, (-\lambda_\gamma) \lambda_f}}^2 \rightarrow \abs{\Mcal_{(-\lambda_\gamma) \lambda_f, \lambda_i}}^2
+\end{align}
+
+We acquired flipping of photon helicity in comparison to matrix element contributing to the cross-section. In the language of total helicities it corresponds to flipping $\Lambda=0$ and $\Lambda=2$. This corresponds to the flipping of sign near the subthreshold terms ($\sigma(2) - \sigma(0) \rightarrow \Gamma(0) - \Gamma(2)$):
+
+\begin{align} \label{eq:app:crsc-dw-subthr}
+    \sigma = -\frac{16 \pi^2 m_f^3}{(m_i^2 - m_f^2)^2} (2J_i + 1) \Gamma \delta(s - m_f^2)
 \end{align}

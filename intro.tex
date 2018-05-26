@@ -180,14 +180,43 @@ This is quite small number when comparing to magnitudes of partial decay width f
         \centering
         \begin{equation} \label{eq:sumrule-sigma}
             \large
-            \int_{s_0}^\infty \frac{\sigma_2(s) - \sigma_0(s)}{s - m} \dd{s} = 0
+            \int_{s_0}^\infty \frac{\sigma_2(s) - \sigma_0(s)}{s - m^2} \dd{s} = 0
         \end{equation}
     }
 } \end{center}
 
 \paragraph{Charmonium in the final state}
-When we are looking at radiative transitions between charmonium bound states, the superconvergent relation~\cref{eq:sumrule-sigma} simplifies a lot. In the transition we actually have a process $2 \rightarrow 1$, which is naturally can be expressed in terms of decay width $1 \rightarrow 2$. Relation between cross-section and decay width is easy to derive in center of mass frame (see the full derivation in Appendix~\cref{eq:app:crsc-dw}):
+When we are looking at radiative transitions between charmonium bound states, the superconvergent relation~\cref{eq:sumrule-sigma} simplifies a lot. In the transition we actually have a process $2 \rightarrow 1$, which naturally can be expressed in terms of decay width $1 \rightarrow 2$. This unsual kind of cross-section has a remarkable property. It is zero as a function of energy almost everywhere except regions near bound states, where cross-section acquires sharp peaks. Relation between cross-section and decay width is easy to derive in center of mass frame (see the full derivation in Appendix~\cref{eq:app:crsc-dw}):
 
 \begin{align} \label{eq:crsc-dw}
     \sigma = \frac{16 \pi^2 m_f^3}{(m_f^2 - m_i^2)^2} (2J_f + 1) \Gamma \delta(s - m_f^2)
 \end{align}
+
+The expression is derived for specific final state, and one can notice a delta-function which expresses a sharp behavior near the bound state mass. Let's substitute this result into~\cref{eq:sumrule-sigma}, summing up over all possible final states:
+
+\begin{align}
+    \sum_{m_f} \frac{16 \pi^2 m_f^3}{(m_f^2 - m_i^2)^3} (2J_f+1) \left\{ \Gamma\left[m_f \rightarrow (\Lambda = +-)\right] - \Gamma\left[m_f \rightarrow (\Lambda = ++)\right] \right\} = 0
+\end{align}
+
+Here $m_f \rightarrow (\Lambda = ++)$ corresponds to the process, where photon and vector meson have helicities $+$, and the bound state which emerge from unitarity has mass $m_f$ and helicity $0$, because total helicity is defined with a minus sign: $\Lambda = \lambda_\gamma - \lambda_i$. From the experimental point of view $\Gamma\left[m_f \rightarrow (\Lambda=0)\right] = \Gamma\left[m_f \rightarrow (\Lambda = ++)\right] + \Gamma\left[m_f \rightarrow (\Lambda = --)\right]$ makes more sense. The same holds for $\Lambda=2$. Taking into account that both terms are equal due to symmetry under parity, the expression above acquires a factor $\frac{1}{2}$:
+
+
+\begin{align} \label{eq:sumrule-dw-nosub}
+    \sum_{m_f} \frac{8 \pi^2 m_f^3}{(m_f^2 - m_i^2)^3} (2J_f+1) \left\{\Gamma\left[m_f \rightarrow (\Lambda = 2)\right] - \Gamma\left[m_f \rightarrow (\Lambda = 0)\right] \right\} = 0
+\end{align}
+
+During the derivation we assumed all final states being heavier than vector meson. But even for $J/\psi$ there exists charmonium state which lies underneath ($\eta_c$). In that case, we can keep notation meaning the decay happening in the reveresed direction: $\gamma \eta_c \leftarrow J/\psi$. Cross-section $\gamma + J/\psi \rightarrow \eta_c$ can be mapped to the corresponding decay width using parity, time reversal and crossing symmetry (see Appendix~\cref{eq:app:crsc-dw-subthr}). What is remarkable in such a mapping, it translates $\sigma(\Lambda=++)$ into $\Gamma(\Lambda=+-)$, i.e. swaps the helicity of photon and switches total helicity from $0$ into $2$ and vice versa. As a result, the ``subthreshold pole'' will contribute with inversed sign when written in terms of decay widths. Let's append subthreshold contributions into~\cref{eq:sumrule-dw-nosub}:
+
+\begin{align} \label{eq:sumrule-dw}
+    &-\sum_{m_f < m_i} \frac{8 \pi^2 m_i^3}{(m_i^2 - m_f^2)^3} (2J_i+1) \left\{\Gamma\left[m_i \rightarrow (\Lambda = 2)\right] - \Gamma\left[m_i \rightarrow (\Lambda = 0)\right] \right\} + \nonumber \\
+    &+ \sum_{m_f > m_i} \frac{8 \pi^2 m_f^3}{(m_f^2 - m_i^2)^3} (2J_f+1) \left\{\Gamma\left[m_f \rightarrow (\Lambda = 2)\right] - \Gamma\left[(\Lambda = 0) \rightarrow m_f\right] \right\} = 0
+\end{align}
+
+Notice that all bound states of charmonium contribute to the sum, so having information about radiative transitions at low energy levels we have direct estimate for contributions of the transitions from high-energy states. Another important remark is that to~\ref{eq:sumrule-dw} contribute decay widths of different helicities, at the same time at experiment people usually measure total decay widths. As we would like to use experimental data, we need to develop some way of distinguishing between helicity contributions. Formally we can introduce translating coefficients corresponding to relative contribution of each helicity to the total radiative decay width:
+
+\begin{align}
+    r^{(0)} = \frac{\Gamma\left[m_f \leftrightarrow (\Lambda=0)\right]}{\Gamma_{tot}} \\
+    r^{(2)} = \frac{\Gamma\left[m_f \leftrightarrow (\Lambda=2)\right]}{\Gamma_{tot}}
+\end{align}
+
+These coefficients are not universal but depend on the states taking part in transition. To estimate their values we are going to apply non-relativistic quark model coupled to electromagnetic field.
