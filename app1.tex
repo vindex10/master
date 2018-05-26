@@ -1,2 +1,30 @@
-\chapter{Appendix1}
-First app
+\section{Cross-section $2 \rightarrow 1$ in terms of decay width}
+
+It is possible to express corss-section $2 \rightarrow 1$ in terms of decay width $1 \rightarrow 2$. We use center of mass frame. For decay width there is a well known expression~\ref{pdg}:
+
+\begin{align}
+    \dd{\Gamma} = \frac{\vec{p}_{c.m.}}{32 \pi^2 m^2} \abs{\Mcal}^2 \dd{\Omega}
+\end{align}
+
+As cross-section $2 \rightarrow 1$ is unusual, we provide complete derivation from first principles:
+
+\begin{align}
+        &\sigma(2 \rightarrow 1) = \sum_{\lambda_f} \int \lips{\vec{p}_f} \frac{(2\pi)^4 \delta^{(4)}(p_i + p_\gamma - p_f)}{(2 \Ep{i}) (2 \Ep{\gamma}) j} \abs{\Mcal_{\lambda_i \lambda_\gamma, \lambda_f}(\vec{p}_i + \vec{p}_\gamma \rightarrow \vec{p}_f)}^2 = \\
+        &= \frac{2\pi}{8 \Ep{f} \Ep{i} \Ep{\gamma} j} \delta(\Ep{i} + \Ep{\gamma} - \Ep{f}) \sum_{\lambda_f} \abs{\Mcal_{\lambda_i \lambda_\gamma, \lambda_f}}^2 = \left| \Ep{i} \Ep{\gamma} j = E_{c.m.} \abs{\vec{p}_{c.m.}} \right| = \\
+        &= \left| \Ep{f} = E_{c.m.} = m_f \right| = \frac{\pi}{4 m_f^2 \abs{\vec{p}_{c.m.}}} \delta(\sqrt{s} - m_f) \sum_{\lambda_f} \abs{\Mcal_{\lambda_i \lambda_\gamma, \lambda_f}}^2 = \\
+        &= \frac{2 \pi \sqrt{s}}{4 m_f^2 \abs{\vec{p}_{c.m.}}} \delta(s - m_f^2) \sum_{\lambda_f} \abs{\Mcal_{\lambda_i \lambda_\gamma, \lambda_f}}^2 = \left| \abs{\vec{p}_{c.m.}} = \frac{m_f^2 - m_i^2}{2 m_f} \right| =\\
+        &= \frac{\pi}{m_f^2 - m_i^2} \delta(s - m_f^2) \sum_{\lambda_f} \abs{\Mcal_{\lambda_i \lambda_\gamma, \lambda_f}}^2
+\end{align}
+
+\begin{align}
+        &\Gamma(1 \rightarrow 2) =  \frac{m_f^2 - m_i^2}{64 \pi^2 m_f^3} \int \dd{\Omega} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}(\vec{p}_f \rightarrow \vec{p}_i + \vec{p}_\gamma)}^2 = \\
+        &= \frac{m_f^2 - m_i^2}{64 \pi^2 m_f^3} \int \dd{\Omega} \sum_{\lambda_f^{\prime \star} \lambda_f^{\prime}} D^{J_f \star}_{\lambda^{\prime \star}_f \lambda_f}(\Omega) D^{J_f}_{\lambda^{\prime}_f \lambda_f}(\Omega) \Mcal^\star_{\lambda^{\prime \star}_f, \lambda_i \lambda_\gamma} \Mcal_{\lambda_f, \lambda_i \lambda_\gamma} = \\
+        &= \left| \int \dd{\Omega}D^{J_f \star}_{\lambda^{\prime \star}_f \lambda_f}(\Omega) D^{J_f}_{\lambda^{\prime}_f \lambda_f}(\Omega) = \frac{4 \pi}{2J_f + 1} \delta_{\lambda_f^\prime, \lambda_f^{\prime \star}}  \right| = \\
+        &= \frac{m_f^2 - m_i^2}{16 \pi m_f^3} \frac{1}{2J_f + 1} \sum_{\lambda_f} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2
+\end{align}
+
+Finally, we can re-express cross-section in terms of decay width:
+
+\begin{align} \label{eq:app:crsc-dw}
+    \sigma = \frac{16 \pi^2 m_f^3}{(m_f^2 - m_i^2)^2} (2J_f + 1) \Gamma \delta(s - m_f^2)
+\end{align}

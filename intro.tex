@@ -175,16 +175,19 @@ At this point we find out eight relations connecting real part of helicity ampli
 
 This is quite small number when comparing to magnitudes of partial decay width for transitions contributing into sumrule. We assume it negligibly small and, finally, arrive to the superconvergent relation:
 
-\begin{center}
-\fbox{
+\begin{center} \fbox{
     \parbox{10cm}{
         \centering
-        \begin{equation}
+        \begin{equation} \label{eq:sumrule-sigma}
             \large
             \int_{s_0}^\infty \frac{\sigma_2(s) - \sigma_0(s)}{s - m} \dd{s} = 0
         \end{equation}
     }
-}
-\end{center}
+} \end{center}
 
+\paragraph{Charmonium in the final state}
+When we are looking at radiative transitions between charmonium bound states, the superconvergent relation~\cref{eq:sumrule-sigma} simplifies a lot. In the transition we actually have a process $2 \rightarrow 1$, which is naturally can be expressed in terms of decay width $1 \rightarrow 2$. Relation between cross-section and decay width is easy to derive in center of mass frame (see the full derivation in Appendix~\cref{eq:app:crsc-dw}):
 
+\begin{align} \label{eq:crsc-dw}
+    \sigma = \frac{16 \pi^2 m_f^3}{(m_f^2 - m_i^2)^2} (2J_f + 1) \Gamma \delta(s - m_f^2)
+\end{align}
