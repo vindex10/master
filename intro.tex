@@ -78,7 +78,7 @@ Finally, we arrive to completely different production scheme ``Two photon scheme
 \paragraph{Superconvergent summation rule}
 After the brief discussion of phenomenology and experimental facilities, let's have a look at the tool we are going to apply at the theoretical side of the work.
 
-Originally,  the idea of sumrules comes from Gerasimov and Drell~\cite{gdh-gd-orig} and independently Hearn~\cite{gdh-h-orig} in application to forward Compton scattering. Well structured review on this topic has been provided by Klaus Halbing~\cite{ghd-helbing}. In 2010 a new application of the same scheme emerged. Marc Vanderhaeghen and Vladimir Pascalutsa applied GDH approach to Light-by-Light scattering process~\cite{lbl-sum1}. Firstly, it was developed for on-shell photons, but in 2012 together with Vladislav Pauk they published an article~\cite{lbl-sum2}, where sumrules emerge in LBL-scattering involving virtual photons. 
+Originally,  the idea of sumrules comes from Gerasimov and Drell~\cite{gdh-g-orig} and independently Hearn~\cite{gdh-dh-orig} in application to forward Compton scattering. Well structured review on this topic has been provided by Klaus Halbing~\cite{gdh-helbing}. In 2010 a new application of the same scheme emerged. Marc Vanderhaeghen and Vladimir Pascalutsa applied GDH approach to Light-by-Light scattering process~\cite{lbl-sum1}. Firstly, it was developed for on-shell photons, but in 2012 together with Vladislav Pauk they published an article~\cite{lbl-sum2}, where sumrules emerge in LBL-scattering involving virtual photons~(\cref{fig:lbl-scatt}). 
 
 \begin{align} \label{eq:lbl-scatt}
     \gamma^\star_1(\lambda_1, q_1) + \gamma^\star_2(\lambda_2, q_2) \rightarrow \gamma^\star_1(\lambda_1^\prime, q_1) + \gamma^\star_2(\lambda_2^\prime, q_2) 
@@ -219,4 +219,7 @@ Notice that all bound states of charmonium contribute to the sum, so having info
     r^{(2)} = \frac{\Gamma\left[m_f \leftrightarrow (\Lambda=2)\right]}{\Gamma_{tot}}
 \end{align}
 
-These coefficients are not universal but depend on the states taking part in transition. To estimate their values we are going to apply non-relativistic quark model coupled to electromagnetic field.
+These coefficients are not universal but depend on the states taking part in transition. Process of calculation of the coefficients consists of several steps. First of all we are going to solve for eigenvalues non-relativistic Shrodinger equation with potential given by non-relativistic quark model. Eigenvalues correspond to masses of charmonium bound states. Then we can use eigenvalues to get eigenfunctions, i.e. wave functions of corresponding bound states. Finally, having wave functions, we can apply Pauli equation to model electromagnetic interaction between quarks in a bound state, in this way we'll be able to estimate decay widths of radiative transitions.
+
+\paragraph{Non-relativistic quark model}
+According to the plan, we are in need of some model to reproduce masses and wave functions of charmonium. For the low-energy region non-relativistic quark model does well in reproducing experimental results. Here we are going to introduce the model potential based on phenomenological considerations referring to sources where it has been obtained from non-relativistic limit of QCD perturbation theory~\cite{nrqm-perturb}:
