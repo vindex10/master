@@ -121,14 +121,14 @@ One should assume integration over all final momenta. Then, lhs can be expressed
     & 2 E_{c.m.} p_{c.m.} \sigma_{tot}(in \rightarrow \forall) =  \Im \Mcal(in \rightarrow in) \label{eq:optical-th}
 \end{align}
 
-Another ingredient of sumrules ``cocktail'' is the analyticity of amplitudes. We assume that $\Mcal$ doesn't contain any poles except physical ones, which correspond to bound states of the system. Formally, this statement can be expressed by Cauchy's theorem:
+Another ingredient of sumrules ``cocktail'' is the analyticity of amplitudes. We assume that $\Mcal$ doesn't contain any poles except physical ones, which correspond to bound states of the system. Formally, this statement can be expressed by Cauchy's theorem. We use Schwartz principle to conduct analytical continuation of the amplitude. See details in appendix~\cref{sec:app:alyt-ampl}. As a result we obtain:
 
 \begin{align}
-    & \Mcal(s) = \frac{1}{\pi \ii} \fint \frac{\Mcal(s^\prime)}{s^\prime - s} \dd{s^\prime} \\
-    & \Re \Mcal(s) = \frac{1}{\pi} \fint \frac{\Im \Mcal(s^\prime)}{s^\prime - s} \dd{s^\prime} \label{eq:disp-rel-gen}
+    & \Mcal(s) = \frac{1}{\pi} \fint \frac{\Im \Mcal(s^\prime + \ii \epsilon)}{s^\prime - s} \dd{s^\prime} \\
+    & \Re \Mcal(s + \ii \epsilon) = \frac{1}{\pi} \fint \frac{\Im \Mcal(s^\prime + \ii \epsilon)}{s^\prime - s} \dd{s^\prime} \label{eq:disp-rel-gen}
 \end{align}
 
-In case of forward scattering matrix element acquires a beautiful parity structure. This will help us to simplify the dispersion relation above. Parity relations involve helicities of initial and final photons, that is why working in terms amplitudes with defined helicities is convenient.
+In case of the forward scattering matrix element acquires a beautiful parity structure. It will help us to simplify the dispersion relation above. Parity relations involve helicities of initial and final photons, that is why working in terms of amplitudes with defined helicities is convenient.
 
 We denote $\Mcal_{\lambda^\prime_1 \lambda^\prime_2 \lambda_1 \lambda_2}$ an amplitude, where the first photon ($\gamma_1$) has helicity $\lambda_1$ in the initial state and $\lambda_1^\prime$ in the final state. The same holds for the second photon $\gamma_2$. As photons are virtual, possible values for $\lambda$ include $\lambda=0$ besides usual $\lambda=\pm1$.
 
@@ -142,26 +142,26 @@ In this terms we can express symmetry under parity and time reversion:
 Taking into account above symmetries, there are only eight independent amplitudes left. They can be combined into even and odd under parity.
 
 \begin{align}
-    &\text{Even:}~f^{(+)}(\nu) = f^{\star(+)}(-\nu) && \\ \nonumber
+    &\text{Even:}~f^{(+)}(\nu) = f^{(+)}(-\nu) && \\ \nonumber
     &(\Mcal_{++,++}-\Mcal_{+-,+-}) &\Mcal_{++,--}\qquad &\Mcal_{00,00}\\
     &\Mcal_{+0,+0} &\Mcal_{0+,0+}\qquad &(\Mcal_{++,00} + \Mcal_{0+,-0})\\
-    &\text{Odd:}~f^{(-)}(\nu) = -f^{\star(-)}(-\nu) && \\ \nonumber
+    &\text{Odd:}~f^{(-)}(\nu) = -f^{(-)}(-\nu) && \\ \nonumber
     &(\Mcal_{++,++} - \Mcal_{+-,+-}) & &(\Mcal_{++,00} - \Mcal_{0+,-0})
 \end{align}
 
 To make use of crossing symmetry, it is convenient to parametrize amplitudes in terms of variable $\nu = \frac{1}{2} (s - u) = q_1 q_2$, which only changes sign under crossing transformation of one of the photons.
 
-For the sake of generality we'll use $f^{(+)}$ and $f^{(-)}$ for even and odd amplitudes correspondingly. Then, it is possible to simplify dispersion relation~\cref{eq:disp-rel-gen}:
+For the sake of generality we'll use $f^{(+)}$ and $f^{(-)}$ for even and odd amplitudes correspondingly. Then, it is possible to simplify dispersion relation in \cref{eq:disp-rel-gen}:
 
 \begin{align}
-    \Re f^{(+)}(\nu) = \frac{2}{\pi} \int_{\nu_0}^{\infty} \dd{\nu^\prime} \frac{\nu^\prime}{\nu^{\prime 2} - \nu^2 - \ii 0^+} \Im f^{(+)}(\nu^\prime) \\
-    \Re f^{(-)}(\nu) = \frac{2\nu}{\pi} \int_{\nu_0}^{\infty} \dd{\nu^\prime} \frac{1}{\nu^{\prime 2} - \nu^2 - \ii 0^+} \Im f^{(-)}(\nu^\prime)
+    \Re f^{(+)}(\nu + \ii \epsilon) = \frac{2}{\pi} \int_{\nu_0}^{\infty} \dd{\nu^\prime} \frac{\nu^\prime}{\nu^{\prime 2} - \nu^2} \Im f^{(+)}(\nu^\prime + \ii \epsilon) \\
+    \Re f^{(-)}(\nu + \ii \epsilon) = \frac{2\nu}{\pi} \int_{\nu_0}^{\infty} \dd{\nu^\prime} \frac{1}{\nu^{\prime 2} - \nu^2} \Im f^{(-)}(\nu^\prime + \ii \epsilon)
 \end{align}
 
 Where we used crossing symmetry relation to map negative half-plane onto positive:
 
 \begin{align}
-    & \text{Crossing:}\quad \Mcal_{\lambda_1^\prime \lambda_2^\prime \lambda_1 \lambda_2}(\nu) = \Mcal^\star_{\lambda_1^\prime -\lambda_2 \lambda_1 -\lambda_2^\prime}(-\nu)
+    & \text{Crossing:}\quad \Mcal_{\lambda_1^\prime \lambda_2^\prime \lambda_1 \lambda_2}(\nu) = \Mcal_{\lambda_1^\prime -\lambda_2 \lambda_1 -\lambda_2^\prime}(-\nu)
 \end{align}
 
 
@@ -222,4 +222,63 @@ Notice that all bound states of charmonium contribute to the sum, so having info
 These coefficients are not universal but depend on the states taking part in transition. Process of calculation of the coefficients consists of several steps. First of all we are going to solve for eigenvalues non-relativistic Shrodinger equation with potential given by non-relativistic quark model. Eigenvalues correspond to masses of charmonium bound states. Then we can use eigenvalues to get eigenfunctions, i.e. wave functions of corresponding bound states. Finally, having wave functions, we can apply Pauli equation to model electromagnetic interaction between quarks in a bound state, in this way we'll be able to estimate decay widths of radiative transitions.
 
 \paragraph{Non-relativistic quark model}
-According to the plan, we are in need of some model to reproduce masses and wave functions of charmonium. For the low-energy region non-relativistic quark model does well in reproducing experimental results. Here we are going to introduce the model potential based on phenomenological considerations referring to sources where it has been obtained from non-relativistic limit of QCD perturbation theory~\cite{nrqm-perturb}:
+According to the plan, we are in need of some model to reproduce masses and wave functions of charmonium. For the low-energy region non-relativistic quark model does well in reproducing experimental results~\cite{deng-charm, deng-bot}. Here we are going to introduce the model potential based on phenomenological considerations introducing empirical fitting parameters, but at the same time we are referring to the sources where the model has been obtained from non-relativistic limit of QCD perturbation theory~\cite{nrqm-perturb}. Thus physical meaning of the parameters to some extent can be traced.
+
+Starting from two-quark Shrodinger equation we can pass to the center of mass frame. We denote by $\vec{r}$ a vector pointing from quark to anti-quark. The problem is spherically symmetric, so we can decouple angular dependency into spherical harmonic $Y_{Lm}$. We consider $\hbar = c = 1$ convention:
+
+\begin{align}
+    &\left[ -\frac{1}{2 \mu_R} \Delta_{\vec{r}} + V(\abs{\vec{r}}) \right] \psi(\vec{r}) = E_{bound} \psi(\vec{r}) \\
+    &\dv[2]{u(r)}{r} + 2 \mu_R \left[ E_{bound} - V(r) - \frac{L(L+1)}{2 \mu_R r^2} \right] u(r) = 0 \\
+    &\abs{\vec{r}} = r ,\quad \psi(\vec{r}) = \frac{u(r)}{r} Y_{Lm}(\Omega) \\
+    &V(r) = V_V(r) +V_S(r) + V_{SL}(r) + V_{SS}(r) + V_T(r)
+\end{align}
+
+This is a general form of the equation for charmonium spectrum. Let's step through each term contributing to the potential.
+
+\begin{align} \label{eq:nrqm-vv}
+    V_V(r) = -\frac{4}{3} \frac{\alpha_S}{r}
+\end{align}
+
+Coulomb-like interaction between quark and anti-quark(\cref{eq:nrqm-vv}) comes from the one-gluon exchange process. Asymptotic freedom can be included in running strong coupling $\alpha_S$, but for the sake of simplicity we leave it as a constant parameter.
+
+Another distinctive feature of QCD, confinement, is encoded into the growing behavior of the potential when quarks move away from each other. A kind of gluon string tension streched between quark and anti-quark. There are two models presented in \cref{eq:nrqm-vs}: linear and screened. The latter, in addition to the string tension tries to model a process when distantly placed quarks acquire screening between each other by pulling new quark-antiquark pairs from vacuum. Parameter $\mu$ is related to the distance at which birth of new pairs becomes possible, and $b$ describes tention force in linear approximation.
+
+\begin{align} \label{eq:nrqm-vs}
+    V_S(r) = \left[ \begin{matrix*}[l]
+                    &\text{Linear:}\quad br \\
+                    &\text{Screened:}\quad \frac{b}{\mu} (1 - \exp^{-\mu r})
+              \end{matrix*} \right.
+\end{align}
+
+Spin-orbit coupling(\cref{eq:nrqm-sl}) is well-known in two-body problem. It appears as an evidence of non-commutativity of Lorentz transformations. At the classical level it emerges as ``Thomas precession''~\cite{thomas}
+
+\begin{align} \label{eq:nrqm-sl}
+    V_{SL}(r) = \frac{1}{2 m_c^2 r} \left( 3 \dv{V_V}{r} - \dv{V_S}{r} \right) \vec{L} \cdot \vec{S}
+\end{align}
+
+Spin-spin interaction (\cref{eq:nrqm-ss}) is based on perturbative expansion of $T$-matrix by $\frac{v}{c}$, and has a contact nature. For numerical purposes we follow~\cite{gbs-model} and smear the delta-function at the scales of order $\frac{1}{\sigma} \propto \frac{1}{m_c}$:
+
+\begin{align} \label{eq:nrqm-ss}
+    V_{SS}(r) = \frac{32 \pi \alpha_S}{9 m_c^2} \tilde{\delta}_\sigma(r) \vec{S}_c \cdot \vec{S}_{\bar{c}},\quad \tilde{\delta}_\sigma(r) = \left(\frac{\sigma}{\sqrt{\pi}}\right)^3 \ee^{-\sigma^2 r^2}
+\end{align}
+
+Tensor term(\cref{eq:nrqm-t}) is another product of perturbative expansion. It is important to mention that this term introduces a hyperfine splitting of levels over total angluar momentum projects.
+
+\begin{align} \label{eq:nrqm-t}
+    &V_T(r) = \frac{1}{12 m_c^2} \left( \frac{1}{r} \dv{V_V}{r} - \dv[2]{V_V}{r} \right) \vec{H}_T \\
+    &\vec{H}_T = 6\frac{(\vec{S} \cdot \vec{r})^2}{r^2} - 2\vec{S}^2
+\end{align}
+
+To simplify computations we decieded to omit hyperfine splitting by aveeraging tensor term over total angular momentum projections. As a result (for derivation see the appendix (\cref{sec:app:tensor}) we obtain:
+
+\begin{align}
+    &V_T(r) = \frac{1}{12 m_c^2} \left( \frac{1}{r} \dv{V_V}{r} - \dv[2]{V_V}{r} \right) \left<\vec{H}_T\right> \\
+    &\left<\vec{H}_T\right> = 2 (-1)^{L+S-J+1} \sqrt{\frac{L(L+1)(2L+1)}{(2L-1)(2L+3)}} \times \nonumber \\
+    &\qquad \times \sqrt{S(S+1)(2S+1)(2S+3)(2S-1)} \left( \begin{matrix}
+                                                L & J & S \\
+                                                S & 2 & L
+                                              \end{matrix} \right)
+\end{align}
+
+Where round brackets represent $6j$ symbol.
+
