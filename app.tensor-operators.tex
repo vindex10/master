@@ -1,0 +1,151 @@
+\section{Tensor operators} \label{sec:app:tensor-op}
+Tensor operators by definition transform like tensors under group action.
+In general, a tensor operator of rank transforms as follows:
+
+\begin{align}
+    \left(U(R) T U(R)^{-1}\right)_{ij...}  = U(R)_{ia} U(R)_{jb} ... T_{ab...}
+\end{align}
+
+By expanding group action around identity, transformation law can be
+formulated for corresponding algebra:
+
+\begin{align}
+    \left[A(R), T\right]_{ij...} = U(A)_{ia} T_{aj...} + U(A)_{jb} T_{ib...} + ...
+\end{align}
+
+Usually tensor operators are classified by rank, a minimal number of vector
+operators needed to construct the tensor. It also represents a number of terms
+in algebra's transformation law and number of multipliers in group transformation law. 
+
+Assuming the group being a group of 3-rotations we are coming to notion of
+a \textit{spherical tensor operator} Corresponding commutation relations are more
+convenient for further use when represented in $SU(2)$ form involving ladder operators:
+
+\begin{align}
+        &\left[J_{\pm}, T^{(k)}_{q}\right] = \sqrt{k(k+1) - q(q\pm1)} T^{(k)}_{q\pm1} \\
+        &\left[J_z, T^{(k)}_{q}\right] = q T_{q}^{(k)}
+\end{align}
+where $k$ — rank of the operator.
+
+It is easy to build families of operators of specified rank by starting
+from $J_{+}^k$ as an operator corresponding to the highest weight $T^{(k)}_k$
+and lowering the weight step by step:
+
+\begin{align}
+        & \left[J_{+}, T^{(k)}_k\right] = \left[J_{+}, J_{+}^{k}\right] = 0 \\
+        & \left[J_{-}, T^{(k)}_k\right] =  \sqrt{k(k+1)-k(k-1)} T^{(k)}_{k-1} \\
+        & \dots
+\end{align}
+
+For further intuition it is better to review a couple of examples.
+
+\paragraph{Spin-1}
+
+\begin{align}
+        & V_1 = \frac{1}{2}S_{+} \\
+        & V_0 = -\frac{1}{\sqrt{2}} S_{z} \\
+        & V_{-1} = -\frac{1}{2}S_{-}
+\end{align}
+
+\paragraph{Spin-2}
+
+\begin{align}
+        & V_{\pm2} = \frac{1}{2\sqrt{21}} S_{\pm}^2 \\
+        & V_{\pm1} = \mp \frac{1}{2\sqrt{21}} \left\{S_z, S_{\pm}\right\} \\
+        & V_0 = \frac{2}{3 \sqrt{14}} \left[S_z^2 - \frac{1}{4} \left\{S_{+}, S_{-}\right\} \right]
+\end{align}
+
+\paragraph{Spherical harmonics l=1}
+It is an interesting example of how rotational group could act not on itself
+but on some other space. Here we have orbital momentum operators acting
+on space coordinates. ${x, y, z}$ can be treated as vector operators.
+For instance, they can act on itselves building higher rank operators.
+
+Returning back to $l=1$ family contruction, it is easy to check that
+$(x+\mathrm{i}y)^{l}$ is an operator of the highest weight. Consequently,
+acting on it by $L_{-}$ we'll obtain the whole family.
+
+\begin{align}
+        & Y_{\pm1}^{1} = \mp \frac{1}{\sqrt{2}} \frac{x \pm \mathrm{i}y}{r} \\
+        & Y_0^1 = \frac{z}{r}
+\end{align}
+
+\paragraph{Spherical harmonics l=2}
+\begin{align}
+        &Y_{\pm2}^{2} = \sqrt{\frac{3}{8}} \frac{(x\pm\mathrm{i}y)^2}{r^2} \\
+        &Y_{\pm1}^{2} = \mp \sqrt{\frac{3}{2}} \frac{(x\pm\mathrm{i}y)z}{r^2} \\
+        &Y_0^{2} = \frac{1}{\sqrt{8}} \frac{2z^2 - x^2 - y^2}{r^2}
+\end{align}
+
+\subsection{Normalization}
+Another crucial point of the algorithm above, that it reproduces families
+up to common normalization factor. As we are dealing with linear operators,
+there is a way to induct a notion of scalar product from vector space. Thus,
+before we start with operators, let's discuss scalar product of vectors.
+
+Let we have vector space $V$ and a space of linear functionals on V --- $V^\star$.
+Usually bases of these spaces respect the following condition:
+
+\begin{align}
+    \vec{e}^i(\vec{e}_j) = \delta^i_j \quad \vec{e}^i \in V^\star, \vec{e}_j \in V
+\end{align}
+
+Also there is a natural way to define how does $V$ act on $V^\star$:
+
+\begin{align}
+    \vec{e_i}(\vec{e^j}) = \vec{e^j}(\vec{e_i})
+\end{align}
+
+To provide $V$ with scalar product we should define a metric. In this notation
+metric $g^\prime$ is a linear map from space to co-space. It should be symmetric
+and positve-defined:
+
+\begin{align}
+        &g^\prime: V \rightarrow V^\star \\
+        &(g^\prime\vec{a})(b) = \vec{a}(g^\prime\vec{b}) = g(\vec{a}, \vec{b}) \\
+        & g(\vec{a}, \vec{a}) > 0 \quad \vec{a} \neq \vec{0}
+\end{align}
+
+Where we introduced $g$, which is a scalar product:
+
+\begin{align}
+    \vec{a}\cdot\vec{b} = g(\vec{a}, \vec{b})
+\end{align}
+
+In case of vectors defined on complex field, $g$ is antilinear in respect to the
+first argument, by convention. And the product is called pseudo-scalar:
+
+\begin{align}
+    (g^\prime\vec{a})^\star(\vec{b}) = g(\vec{a}, \vec{b}) = g(\vec{b}, \vec{a})^\star
+\end{align}
+
+$g$ generates a natural map $g_\prime: V^\star \rightarrow V$:
+
+\begin{align}
+    g_\prime(\hat{a}) = (g^\prime)^{-1}(\hat{a}) = \vec{a} \quad \hat{a} \in V^\star, \vec{a} \in V
+\end{align}
+
+In general, linear operator can be represented as a tensor
+living in $V^\star \otimes V$.
+
+\begin{align}
+        &T: V \rightarrow V \\
+        &T = T_i^j e_j \otimes e^i \quad e^i \in V^\star, e_j \in V 
+\end{align}
+
+By analogy with vectors, scalar product of tensors could be defined as follows:
+
+\begin{align}
+        &\vec{A}^\prime = A_i^j g_\prime(e_j) \otimes g^\prime(e^i) \\ 
+        &\vec{A} \cdot \vec{B} = (\vec{A}^\prime)^\star(\vec{B}) \quad \vec{A}, \vec{B} \in V \otimes V^\prime
+\end{align}
+
+Where $\prime-operation$ spreads over basis vectors to flip their nature
+between $V$ and $V^\prime$. Together with complex conjugation $\star$, it
+defines hermitian conjugation $\dagger$. It is easy to rewrite
+scalar product in terms of matrices:
+
+\begin{align}
+    \vec{A} \cdot \vec{B} = \vec{A}^\dagger (\vec{B}) = A_{ij}^\star B_{ij} = (A^T)^\star_{j i} B_{ij} = Tr(A^\dagger B)
+\end{align}
+

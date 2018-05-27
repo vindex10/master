@@ -1,0 +1,193 @@
+\section{Tensor term averaging} \label{sec:app:tensor-term}
+
+\begin{align}
+    &H_T \propto S_T \\
+    &S_T = 2(3\frac{(\vec{S}\vec{r})^2}{r^2} - \vec{S}^2) \\
+    &<S_T> = \frac{1}{2J+1} \sum_{j} \left<J, j, L, S\right| S_T \left|J, j, L, S\right> \label{eq:STav}
+\end{align}
+
+As a sketch of derivation let's do the counting of Clebsch-Gordan coefficients
+emerging in \cref{eq:STav}.
+
+1. $Jj$ to $LS$ decomposition of "-in" state.
+2. $Jj$ to $LS$ decomposition of "out-" state.
+3. $S_T$ includes coordinate components, which are $Y_2^m$.
+$\left<L, l\right| Y_2^m \left|L,l^\prime\right> \propto \left<L, l^\prime, 2, m| L, l \right>$
+according to Wigner-Eckart theorem.
+4. $S_T$ includes spin dependence, which is also can be expressed in terms of
+spherical tensor operator, thus according to Wigner-Eckart theorem gives
+$\left<S, s\right| S_{2}^m \left|S, s^\prime \right> \propto \left<S, s^\prime, 2, m| S, s\right>$
+
+There are also $6$ summations, over all spin and momentum projections.
+Hence, at firstrough look, the combination above reminds a $6j$-symbol.
+Further we'd like to obtain it in a more strict fashion.
+
+Before we start with algebra, it worths reminding a notion of tensor operators.\cref{sec:app:tensor-op}
+
+We are now able to rewrite $S_T$ in terms of spherical tensor operators.
+This action is important to decouple spin and momenta projection dependency
+into Clebsch-Gordan coefficient. $S_T$ consist of the second power operators
+in both coordinate and spin space, which means we are dealing
+with $l=2$ and $S=2$ families. After substitution of ladder operators
+instead of spin vector and collecting similar terms spherical representation
+of $S_T$ looks like:
+
+\begin{align}
+    S_T = 6 \sqrt{14} \sum_{m=-2}^{2} (-1)^m S_{2}^{m} Y_{2}^{-m}
+\end{align}
+
+At this point let's factorize \cref{eq:STav} and express factors in terms
+of $3j$-symbols.
+
+\begin{align}
+        &\left<S_T\right> = 6 \sqrt{14} \frac{1}{2J+1} \sum_{j} \left<JjLS\right|(-1)^m Y_2^m S_2^{-m}\left|JjLS\right> =\\
+        &= \frac{6\sqrt{14}}{2J+1} \sum_{j, m_f, s_f, m_i, s_i, m} (-1)^m  \left<Jj|Lm_fSs_f\right> \left<Lm_iSs_i|Jj\right> \times \nonumber \\
+        &\qquad\times \left<Lm_f\right|Y_2^m\left|Lm_i\right> \left<Ss_f\right|S_2^{-m}\left|Ss_i\right> = \\
+        &= 6\sqrt{14} \sum_{j, m_f, s_f, m_i, s_i, m} (-1)^m \left\{\begin{matrix}
+      L & S & J \\
+      m_f & s_f & -j
+    \end{matrix}\right\} \left\{\begin{matrix}
+                          L & S & J \\
+                          m_i & s_i & -j
+                        \end{matrix}\right\} \times\nonumber \\
+    &\qquad \times \left<Lm_f\right|Y_2^m\left|Lm_i\right> \left<Ss_f\right|S_2^{-m}\left|Ss_i\right> = \\
+    \begin{split}
+    &= 6\sqrt{14} \left<L||Y_2||L\right> \left<S||S_2||S\right> \sum_{j, m_f, s_f, m_i, s_i, m} (-1)^m \left\{\begin{matrix}
+      L & S & J \\
+      m_f & s_f & -j
+    \end{matrix}\right\} \left\{\begin{matrix}
+                          L & S & J \\
+                          m_i & s_i & -j
+                        \end{matrix}\right\}\\
+    &\left<Lm_i2m|Lm_f\right> \left<Ss_i2(-m)|Ss_f\right> =
+    \end{split}\\
+    \begin{split}
+        &= (-1)^{L+S} 6\sqrt{14} \sqrt{2S+1} \sqrt{2L+1} \left<L||Y_2||L\right> \left<S||S_2||S\right> \\
+        &\sum_{j, m_f, s_f, m_i, s_i, m} (-1)^{m_f+s_f+m}
+            \left\{\begin{matrix}
+              L & S & J \\
+              m_f & s_f & -j
+            \end{matrix}\right\} \left\{\begin{matrix}
+                                  L & S & J \\
+                                  m_i & s_i & -j
+                                \end{matrix}\right\} \times \nonumber \\
+            &\qquad \times \left\{\begin{matrix}
+                              L & 2 & L \\
+                              m_i & m & -m_f
+                            \end{matrix}\right\} \left\{\begin{matrix}
+                                                  S & 2 & S \\
+                                                  s_i & -m & -s_f
+                                                \end{matrix}\right\}
+       \end{split}
+\end{align}
+
+Where we have used the following convention for $3j$-symbol, normalization
+of Wigen-Eckart reduced operators:
+
+\begin{align}
+    \left<LmSs|Jj\right> = (-1)^{L-S+j} \sqrt{2J+1}
+                                \left\{\begin{matrix}
+                                    L & S & J \\
+                                    m & s & -j
+                                \end{matrix}\right\}
+\end{align}
+
+\begin{align} \label{eq:WEth}
+    \left<J^{(f)}j_f\right| T_D^m \left|J^{(i)} j_i\right> = \left<J^{(i)}j_iDm|J^{(f)}j_f\right> \left<J^{(f)}||T_D||J^{(i)}\right>
+\end{align}
+
+Now we should transform $3j$'s to construct a $6j$ symbol. Among with
+structure of linkages in $6j$-symbol also phase factor matters. It is
+easy to check, that applying momentum projections' conservation laws,
+the factor can be adapted to the needed form shown below:
+
+\begin{align}
+    \left(\begin{matrix}
+        L & J & S \\
+        S & 2 & L
+       \end{matrix}\right) = &\sum_{j,m_f,s_f,m_i,s_i,m}
+                                    (-1)^{L-m_f + L-m_i + S-s_f + S-s_i + J-j + 2-m} \\ \nonumber
+                                    &\left\{\begin{matrix}
+                                        L & J & S \\
+                                        -m_i & -j & -s_i
+                                    \end{matrix}\right\}
+                                    \left\{\begin{matrix}
+                                        L & 2 & L \\
+                                        m_i & -m & m_f
+                                    \end{matrix}\right\}
+                                    \left\{\begin{matrix}
+                                        S & J & L \\
+                                        s_f & j & -m_f
+                                    \end{matrix}\right\}
+                                    \left\{\begin{matrix}
+                                        S & 2 & S \\
+                                        -s_f & m & s_i
+                                    \end{matrix}\right\}
+\end{align}
+
+Here is an intermediate result:
+
+\begin{align} \label{eq:STavMid}
+    \left<S_T\right> = (-1)^{L+S-J} 6 \sqrt{14} \sqrt{2S+1} \sqrt{2L+1} \left<L||Y_2||L\right> \left<S||S_2||S\right> \left(\begin{matrix}
+            L & J & S \\
+            S & 2 & L
+         \end{matrix}\right)
+\end{align}
+
+\subsection{Computing reduced matrix elements}
+We can use definition above (\cref{eq:WEth}), i.e. compute matrix element with
+specific projections and divide it by corresponding Clebsch-Gordan coefficient.
+For cross-checking we'll do it for two different configurations
+of momenta projections.
+
+\paragraph{Spin operator}
+\subparagraph{m=2}
+\begin{align}
+        \begin{split}
+            &\left<SS\right| S_2^2 \left|S (S-2)\right> = \left<SS\right| \frac{1}{2\sqrt{21}} S_{+}^2 \left|S (S-2)\right> =\\
+            &= \frac{1}{\sqrt{21}} \sqrt{S(S+1) - (S-2)(S-1)} \sqrt{S(S+1) - S(S-1)} =\\
+            &= \left<S (S-2) 2 2|SS\right> \left<S||S_2||S\right>
+        \end{split}\\
+        &\left<S||S_2||S\right> = \frac{1}{2\sqrt{21}} \frac{\sqrt{S(S+1) - (S-2)(S-1)} \sqrt{S(S+1) - S(S-1)}}{\left<S (S-2) 2 2|SS\right>} \\
+        &\left<S (S-2) 2 2|SS\right> = \frac{\sqrt{6}}{\sqrt{(S+1)(2S+3)}} \\
+        &\left<S||S_2||S\right> = \frac{1}{\sqrt{126}} \sqrt{S (S+1) (2S-1) (2S+3)}
+\end{align}
+
+\subparagraph{m=0 (crosscheck)}
+\begin{align}
+    \begin{split}
+        &\left<SS\right| S_2^0 \left|SS\right> = \left<SS\right| \frac{1}{6\sqrt{14}} \left( 4 S_z^2 - \left\{S_{+}, S_{-}\right\}\right)\left|SS\right> =\\
+        &= \frac{1}{6\sqrt{14}} \left( 4S^2 - \sqrt{S(S+1)-S(S-1)}^2 \right) =\\
+        &= \frac{2}{6\sqrt{14}} S (2S-1) = \left<SS20|SS\right> \left<S||S_2||S\right>
+    \end{split} \\
+    &\left<SS20|SS\right> = \sqrt{\frac{S (2S-1)}{(S+1)(2S+3)}} \\
+    &\left<S||S_2||S\right> = \frac{1}{\sqrt{126}} \sqrt{S (S+1) (2S-1) (2S+3)}
+\end{align}
+
+\paragraph{Spherical harmonics}
+To compute reduced matrix element for spherical harmonics, we'll use the same
+procedure. There exists known expression for integral of product
+of three hamonics. We'll use it to calculate l.h.s.
+
+\begin{align}
+    \int \mathrm{d}{\Omega} \tilde{Y}_l^m \tilde{Y}_{l^\prime}^{m^\prime} (\tilde{Y}_J^j)^{\star} = \sqrt{\frac{(2l+1)(2l^\prime+1)}{4\pi(2J+1)}} \left<l0l^\prime0|J0\right> \left<lml^\prime m^\prime|Jj\right>
+\end{align}
+
+\begin{align}
+    \begin{split}
+        &\left<Ll_f\right| Y_2^m \left|L l_i\right> = 2\sqrt{\frac{\pi}{5}} \int \mathrm{d}\Omega (\tilde{Y}_L^{l_f})^\star Y_2^m \tilde{Y}_L^{l_i} =\\
+        &= \left<L020|L0\right> \left<Ll_i2m|Ll_f\right> = \left<L||Y_2||L\right> \left<Ll_i2m|Ll_f\right>
+    \end{split}\\
+    &\left<L020|L0\right> = -\sqrt{\frac{(L+1)L}{(2L-1)(2L+3)}}\\
+    &\left<L||Y_2||L\right> = -\sqrt{\frac{(L+1)L}{(2L-1)(2L+3)}}
+\end{align}
+
+After substituting reduced matrix elements into \cref{eq:STavMid} and collecting everything together:
+
+\begin{align}
+    &\left<S_T\right> = 2 (-1)^{L+S-J+1} \sqrt{\frac{L(L+1)(2L+1)}{(2L-1)(2L+3)}} \times \nonumber \\
+    &\qquad\times \sqrt{S(S+1)(2S+1)(2S+3)(2S-1)} \left(\begin{matrix}
+                                              L & J & S \\
+                                              S & 2 & L
+                                           \end{matrix}\right)
+\end{align}
