@@ -1,0 +1,54 @@
+\section{Interaction Hamiltonian} \label{sec:app:hint}
+
+\begin{align}
+    &\Gamma = \alpha \frac{m_f^4 - m_i^4}{2 m_f^3} \frac{1}{2J_f + 1} \sum_{\lambda_f} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2 \\
+    &\Mcal_{\lambda_f, \lambda_i \lambda_\gamma} = \int \dd{r} \psi_f^\star(r) \bra{J_f j_f L_f S_f} H_{int}^{\lambda_\gamma} \ket{J_i j_i L_i S_i} \psi_i(r)
+\end{align}
+
+Vector $\vec{r}$ in the definition of $\mathcal{M}$ is a vector which points from quark to anti-quark in a meson. Interaction part of Hamiltonian we'll take from Pauli equation. To express EM field explicitly, let's focus on the process of emission of photon:
+
+\begin{align}
+    &H_{int} = \sum_{i} -\frac{e_i}{m_i} \vec{p_i} \vec{A}(\vec{r}_i) - \frac{e_i}{2 m_i} \vec{\sigma}_i \mathrm{rot} \vec{A}(\vec{r}_i)
+\end{align}
+
+Index $i$ here enumerates quarkonium constituents. For further analysis, it is more convenient to choose c.o.m. frame. We should take into account that $e_q = e = - e_{\overline{q}}$, and also assume masses of both of constituents to be equal. According to convention~\cite{deng-charm} used for computing bound states, $\vec{r} = \vec{r}_2 - \vec{r}_1$:
+
+\begin{align}
+    &H_{int} = -\frac{e}{2 \mu} \vec{p} \left( \vec{A}(\frac{\vec{r}}{2}) + \vec{A}(-\frac{\vec{r}}{2}) \right) - \frac{e}{4 \mu} \left( \vec{\sigma}_{q} \mathrm{rot}_{q} \vec{A}(\frac{\vec{r}}{2}) - \vec{\sigma}_{\overline{q}} \mathrm{rot}_{\overline{q}} \vec{A}(-\frac{\vec{r}}{2}) \right)
+\end{align}
+
+Here $\mu$ stands for reduced mass of two quarks, so $\mu = \frac{m}{2}$. $\vec{r}$ is exactly the vector we mentioned in the definition of $\mathcal{M}$.
+
+We have already fixed gauge here, so that $\mathrm{div}~\vec{A} = 0$.\cite{tong-qed}
+Now, we would like to substitute explicit expression for specific mode of
+EM field. To keep it consitent with gauge condition we orient photon
+momentum along $z$ axis:
+
+\begin{align}
+    &<\vec{k}, \lambda| = <0| a_{\vec{k}, \lambda} \sqrt{2 k}\\
+    & <\vec{k}, \lambda|\vec{k^\prime}, \lambda> = {(2 \pi)}^3
+        \delta(\vec{k} - \vec{k^\prime}) 2 k \\
+    & <\vec{k}, \lambda| \int \frac{\mathrm{d}^3 \vec{k}}{{(2 \pi)}^3 \sqrt{2 k}} 
+        a_{\vec{k}, \lambda} \vec{e}_{\lambda} \mathrm{e}^{\mathrm{i} \vec{k} \vec{r}}
+        + h.c. |0> = \vec{e}^{\star}_{\lambda}
+        \mathrm{e}^{-\mathrm{i} \vec{k} \vec{r}}
+\end{align}
+
+The matrix element above is exactly what is meant under field $\vec{A}$ above.
+
+\begin{align}
+    & \vec{A}_{\vec{k}, \lambda}(\vec{r}) =
+        \vec{e}^{\star}_{\lambda}
+        \mathrm{e}^{-\mathrm{i} \vec{k} \vec{r}} = 
+        -\vec{e}_{-\lambda} \mathrm{e}^{-\mathrm{i} k z}
+\end{align}
+
+As far as $A$ has a form of plane wave, $H_{int}$ allows a slight reduction. We have a freedom to choose the coordinate system for the integration over $\vec{r}$ inside of $\mathcal{M}$. But, one should remember, that initial and final states have defined projection on a fixed axis. Thus, we choose $z$-axis along $\vec{k}$. We assume measuring $\vec{r}$ from $\vec{k}$:
+
+\begin{align}
+    &\mathrm{rot}_i \vec{A}_{\vec{k}, \lambda}(\vec{r}_i) = \lambda k \vec{A}_{\vec{k}, \lambda}  \\
+    &H_{int} = -\frac{e}{2 \mu} \vec{p} \left( \vec{A}(\frac{\vec{r}}{2}) + \vec{A}(-\frac{\vec{r}}{2}) \right) - \frac{\lambda k e}{4 \mu} \left( \vec{\sigma}_{q} \vec{A}(\frac{\vec{r}}{2}) - \vec{\sigma}_{\overline{q}} \vec{A}(-\frac{\vec{r}}{2}) \right)
+\end{align}
+
+It is important to mention that the expression for $\mathrm{rot}_i \vec{A}_{\vec{k}, \lambda}$ doesn't depend on whether photon has been emitted or absorbed.
+

@@ -6,7 +6,7 @@ While in 1960s QCD based phenomenological models showed up well in describing kn
 
 In our work we are establishing a new channel between experimental observables and theoretical predictions by applying sumrules emerging from Light-by-Light scattering to radiative transitions of charmonium.
 
-\paragraph{Charmonium system}
+\section{Charmonium system}
 Charmonium is a meson built from $c$-quark and its anti-quark $\bar{c}$. At low energies one can apply non-relativistic Shrodinger equation to solve Coulomb-like problem and classify some low-lying states. By analogy to Coulomb problem, charmonium states are characterized by radial quantum number $n$, the relative orbital momentum between quark and anti-quark $L$, total spin of the system $S$, total angular momentum $J$ and its projections. Usually people label values of $L$ as S, P, D, F,~…  which correspond to 0, 1, 2, 3,~…. Then, a state with specific spin, orbital momentum, orbital quantum number and total angular momentum (excluding hyperfine splitting over total angular momentum projections) is labeled as $n^{(2S+1)} L_J$. There is another taxonomy, when people are interested in parities. Space parity is denoted by $P = (-1)^{L+1}$ and charge eigenvalue is $C = (-1)^{L+S}$. Together with the total angular momentum they form a symbol: $J^{P C}$.
 
 To discuss the motivation for investigating charmonium, we present a diagram \cref{fig:charm-states} with its energy levels. There are $D\bar{D}$ thresholds shown there, which correspond to an energy of $c \bar{c}$ which is enough to decay into a pair of real mesons. Such a process is relativistic by its nature, so the threshold is treated as a limit above which states are not obliged to respect non-relativistic equations. It is important to mention that all states below $D\bar{D}$ have been already observed.
@@ -75,7 +75,7 @@ Initial state radiation scheme can be extended to higher energies. According to 
 
 Finally, we arrive to completely different production scheme ``Two photon scheme''~\cref{fig:charmgen-digamma}. $J^{PC}$ in that process allows $0^{-+}$, $0^{++}$, $2^{-+}$ and $2^{++}$. Thanks to this production scheme CLEO group has confirmed $\eta_c^\prime$ meson.~\cite{digamma}
 
-\paragraph{Superconvergent summation rule}
+\section{Superconvergent summation rule}
 After the brief discussion of phenomenology and experimental facilities, let's have a look at the tool we are going to apply at the theoretical side of the work.
 
 Originally,  the idea of sumrules comes from Gerasimov and Drell~\cite{gdh-g-orig} and independently Hearn~\cite{gdh-dh-orig} in application to forward Compton scattering. Well structured review on this topic has been provided by Klaus Halbing~\cite{gdh-helbing}. In 2010 a new application of the same scheme emerged. Marc Vanderhaeghen and Vladimir Pascalutsa applied GDH approach to Light-by-Light scattering process~\cite{lbl-sum1}. Firstly, it was developed for on-shell photons, but in 2012 together with Vladislav Pauk they published an article~\cite{lbl-sum2}, where sumrules emerge in LBL-scattering involving virtual photons~(\cref{fig:lbl-scatt}). 
@@ -221,7 +221,7 @@ Notice that all bound states of charmonium contribute to the sum, so having info
 
 These coefficients are not universal but depend on the states taking part in transition. Process of calculation of the coefficients consists of several steps. First of all we are going to solve for eigenvalues non-relativistic Shrodinger equation with potential given by non-relativistic quark model. Eigenvalues correspond to masses of charmonium bound states. Then we can use eigenvalues to get eigenfunctions, i.e. wave functions of corresponding bound states. Finally, having wave functions, we can apply Pauli equation to model electromagnetic interaction between quarks in a bound state, in this way we'll be able to estimate decay widths of radiative transitions.
 
-\paragraph{Non-relativistic quark model}
+\section{Non-relativistic quark model}
 According to the plan, we are in need of some model to reproduce masses and wave functions of charmonium. For the low-energy region non-relativistic quark model does well in reproducing experimental results~\cite{deng-charm, deng-bot}. Here we are going to introduce the model potential based on phenomenological considerations introducing empirical fitting parameters, but at the same time we are referring to the sources where the model has been obtained from non-relativistic limit of QCD perturbation theory~\cite{nrqm-perturb}. Thus physical meaning of the parameters to some extent can be traced.
 
 Starting from two-quark Shrodinger equation we can pass to the center of mass frame. We denote by $\vec{r}$ a vector pointing from quark to anti-quark. The problem is spherically symmetric, so we can decouple angular dependency into spherical harmonic $Y_{Lm}$. We consider $\hbar = c = 1$ convention:
@@ -269,7 +269,7 @@ Tensor term(\cref{eq:nrqm-t}) is another product of perturbative expansion. It i
     &\vec{H}_T = 6\frac{(\vec{S} \cdot \vec{r})^2}{r^2} - 2\vec{S}^2
 \end{align}
 
-To simplify computations we decieded to omit hyperfine splitting by aveeraging tensor term over total angular momentum projections. As a result (for derivation see the appendix (\cref{sec:app:tensor-term}) we obtain:
+To simplify computations we decieded to omit hyperfine splitting by averaging tensor term over total angular momentum projections. As a result we obtain the following result(for derivation see the appendix (\cref{sec:app:tensor-term}). Round brackets here represent $6j$ symbol.
 
 \begin{align}
     &V_T(r) = \frac{1}{12 m_c^2} \left( \frac{1}{r} \dv{V_V}{r} - \dv[2]{V_V}{r} \right) \left<\vec{H}_T\right> \\
@@ -280,5 +280,84 @@ To simplify computations we decieded to omit hyperfine splitting by aveeraging t
                                               \end{matrix} \right)
 \end{align}
 
-Where round brackets represent $6j$ symbol.
+Finally, having binding energies and wavefunctions of charmonium states obtained we can apply Pauli equation to the quark-antiquark system to describe raditive transitions. In the next chapter we discuss this approach briefly reminding apparatus of the multipole decomposition which comes in handy for analytical calculations.
 
+\section{Electromagnetic transitions between charmonium states}
+We would like to start this chapter by reminding the main goal --- computation of $r^{(0,2)}$ coefficients for charmonium system. The general expression for decay width has been presented above, when we connected cross-section $2 \rightarrow 1$ with it. In assumption that all states follow covariant normalization, expression had the following form:
+
+\begin{align}
+    &\Gamma = \frac{m_f^2 - m_i^2}{16 \pi m_f^3} \frac{1}{2J_f + 1} \sum_{\lambda_f} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2
+\end{align}
+
+For our purposes it will be convenient to use quantum mechanical normalization for initial and final charmonium states(see ~\cref{par:app:dw-nr}). We also pulled out electron charge from $H_{int}$ to combine it into the coupling constant $\alpha = \frac{e^2}{4 \pi}$: 
+
+\begin{align}
+    &\Gamma = \alpha \frac{m_f^4 - m_i^4}{2 m_f^3} \frac{1}{2J_f + 1} \sum_{\lambda_f} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2 \label{eq:dw-nr} \\
+    &\Mcal_{\lambda_f, \lambda_i \lambda_\gamma} = \int \dd{r} \psi_f^\star(r) \bra{J_f j_f L_f S_f} H_{int}^{\lambda_\gamma} \ket{J_i j_i L_i S_i} \psi_i(r) \label{eq:mel-nr}
+\end{align}
+
+We assume electromagnetic field being hardcoded into $H_{int}$, so instead of creation/annihilation operators hamiltonian acquires photon helicity index. Regarding helicities of initial and final state, they are encoded into angular momentum projections. In the center of mass frame decay products both have outgoing momenta, thus by orienting quantization axis along photon momentum, angular momenta can be translated into helicities with the following rule:
+
+\begin{align}
+    j_f \leftrightarrow -\lambda_f \qquad j_i \leftrightarrow \lambda_i
+\end{align}
+
+Then angular momentum conservation can be reformulated in terms of helicities. This confirm that our matching respects notion of ``total helicity'' used in previous chapters.
+
+\begin{align}
+    j_i = j_f + \lambda_\gamma \leftrightarrow \lambda_i = \lambda_\gamma - \lambda_f
+\end{align}
+
+In expressions~\cref{eq:dw-nr,eq:mel-nr} all quantities except $H_{int}$ we already know. The latter we'll derive based on Pauli equation for quark-antiquark system. Notice that when free of charges EM field in Coulomb gauge ($\nabla\cdot\vec{A} = 0$) respects $A_0 = 0$ as well (see lectures of David Tong for details~\cite{tong-qed}). We also ignore non-linearities, i.e. self-interaction of photons:
+
+\begin{align}
+    &\left[\frac{1}{2m_q} \left( \vec{\sigma}_q \cdot [\vec{p}_q - e_q \vec{A}(\vec{r}_q)] \right)^2 + \frac{1}{2m_{\bar{q}}} \left( \vec{\sigma}_{\bar{q}} \cdot [\vec{p}_{\bar{q}} - e_{\bar{q}} \vec{A}(\vec{r}_{\bar{q}})] \right)^2 + V(r) \right] \psi = \ii \pdv{t} \psi \\
+    &\left[H_0 + H_{int} \right] \psi= \ii \pdv{t} \psi \\
+    &H_{int} = \sum_{i = q, \bar{q}} -\frac{e_i}{m_i} \vec{A}(\vec{r}_i) \vec{p}_i - \frac{e_i}{2 m_i} \vec{\sigma} \cdot \rot_i \vec{A}(\vec{r}_i)
+\end{align}
+
+Here $V$ is a potential for non-relativistic quark model, $H_0$ includes kinetic terms and $V$ and describes bound states of charmonium in vacuum. Finally $H_{int}$ -- part responsible for the interaction of charmonium with EM field.
+
+Taking into account that we have a quark-antiquark system, charges of the particles differ only by sign and we can rewrite $H_{int}$ in the center of mass frame grouping similar terms:
+
+\begin{align} \label{eq:hint-nomult}
+    &H_{int} = -\frac{e}{2 \mu_R} \vec{p} \left[ \vec{A}(\frac{\vec{r}}{2}) + \vec{A}(\frac{-\vec{r}}{2}) \right]-\frac{\lambda_\gamma k e}{4 \mu_R}\left[ \vec{\sigma}_q \vec{A}(\frac{\vec{r}}{2}) - \vec{\sigma}_{\bar{q}} \vec{A}(\frac{-\vec{r}}{2}) \right]
+\end{align}
+
+Notice $k \lambda_\gamma$ emerged instead of $\rot$. As far as photons are represented by plane waves, it's easy to check the following statement. Moreover, it doesn't depend on whether photon was emitted or absorbed:
+
+\begin{align}
+    &\rot_i \vec{A_{\vec{k}, \lambda_\gamma}(\vec{r}_i)} = \lambda_\gamma k \vec{A}_{\vec{k}, \lambda_\gamma}(\vec{r}_i)
+\end{align}
+
+The~\cref{eq:hint-nomult} can be shorten by half making use of parity. For further analysis it will be convenient to expand EM field into multipole series. Each multipole transforms in a defined way under parity, so $H_{int}$ acquires simpler form:
+
+\begin{align} \label{hint-mult-nobrak}
+    &H_{int}^{EJ} = \left[ -(E_f - E_i) \ii e \vec{r} \delta_{2 \nmid J} - \frac{\lambda_\gamma k e}{2 \mu_R} \delta_{2 \mid S_i + S_f + J} \vec{\sigma}_q \right] \vec{A}^{EJ}(\frac{\vec{r}}{2}) \\
+    &H_{int}^{MJ} = \left[ - \frac{\lambda_\gamma k e}{2 \mu_R} \delta_{2 \nmid S_i + S_f + J} \vec{\sigma}_q \right] \vec{A}^{MJ}(\frac{\vec{r}}{2}) 
+\end{align}
+
+Where multipoles are expressed in terms of vector spherical harmonics $\vec{Y}^\lambda_{J, l}(\Omega)$. Further we omit argument $\Omega$ because after we applied Wigner rotation to decaying state the only angle which takes place here could be one between $\vec{k}$ and $\vec{r}$:
+
+\begin{align}
+    &\vec{A}^{EJ}(\frac{\vec{r}}{2}) = \sqrt{2\pi} (-\ii)^{J+1} \left[ \sqrt{\frac{J+1}{2J+1}} j_{J-1}(\frac{kr}{2}) \vec{Y}^{-\lambda_\gamma}_{J-1, J} - \sqrt{\frac{J}{2J+1}} j_{J+1}(\frac{kr}{2}) \vec{Y}^{-\lambda_\gamma}_{J+1, J} \right] \\
+    &\vec{A}^{MJ}(\frac{\vec{r}}{2}) = -\sqrt{2\pi} (-\ii)^J \sqrt{2J+1} \lambda_\gamma j_J(k r) \vec{Y}^{-\lambda_\gamma}_{J,J}
+\end{align}
+
+Assuming $H_{int}$ is under brackets $\bra{J_f j_f L_f S_f} H_{int} \ket{J_i j_i L_i S_i}$  we introduce $Q$ and $C$ symbols carrying all information about angular structure of the process:
+
+\begin{align}
+    &\sqrt{2L+1} C^\lambda_{L, J} = \bra{J_f j_j L_f S_f} \vec{\sigma}_q \vec{Y}^{\lambda}_{L, J} \ket{J_i j_i L_i S_i} \\
+    &r Q^{\lambda}_{L, J} = \bra{J_f j_j L_f S_f} \vec{r} \vec{Y}^{\lambda}_{L, J} \ket{J_i j_i L_i S_i} = r \sqrt{2L+1} \braket{L010}{J0} Q^\lambda_J
+\end{align}
+
+In this terms, $\bra{J_f j_f L_f S_f} H_{int} \ket{J_i j_i L_i S_i}$ acquires the following form, which we'll directly use in our numerical computations (for complete derivation see~\cref{sec:app:hint-multipole}):
+
+\begin{align}
+    \begin{split}
+        &H_{int}^{EJ} = -\sqrt{2\pi} (- \mathrm{i})^{J+1} \left[ 2 \mathrm{i} e (E_f-E_i) \delta_{2 \nmid J} (2J+1) \sqrt{J(J+1)} \frac{Q_{J}^{- \lambda}}{k} j_{J}(\frac{kr}{2}) + \right.\\
+        &\qquad +  \frac{\lambda k e}{2 \mu} \delta_{2 \mid S_i + S_f + J} \left(  \sqrt{(J+1)(2J-1)} j_{J-1}(\frac{kr}{2}) C_{J-1, J}^{- \lambda} -\right. \\
+        &\qquad\qquad\left.\left.- \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) C_{J+1, J}^{- \lambda} \right) \right]
+    \end{split} \\
+    &H_{int}^{MJ} = \sqrt{2\pi} (- \mathrm{i})^{J} (2J+1) j_J(\frac{kr}{2}) \frac{k e}{2 \mu} \delta_{2 \nmid S_i + S_f +J} C_{J, J}^{- \lambda}
+\end{align}

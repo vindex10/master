@@ -1,4 +1,4 @@
-\section{Cross-section $2 \rightarrow 1$ in terms of decay width}
+\section{Cross-section $2 \rightarrow 1$ in terms of decay width} \label{sec:app:crsc-dw}
 
 It is possible to express corss-section $2 \rightarrow 1$ in terms of decay width $1 \rightarrow 2$. We use center of mass frame. For decay width there is a well known expression~\cite{pdg}:
 
@@ -23,7 +23,7 @@ As cross-section $2 \rightarrow 1$ is unusual, we provide complete derivation fr
         &= \frac{m_f^2 - m_i^2}{16 \pi m_f^3} \frac{1}{2J_f + 1} \sum_{\lambda_f} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2
 \end{align}
 
-Where $D$s stand for Wigner-D funnctions needed to align quantization axis of decaying particle along direction defined by products of the decay. It is convenient because then matrix element shows angular momentum conservation explicitly.
+Where $D$s stand for Wigner-D functions needed to align quantization axis of decaying particle along direction defined by products of the decay. It is convenient because then matrix element shows angular momentum conservation explicitly.
 
 Finally, we can re-express cross-section in terms of decay width:
 
@@ -50,4 +50,22 @@ We acquired flipping of photon helicity in comparison to matrix element contribu
 
 \begin{align} \label{eq:app:crsc-dw-subthr}
     \sigma = -\frac{16 \pi^2 m_f^3}{(m_i^2 - m_f^2)^2} (2J_i + 1) \Gamma \delta(s - m_f^2)
+\end{align}
+
+\paragraph{Decay width with non-relativistic normalization of states} \label{par:app:dw-nr}
+The subject is useful for us because we obtain bound states of charmonium from quantum mechanics. Some definitions:
+
+\begin{align}
+    \text{QM:}\qquad &\braket{\vec{p}_i \psi_i}{\vec{p}_f \psi_f} = \delta_{i, f} (2\pi)^3 \delta(\vec{p}_i - \vec{p}_f) \\
+    \text{Covariant:}\qquad &\braket{\vec{p}_i \psi_i}{\vec{p}_f \psi_f} = \delta_{i, f} (2\pi)^3 2 \Ep{i} \delta(\vec{p}_i - \vec{p}_f)
+\end{align}
+
+We use covariant normalization for EM field and QM normalization for charmonium states. Then decay width looks as follows:
+
+\begin{align}
+    &\Gamma = \int \frac{\dd[3]{\vec{p}_i}}{(2\pi)^3} \lips{\vec{p_\gamma}}  (2\pi)^4 \delta^{(4)}(p_f - p_i - p_\gamma) \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2 = \\
+    &= \frac{1}{4 \pi^2} \int \frac{\dd[3]{\vec{p}_\gamma}}{2 \abs{\vec{p}_\gamma}} \delta(m_f - \sqrt{\vec{p}_\gamma^2 + m_i^2} - \abs{\vec{p}_\gamma}) \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2 = \\
+    &= \frac{1}{8\pi^2} \int \abs{\vec{p}_\gamma} \dd{\abs{\vec{p}_\gamma}} \delta(m_f - \sqrt{\vec{p}_\gamma^2 + m_i^2} - \abs{\vec{p}_\gamma}) \int \dd{\Omega}\abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2 = \\
+    &= \frac{1}{8 \pi^2} \frac{\vec{p}_\gamma \sqrt{\vec{p}_\gamma^2 + m_i^2}}{m_f} \frac{4 \pi}{2J_f + 1} \sum_{\lambda_f} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2 = \\
+    &= \frac{1}{8 \pi} \frac{m_f^4 - m_i^4}{m_f^3} \frac{1}{2J_f + 1} \sum_{\lambda_f} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2
 \end{align}

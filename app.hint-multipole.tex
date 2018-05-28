@@ -1,0 +1,228 @@
+\section{Multipole expansion of the vector potential} \label{sec:app:hint-multipole}
+
+Let's do the expansion of EM field first. We'll use vector spherical harmonics
+to express multipoles. Also, as we will need $\vec{A}(-\vec{r})$ as well, it is convenient to introduce sign factor $\xi = \pm 1$. Then, both cases could be derived simultaniously:
+
+\begin{align}
+    \vec{Y}^{\lambda}_{l, J} = \sum_{m_1, m_2} <J \lambda| l m_1 1 m_2>
+    Y_{l m_1} \vec{e}_{m_2}
+\end{align}
+
+\begin{align}
+        &\vec{e}_{\lambda} \mathrm{e}^{\xi \mathrm{i} k z} = \sum_{J}
+            \sqrt{4 \pi (2 J + 1)} (\xi \mathrm{i})^J j_{J}(k r)
+            Y_{J, 0}(\Omega_{\vec{k}\hat{~}\vec{z}}) \vec{e}_{\lambda} = \\
+        &=\sum_{J=0}^{\infty} \sum_{l=|J-1|}^{J+1} \sqrt{4 \pi (2J+1)}
+            (\xi \mathrm{i})^J j_J(kr) <l \lambda | J 0 1 \lambda>
+            \vec{Y}_{J, l}^\lambda = \\
+    \begin{split}
+        &=\sum_{J=1} (\xi \mathrm{i})^J \sqrt{4 \pi (2J+1)} j_{J}(kr)
+            <J \lambda|J 0 1 \lambda> \vec{Y}^\lambda_{J,J} + \\
+        &+\sum_{J=0} (\xi \mathrm{i})^J \sqrt{4 \pi (2J+1)} j_{J}(kr)
+            <J+1~\lambda|J 0 1 \lambda> \vec{Y}^\lambda_{J,J+1} + \\
+        &+\sum_{J=1} (\xi \mathrm{i})^J \sqrt{4 \pi (2J+1)} j_{J}(kr)
+            <J-1~\lambda|J 0 1 \lambda> \vec{Y}^\lambda_{J,J-1} = \\
+    \end{split}\\
+    \begin{split}
+        &=\sum_{J=1} (\xi \mathrm{i})^J \sqrt{4 \pi (2J+1)} j_{J}(kr)
+            <J \lambda|J 0 1 \lambda> \vec{Y}^\lambda_{J,J} + \\
+        &+\sum_{J=1} (-\xi\mathrm{i}) (\xi \mathrm{i})^J \sqrt{4 \pi (2J+1)} j_{J-1}(kr)
+            <J \lambda|J-1~0 1 \lambda> \vec{Y}^\lambda_{J-1,J}
+            \frac{\sqrt{2J-1}}{\sqrt{2J+1}} + \\
+        &+\sum_{J=0} (\xi \mathrm{i}) (\xi \mathrm{i})^J \sqrt{4 \pi (2J+1)} j_{J}(kr)
+            <J \lambda|J+1~0 1 \lambda> \vec{Y}^\lambda_{J+1,J}
+            \frac{\sqrt{2J+3}}{\sqrt{2J+1}}
+    \end{split}\\
+    \begin{split}
+        &<J \lambda|J 0 1 \lambda> = -\lambda \frac{1}{\sqrt{2}} \\
+        &<J \lambda|J-1~0 1 \lambda> = \frac{1}{\sqrt{2}}
+            \sqrt{\frac{J + |\lambda|}{2J-1}} \\
+        &<J \lambda | J+1~0 1 \lambda>  = (-1)^{1 + |\lambda|}
+            \frac{1}{\sqrt{2}} \sqrt{\frac{J + \delta_{\lambda, 0}}{3 + 2J}}
+    \end{split}
+\end{align}
+
+Assuming transverse EM field polarizations, i.e.  $\lambda = \pm 1$
+we arrive to the following expansion:
+
+\begin{align}
+    \begin{split}
+        &\vec{e}_{\lambda} \mathrm{e}^{\xi \mathrm{i} k z} =
+            -\sqrt{2 \pi} \sum_{J=1}^{\infty} (\xi \mathrm{i})^J \sqrt{2J +1}
+            \left\{ \lambda \vec{M}^{mag}_{J\lambda} + \xi \mathrm{i}
+            \left( \sqrt{\frac{J+1}{2J+1}} j_{J-1} \vec{Y}^\lambda_{J-1, J}
+            -\sqrt{\frac{J}{2J+1}} j_{J+1} \vec{Y}^\lambda_{J+1, J} \right)
+            \right\} =\\
+        &=\left| \vec{M}^{mag}_{J \lambda} = j_{J}(kr)
+            \vec{Y}^\lambda_{J J} \right| = -\sqrt{2 \pi} \sum_{J=1}^{\infty}
+            (\xi \mathrm{i})^J \sqrt{2J +1} \left\{ \lambda \vec{M}^{mag}_{J \lambda}
+            +\frac{\xi}{k} \left[ \vec{\nabla} \times
+            \vec{M}^{mag}_{J \lambda} \right] \right\}
+    \end{split}
+\end{align}
+
+Last step was made according to formula mentioned by Weissbluth~\cite{weissbluth}, chapter «Vector Fields».
+
+\subsection{Structure of $H_{int}$ after multipole expansion}
+
+As far as multipoles transform under parity in the known way, it is possible to simplify $H_{int}$. Notice unusual sign configuration here. We actuall flip the argument of the vector field, it is not proper parity transformatio. Let's focus on some order $J$ of the multipole:
+
+\begin{align}
+    &\vec{A}^{EJ}(\frac{-\vec{r}}{2}) = (-1)^{J+1} \vec{A}^{EJ}(\frac{\vec{r}}{2}) \\
+    &\vec{A}^{MJ}(\frac{-\vec{r}}{2}) = (-1)^{J} \vec{A}^{EJ}(\frac{\vec{r}}{2})
+\end{align}
+
+Then we have two construtions to simplify:
+
+\begin{align}
+    &\vec{A}^{J}(\frac{\vec{r}}{2}) + \vec{A}^{J}(-\frac{\vec{r}}{2}) \\
+    &\vec{\sigma}_{q} \vec{A}^{J}(\frac{\vec{r}}{2}) - \vec{\sigma}_{\overline{q}} \vec{A}^{J}(-\frac{\vec{r}}{2}) \label{eq:sigmaAJ}
+\end{align}
+
+Expression without Pauli matrices can be transformed immediately:
+
+\begin{align}
+    &\vec{A}^{EJ}(\frac{\vec{r}}{2}) + \vec{A}^{EJ}(-\frac{\vec{r}}{2}) = 2 \delta_{2 \nmid J} \\
+    &\vec{A}^{MJ}(\frac{\vec{r}}{2}) + \vec{A}^{MJ}(-\frac{\vec{r}}{2}) = 2 \delta_{2 \mid J}
+\end{align}
+
+For spin matrices, it is possible to perform transformations assuming they are "sandwiched". Relevant matrix element has the following form:
+\begin{align}
+    \begin{split}
+        &<J_f j_f L_f S_f| \vec{\sigma_{\overline{q}}} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> = \sum_{m_1, m_2, m_i, s_i, m_f, s_f} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> \times\\
+        &\qquad\times <L_f m_f| Y_{L}^{m_1} |L_i m_i>  <L_i m_i S_i s_i| J_i j_i> <S_f s_f| (-m_2\sqrt{2}) \hat{S}_{\overline{q}}^{m_2} |S_i s_i> = \\
+        &= \sum_{m_1, m_2, m_i, s_i, m_f, s_f, s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i>  <L_i m_i S_i s_i| J_i j_i> \times\\
+        &\qquad\times <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}>  (-m_2\sqrt{2}) <s^f_{q}|s^{i}_{q}> <s^f_{\overline{q}}| \hat{S}_{\overline{q}}^{m_2} |s^i_{\overline{q}}> <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> =\\
+        &= \sum_{m_1, m_2, m_i, s_i, m_f, s_f, s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i>  <L_i m_i S_i s_i| J_i j_i> \times\\
+        &\qquad\times <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}>  (-m_2\sqrt{2}) \delta_{s^f_{q}, s^{i}_{q}} \delta_{s^f_{\overline{q}} + m_2, s^i_{\overline{q}}} <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i>
+    \end{split}
+\end{align}
+
+At this point we'll interchange $s^{i,f}_{q} \leftrightarrow s^{i,f}_{\overline{q}}$, because they are under summation sign. Afterwards we'll apply a parity property of Clebsch-Gordan coefficients to restore initial form of the matrix element:
+
+\begin{align}
+    &<J_1 j_1 J_2 j_2 | J j> = (-1)^{j_1 + j_2 - J} <J_2 j_2 J_1 j_1 | J j> \\
+    &<J_f j_f L_f S_f| \vec{\sigma_{\overline{q}}} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> = (-1)^{-S_i - S_f} <J_f j_f L_f S_f| \vec{\sigma_{q}} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i>
+\end{align}
+
+Finally, expression for~\cref{eq:sigmaAJ} reduces as well:
+
+\begin{align}
+    &\vec{\sigma}_{q} \vec{A}^{EJ}(\frac{\vec{r}}{2}) - \vec{\sigma}_{\overline{q}} \vec{A}^{EJ}(-\frac{\vec{r}}{2}) = 2 \delta_{2 \nmid S_i + S_f + J} \vec{\sigma_{q}} \vec{A}^{EJ}(\frac{\vec{r}}{2}) \\
+    &\vec{\sigma}_{q} \vec{A}^{MJ}(\frac{\vec{r}}{2}) - \vec{\sigma}_{\overline{q}} \vec{A}^{MJ}(-\frac{\vec{r}}{2}) = 2 \delta_{2 \mid S_i + S_f + J} \vec{\sigma_{q}} \vec{A}^{MJ}(\frac{\vec{r}}{2}) \\
+\end{align}
+
+Before we substitute this to $H_{int}$, let's have a look at another observation:
+
+\begin{align}
+    &[H_0, \vec{r}] = -\frac{\mathrm{i}}{\mu} \vec{p} \\
+    &<\psi_f| -\frac{e}{\mu} \vec{p} \vec{A} |\psi_i> = <\psi_f| -\frac{e}{\mu} \left( \mathrm{i} \mu [H_0, \vec{r}]  \right) |\psi_i> = <\psi_f| -(E_f - E_i) \mathrm{i} e \vec{r} |\psi_i> \\
+    &E_f - E_i = k + \frac{k^2}{2 M_f}
+\end{align}
+
+Now, remembering the fact $\vec{r} \vec{Y}^\lambda_{J, J} = 0$ (Weissbluth, Ch. 7.2)[@weissbluth], let's assemble $H_{int}$ in its renewed incarnation. We also restored factor $\chi$ to distinguish emission and absorbtion:
+
+\begin{align}
+    &H_{int}^{EJ} = \left[-(E_f - E_i) \mathrm{i} e \vec{r} \delta_{2 \nmid J} - \frac{\lambda k \mathrm{e}}{2 \mu} \delta_{2 \mid S_i + S_f + J} \vec{\sigma}_{q} \right] \vec{A}^{EJ}(\frac{\vec{r}}{2}) \\
+    &H_{int}^{MJ} = \left[ -\frac{\lambda k \mathrm{e}}{2 \mu} \delta_{2 \nmid S_i + S_f + J} \vec{\sigma}_{q} \right] \vec{A}^{MJ}(\frac{\vec{r}}{2})
+\end{align}
+
+Where we have used transversality relation to drop the first term in $H_{int}^{MJ}$.
+
+Assuming $H_{int}$ "sandwiched", there are two constructions emerge:
+
+\begin{align}
+    &C_{L, J}^\lambda = <J_f j_f L_f S_f|\vec{\sigma}_{q} \vec{Y}^{\lambda}_{L, J}|J_i j_i L_i S_i> \\
+    &r Q_{L, J}^\lambda = <J_f j_f L_f S_f|\vec{r} \vec{Y}^{\lambda}_{L, J}|J_i j_i L_i S_i>
+\end{align}
+
+First one is already familiar to us, let's do some more steps to simplify it:
+
+\begin{align}
+    \begin{split}
+        &\sqrt{2L+1} C_{L, J}^\lambda = <J_f j_f L_f S_f| \vec{\sigma_{\overline{q}}} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> = \\
+        &= \sum_{m_1, m_2, m_i, s_i, m_f, s_f, s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i> \times \\
+        &\qquad\times <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}>  (-m_2\sqrt{2}) \delta_{s^f_{q}, s^{i}_{q}} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}} + m_2} <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> = \\
+        &= -\sqrt{2}\sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} <L_i 0 L 0 | L_f 0> \sum_{m_1, m_2, m_i, s_i, m_f, s_f, s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}} m_2 <J \lambda| L m_1 1 m_2> \times\\
+        &\qquad\times <J_f j_f| L_f m_f S_f s_f> <L_f m_f| L m_1 L_i m_i>  <L_i m_i S_i s_i| J_i j_i> \times\\
+        &\qquad\times <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> \delta_{s^f_{q}, s^{i}_{q}} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}}+m_2} = \\
+    &= -\sqrt{2}\sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} <L_i 0 L 0 | L_f 0> \sum_{m_2, s_{q}, s_{\overline{q}}} m_2 <J \lambda| L (\lambda - m_2) 1 m_2> \times\\
+        &\qquad\times <J_f j_f| L_f (j_f-(s_q + s_{\overline{q}})) S_f (s_q + s_{\overline{q}})> <L_i (j_i - (s_q + s_{\overline{q}} + m_2)) S_i (s_q + s_{\overline{q}} + m_2)| J_i j_i> \times \\
+        &\qquad\times <L_f (j_f - (s_q + s_{\overline{q}}))| L (\lambda - m_2) L_i (j_i - (s_q + s_{\overline{q}}+m_2))>  \times\\
+        &\qquad\times <S_f (s_q + s_{\overline{q}})| \frac{1}{2} s_{q} \frac{1}{2} s_{\overline{q}}> <\frac{1}{2} s_{q} \frac{1}{2} (s_{\overline{q}} + m_2) |S_i (s_q + s_{\overline{q}} + m_2)>
+    \end{split}
+\end{align}
+
+Here we made use of momentum projection conservation and Kronecker-deltas to eliminate redundant summations. Also we applied a formula for the integral of three spherical harmonics:
+
+\begin{align}
+    \int Y^{\star}_{l m} Y_{l_1 m_1} Y_{l_2 m_2} \mathrm{d} \Omega = \sqrt{\frac{(2l_1+1)(2l_2+1)}{4 \pi (2l+1)}} <l_1 0 l_2 0 | l 0> <l_1 m_1 l_2 m_2 | l m>
+\end{align}
+
+Much easier is to deal with $Q_{L, J}^\lambda$, there is no spin dependence in it. Moreover, it turns out, that $Q_{L, J}^{\lambda}$ depends on $L$ in a trivial way, so at the end we'll drop index $L$:
+
+\begin{align}
+    \begin{split}
+        &r Q_{L, J}^\lambda = <J_f j_f L_f S_f|\vec{r} \vec{Y}^{\lambda}_{L, J}|J_i j_i L_i S_i> = \\
+        &= \sum_{m_1, m_2, m_i, s_i, m_f, s_f} <J_f j_f| L_f m_f S_f s_f> <J \lambda| L m_1 1 m_2> \times \\
+        &\qquad\times <L_i m_i S_i s_i | J_i j_i> <L_f m_f| Y_L^{m_1} \sqrt{\frac{4 \pi}{3}} r Y_{1}^{m_2}|L_i m_i> <S_f s_f|S_i s_i> = \\
+        &= r \sqrt{\frac{4 \pi}{3}} \sum_{m_i, s_i, m_f, s_f} <J_f j_f| L_f m_f S_f s_f> <L_i m_i S_i s_i | J_i j_i> \times \\
+        &\qquad\times <L_f m_f| \sqrt{\frac{(2L+1)(2\cdot1+1)}{4 \pi (2J + 1)}} <L 0 1 0 | J 0> Y_J^\lambda|L_i m_i> \delta_{s_i, s_f} \delta_{S_i, S_f} = \\
+        &= r \delta_{S_i, S_f} \sqrt{\frac{2L+1}{2J+1}} <L 0 1 0 | J 0> \\
+        &\qquad\sum_{m_i, s_i, m_f, s_f} <J_f j_f| L_f m_f S_f s_f> \times \\
+        &\qquad\times <L_i m_i S_i s_i | J_i j_i> <L_f m_f| Y_J^\lambda |L_i m_i> \delta_{s_i, s_f} = \\
+        &= r \delta_{S_i, S_f} \sqrt{\frac{2L+1}{2J+1}} \sqrt{\frac{(2L_i+1)(2J+1)}{4 \pi (2L_f+1)}} <L_i 0 J 0 | L_f 0> <L 0 1 0 | J 0> \\
+        &\qquad \sum_{m_i, s_i, m_f, s_f} <J_f j_f| L_f m_f S_f s_f> \times \\
+        &\qquad\times <L_i m_i S_i s_i | J_i j_i> <L_f m_f| J \lambda L_i m_i> \delta_{s_i, s_f} = \\
+        &= r \delta_{S_i, S_f} \sqrt{\frac{(2L_i+1)(2L+1)}{4 \pi (2L_f+1)}} <L_i 0 J 0 | L_f 0> <L 0 1 0 | J 0> \\
+        &\qquad \sum_{s} <J_f j_f| L_f (j_f - s) S_f s> \times \\
+        &\qquad\times <L_i (j_i - s) S_i s | J_i j_i> <L_f (j_f - s)| J \lambda L_i (j_i - s)> = \\
+        &= r \delta_{S_i, S_f} \sqrt{\frac{(2L_i+1)(2L+1)}{4 \pi (2L_f+1)}} <L_i 0 J 0 | L_f 0> <L 0 1 0 | J 0> \\
+        &\qquad \sum_{s} <J_f j_f| L_f (j_f - s) S_f s> \times \\
+        &\qquad\times <L_i (j_i - s) S_i s | J_i j_i> <L_f (j_f - s)| J \lambda L_i (j_i - s)> = \\
+        &=r \sqrt{2L+1} <L 0 1 0 | J 0> Q_{J}^{\lambda}
+    \end{split}
+\end{align}
+
+Let's write down explicit form of $<\vec{r}\vec{A}^{EJ}(\frac{\vec{r}}{2})>$ and $<\vec{\sigma}_{q}\vec{A}^{EJ, MJ}(\frac{\vec{r}}{2})>$:
+
+\begin{align}
+    \begin{split}
+        &\vec{r} \vec{A}^{EJ}(\frac{\vec{r}}{2}) = -\sqrt{2\pi} (- \mathrm{i})^{J+1} \sqrt{2J+1} \left( \sqrt{\frac{J+1}{2J+1}} j_{J-1}(\frac{kr}{2})<\vec{r} \vec{Y}^{-\lambda}_{J-1, J}> - \right.\\
+        &- \left. \sqrt{\frac{J}{2J+1}} j_{J+1}(\frac{kr}{2}) <\vec{r} \vec{Y}_{J+1, J}^{-\lambda}> \right) = \\
+        &= -\sqrt{2\pi} (- \mathrm{i})^{J+1} \sqrt{2J+1} r \left( \sqrt{\frac{J+1}{2J+1}} j_{J-1}(\frac{kr}{2}) <(J-1) 0 1 0 | J 0> Q_{J-1, J}^{- \lambda} - \right.\\
+        &- \left. \sqrt{\frac{J}{2J+1}} <(J+1) 0 1 0 | J 0> j_{J+1}(\frac{kr}{2}) Q_{J+1, J}^{- \lambda} \right) = \\ 
+    &= -\sqrt{8\pi} (- \mathrm{i})^{J+1} (2J+1) \sqrt{J (J+1)}  \frac{Q_{J}^{- \lambda}}{k} j_J(\frac{k r}{2})
+    \end{split}
+\end{align}
+
+\begin{align}
+    \begin{split}
+        &\vec{\sigma}_q \vec{A}^{EJ}(\frac{\vec{r}}{2}) = -\sqrt{2\pi} (- \mathrm{i})^{J+1} \sqrt{2J+1} \left( \sqrt{\frac{J+1}{2J+1}} j_{J-1}(\frac{kr}{2})<\vec{\sigma}_q \vec{Y}^{- \lambda}_{J-1, J}> - \right.\\
+        &\left. -\sqrt{\frac{J}{2J+1}} j_{J+1}(\frac{kr}{2}) <\vec{\sigma}_q \vec{Y}_{J+1, J}^{- \lambda}> \right) = \\
+        &= -\sqrt{2\pi} (- \mathrm{i})^{J+1} \left( \sqrt{(J+1)(2J-1)} j_{J-1}(\frac{kr}{2}) C_{J-1, J}^{- \lambda} - \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) C_{J+1, J}^{- \lambda} \right)
+    \end{split}
+\end{align}
+
+\begin{align}
+    \begin{split}
+        &\vec{\sigma}_q \vec{A}^{MJ}(\frac{\vec{r}}{2}) = -\sqrt{2\pi }(- \mathrm{i})^J \sqrt{2J + 1} (- \lambda) j_J(\frac{kr}{2}) <\vec{\sigma}_q \vec{Y}^{- \lambda}_{JJ}> = \\
+        &= -\sqrt{2\pi }(- \mathrm{i})^J (2J + 1) (- \lambda) j_J(\frac{kr}{2}) C_{J, J}^{- \lambda}
+    \end{split}
+\end{align}
+
+Let's substitute these expressions into $H_{int}^{EJ, MJ}$:
+
+\begin{align}
+    \begin{split}
+        &H_{int}^{EJ} = \sqrt{2\pi} (- \mathrm{i})^{J+1} \left[ 2 \mathrm{i} e (E_f-E_i) \delta_{2 \nmid J} (2J+1) \sqrt{J(J+1)} \frac{Q_{J}^{- \lambda}}{k} j_{J}(\frac{kr}{2}) + \right.\\
+        &\qquad + \frac{\lambda k e}{2 \mu} \delta_{2 \mid S_i + S_f + J} \left( \sqrt{(J+1)(2J-1)} j_{J-1}(\frac{kr}{2}) C_{J-1, J}^{- \lambda} - \right.\\
+        &-\left. \left. \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) C_{J+1, J}^{- \lambda} \right) \right]
+    \end{split} \\
+    &H_{int}^{MJ} = -\sqrt{2\pi} (- \mathrm{i})^{J} (2J+1) j_J(\frac{kr}{2}) \frac{k e}{2 \mu} \delta_{2 \nmid S_i + S_f +J} C_{J, J}^{- \lambda}
+\end{align}
+
+Finally, there are two important observations emerge. First of all, $H_{int}$ indeed doesn't depend on $\Omega_{\vec{k}}$ explicitly, so by rotation of wave functions and by measuring $\vec{r}$ from $\vec{k}$ we are able to eliminate dependency on $\Omega_{\vec{k}}$ keeping it in Wigner-D functions (as we did in~\cref{sec:app:crsc-dw}).
+
+Another point is more specific. People often compute the lowest non-zero $EJ$ transition as an approximation to complete amplitude. In case $2 \nmid S_i + S_f + J$, $H_{int}^{EJ}$ has only one term. Consequently, assuming the approximation, it turns out that dependency on wave function doesn't contribute to amplitude ratios.
+
