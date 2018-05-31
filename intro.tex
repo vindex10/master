@@ -75,7 +75,7 @@ Initial state radiation scheme can be extended to higher energies. According to 
 
 Finally, we arrive to completely different production scheme ``Two photon scheme''~\cref{fig:charmgen-digamma}. $J^{PC}$ in that process allows $0^{-+}$, $0^{++}$, $2^{-+}$ and $2^{++}$. Thanks to this production scheme CLEO group has confirmed $\eta_c^\prime$ meson.~\cite{digamma}
 
-\section{Superconvergent summation rule}
+\section{Superconvergent summation rule} \label{sec:intro:sumrules}
 After the brief discussion of phenomenology and experimental facilities, let's have a look at the tool we are going to apply at the theoretical side of the work.
 
 Originally,  the idea of sumrules comes from Gerasimov and Drell~\cite{gdh-g-orig} and independently Hearn~\cite{gdh-dh-orig} in application to forward Compton scattering. Well structured review on this topic has been provided by Klaus Halbing~\cite{gdh-helbing}. In 2010 a new application of the same scheme emerged. Marc Vanderhaeghen and Vladimir Pascalutsa applied GDH approach to Light-by-Light scattering process~\cite{lbl-sum1}. Firstly, it was developed for on-shell photons, but in 2012 together with Vladislav Pauk they published an article~\cite{lbl-sum2}, where sumrules emerge in LBL-scattering involving virtual photons~(\cref{fig:lbl-scatt}). 
@@ -167,7 +167,7 @@ Where we used crossing symmetry relation to map negative half-plane onto positiv
 
 We introduced $\nu_0$, a threshold at which final particle state becomes forbidden.
 
-At this point we find out eight relations connecting real part of helicity amplitudes to their imaginary part, and according to the optical theorem~\cref{eq:optical-th} to corresponding helicity cross-sections. We'll focus on the odd amplitude $(\Mcal_{++,--} - \Mcal_{+-,+-})$, because there exists low energy theorem, an estimation for the value of $\frac{f^{(-)}(\nu)}{\nu}$ in the limit of $\nu \rightarrow \nu_0$. By analogy to GDH sumrule for the Compton scattering based on perturbation theory, value of the latter expression can be expressed in terms of anomalous magnetic moment ($a$) and mass ($m$) of the vector meson:
+At this point we find out eight relations connecting real part of helicity amplitudes to their imaginary part, and according to the optical theorem~\cref{eq:optical-th} to corresponding helicity cross-sections. We'll focus on the odd amplitude $(\Mcal_{++,--} - \Mcal_{+-,+-})$, because there exists low energy theorem, an estimation for the value of $\frac{f^{(-)}(\nu)}{\nu}$ in the limit of $\nu \rightarrow \nu_0$. It turns out that the limit is exactly zero when initial charmonium state is space-like (which is not really of our interest) or time-like but lies under the threshold (a threshold at which decay is allowed by energy-momentum conservation). By analogy to GDH sumrule for the Compton scattering based on perturbation theory, value of the latter expression can be expressed in terms of anomalous magnetic moment ($a$) and mass ($m$) of the vector meson:
 
 \begin{align}
     \frac{f^{(-)}(\nu)}{\nu} \rightarrow 16 \pi \frac{\alpha_{EM}}{m^2} a^2 \approx 70 nb \text{\quad \textit{for charmonium}}
@@ -228,7 +228,7 @@ Starting from two-quark Shrodinger equation we can pass to the center of mass fr
 
 \begin{align}
     &\left[ -\frac{1}{2 \mu_R} \Delta_{\vec{r}} + V(\abs{\vec{r}}) \right] \psi(\vec{r}) = E_{bound} \psi(\vec{r}) \\
-    &\dv[2]{u(r)}{r} + 2 \mu_R \left[ E_{bound} - V(r) - \frac{L(L+1)}{2 \mu_R r^2} \right] u(r) = 0 \\
+    &\dv[2]{u(r)}{r} + 2 \mu_R \left[ E_{bound} - V(r) - \frac{L(L+1)}{2 \mu_R r^2} \right] u(r) = 0 \label{eq:nrqm-radialeq} \\
     &\abs{\vec{r}} = r ,\quad \psi(\vec{r}) = \frac{u(r)}{r} Y_{Lm}(\Omega) \\
     &V(r) = V_V(r) +V_S(r) + V_{SL}(r) + V_{SS}(r) + V_T(r)
 \end{align}
@@ -250,34 +250,44 @@ Another distinctive feature of QCD, confinement, is encoded into the growing beh
               \end{matrix*} \right.
 \end{align}
 
-Spin-orbit coupling(\cref{eq:nrqm-sl}) is well-known in two-body problem. It appears as an evidence of non-commutativity of Lorentz transformations. At the classical level it emerges as ``Thomas precession''~\cite{thomas}
-
-\begin{align} \label{eq:nrqm-sl}
-    V_{SL}(r) = \frac{1}{2 m_c^2 r} \left( 3 \dv{V_V}{r} - \dv{V_S}{r} \right) \vec{L} \cdot \vec{S}
-\end{align}
-
 Spin-spin interaction (\cref{eq:nrqm-ss}) is based on perturbative expansion of $T$-matrix by $\frac{v}{c}$, and has a contact nature. For numerical purposes we follow~\cite{gbs-model} and smear the delta-function at the scales of order $\frac{1}{\sigma} \propto \frac{1}{m_c}$:
 
 \begin{align} \label{eq:nrqm-ss}
     V_{SS}(r) = \frac{32 \pi \alpha_S}{9 m_c^2} \tilde{\delta}_\sigma(r) \vec{S}_c \cdot \vec{S}_{\bar{c}},\quad \tilde{\delta}_\sigma(r) = \left(\frac{\sigma}{\sqrt{\pi}}\right)^3 \ee^{-\sigma^2 r^2}
 \end{align}
 
+Spin-orbit coupling(\cref{eq:nrqm-sl}) is well-known in two-body problem. It appears as an evidence of non-commutativity of Lorentz transformations. At the classical level it emerges as ``Thomas precession''~\cite{thomas}
+
+\begin{align} \label{eq:nrqm-sl}
+    V_{SL}(r) = \frac{1}{2 m_c^2 r} \left( 3 \dv{V_V}{r} - \dv{V_S}{r} \right) \vec{L} \cdot \vec{S}
+\end{align}
+
 Tensor term(\cref{eq:nrqm-t}) is another product of perturbative expansion. It is important to mention that this term introduces a hyperfine splitting of levels over total angluar momentum projects.
 
 \begin{align} \label{eq:nrqm-t}
-    &V_T(r) = \frac{1}{12 m_c^2} \left( \frac{1}{r} \dv{V_V}{r} - \dv[2]{V_V}{r} \right) \vec{H}_T \\
-    &\vec{H}_T = 6\frac{(\vec{S} \cdot \vec{r})^2}{r^2} - 2\vec{S}^2
+    &V_T(r) = \frac{1}{12 m_c^2} \left( \frac{1}{r} \dv{V_V}{r} - \dv[2]{V_V}{r} \right) H_T \\
+    &H_T = 6\frac{(\vec{S} \cdot \vec{r})^2}{r^2} - 2\vec{S}^2
 \end{align}
 
 To simplify computations we decieded to omit hyperfine splitting by averaging tensor term over total angular momentum projections. As a result we obtain the following result(for derivation see the appendix (\cref{sec:app:tensor-term}). Round brackets here represent $6j$ symbol.
 
 \begin{align}
-    &V_T(r) = \frac{1}{12 m_c^2} \left( \frac{1}{r} \dv{V_V}{r} - \dv[2]{V_V}{r} \right) \left<\vec{H}_T\right> \\
-    &\left<\vec{H}_T\right> = 2 (-1)^{L+S-J+1} \sqrt{\frac{L(L+1)(2L+1)}{(2L-1)(2L+3)}} \times \nonumber \\
+    &V_T(r) = \frac{1}{12 m_c^2} \left( \frac{1}{r} \dv{V_V}{r} - \dv[2]{V_V}{r} \right) \left<H_T\right> \\
+    &\left<H_T\right> = 2 (-1)^{L+S-J+1} \sqrt{\frac{L(L+1)(2L+1)}{(2L-1)(2L+3)}} \times \nonumber \\
     &\qquad \times \sqrt{S(S+1)(2S+1)(2S+3)(2S-1)} \left( \begin{matrix}
                                                 L & J & S \\
                                                 S & 2 & L
                                               \end{matrix} \right)
+\end{align}
+
+When looking at $V_{SL}$ and $V_T$ one can notice singular behavior of these terms in the limit when $r \rightarrow 0$. While Coulomb case $\propto \frac{1}{r}$ and orbital part $\propto \frac{1}{r^2}$ are well known, $\frac{1}{r^3}$ behavior needs regularization. The most obvious approach is to set some low-distance scale $r_C$ at which $\frac{1}{r^3} = \frac{1}{r_C^3}$ when $r < r_c$. Such a behavior can be motivated by existence of asymptotic freedom. Indeed, when $r << r_C$ and $H_{SL, T}$ are regulated then Coulomb-like part plays a major part in the game leaving regulated terms suppressed.
+
+To conclude we present entire potential again highlighting parameters which assumed free in the model:
+
+\begin{align}
+    &V(r) = -\frac{4}{3} \frac{\hl{\alpha_S}}{r} + \frac{\hl{b}}{\hl{\mu}} (1 - \exp^{-\hl{\mu} r}) + \frac{32 \pi \hl{\alpha_S}}{9 \hl{m_c}^2} \tilde{\delta}_{\hl{\sigma}}(r) \vec{S}_c \cdot \vec{S}_{\bar{c}} + \nonumber \\
+    &\qquad+ \frac{1}{2 \hl{m_c}^2 r} \left( 3 \dv{V_V}{r} - \dv{V_S}{r} \right) \vec{L} \cdot \vec{S} + \frac{1}{12 \hl{m_c}^2} \left( \frac{1}{r} \dv{V_V}{r} - \dv[2]{V_V}{r} \right) \left<H_T\right> \nonumber \\
+    &\text{together with}~\hl{r_C}
 \end{align}
 
 Finally, having binding energies and wavefunctions of charmonium states obtained we can apply Pauli equation to the quark-antiquark system to describe raditive transitions. In the next chapter we discuss this approach briefly reminding apparatus of the multipole decomposition which comes in handy for analytical calculations.
@@ -361,3 +371,5 @@ In this terms, $\bra{J_f j_f L_f S_f} H_{int} \ket{J_i j_i L_i S_i}$ acquires th
     \end{split} \\
     &H_{int}^{MJ} = \sqrt{2\pi} (- \mathrm{i})^{J} (2J+1) j_J(\frac{kr}{2}) \frac{k e}{2 \mu} \delta_{2 \nmid S_i + S_f +J} C_{J, J}^{- \lambda}
 \end{align}
+
+Notice the Kronecker-$\delta$s in the expressions above. For example in transition $\chi_{cJ}(nP) \rightarrow J/\psi$ configuration of spins is such that $2 \nmid (S_i=1) + (S_f=1) + (J=1)$, so a half of the hamiltonian $H^{E1}_{int}$ doesn't contribute. Later on we'll see that in this approximation radial dependence decouples from the angular one, and we can get $r^{0,2}$ coefficients straightforwardly as fractions of $Q$ and $C$ coefficients. On practice higher multipole contributions are suppressed, usually $E1$ (or $M1$ when $E1$ is not allowed) approximation is enough to reproduce major contribution to the transition matrix elements.

@@ -1,0 +1,127 @@
+\chapter{Spectroscopy}
+In this chapter we present results of searches of binding energies and wave functions in the way proposed by Deng et al.~\cite{deng-bot,deng-charm}. For testing purposes we use bottomonium along with charmonium. Bottomonium consists of heavier quarks so non-relativistic quark model applies better to it (compare to charmonium~\cref{fig:charm-states}). We use the following values of model parameters provided by Deng et al.~\cite{deng-bot,deng-charm}:
+
+\begin{table} \begin{floatrow}
+\ttabbox
+    {\caption{Parameters used for charmonium}}
+    {\begin{tabular}{l|c|c}
+        {} & Linear & Screened \\ \hline
+        Parameter & {} & {} \\ \cline{1-1}
+        $\alpha_S$ & 0.5461 & 0.5070 \\
+        $b$ [$GeV^2$] & 0.1425 & 0.2100 \\
+        $m_c$ [$GeV$] & 1.4830 & 1.4110 \\
+        $\sigma$ [$GeV$] & 1.1384 & 1.1600 \\
+        $r_C$ [$fm$] & 0.202 & 0.180 \\
+        $\mu$ [$GeV$] & \ldots & 0.0979 \\ \hline
+    \end{tabular}}
+\hspace{2cm}
+\ttabbox
+    {\caption{Parameters used for bottomonium}}
+    {\begin{tabular}{l|c}
+        {} & Screened \\ \hline
+        Parameter & {} \\ \cline{1-1}
+        $\alpha_S$ & 0.368 \\
+        $b$ [$GeV^2$] & 0.206 \\
+        $m_b$ [$GeV$] & 4.757 \\
+        $\sigma$ [$GeV$] & 3.10 \\
+        $r_C$ [$fm$] & 0.060 \\
+        $\mu$ [$GeV$] & 0.056 \\ \hline
+    \end{tabular}}
+\end{floatrow}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{bottomoniumExotic.pdf}
+    \caption{The status of bottomonium spectrum in August 2017. Red dashed lines represent theoretical predictions based on Godfrey-Isgur model with relativistic corrections to higher-excited states~\cite{gbs-model}. Black solid lines are experimentally measured energy levels. Here are also shown measured transitions. We are interested in radiative transitions which are represented by green dashed lines: thick for E1 and thin for M1. Source: Olsen, Skwarnicki, Zieminska~\cite{heavy-quark_pics}} \label{fig:bot-states}
+\end{figure}
+
+The method of searching for binding energies is based on the fact that eigenfunctions of Shrodinger equation should be localized, i.e. swiftly go to zero when far from origin. Especially for screened potential one can express asymptotic solution of  the radial equation(\cref{eq:nrqm-radialeq}) as a linear combination of exponents.
+
+\begin{align}
+    &\dv[2]{u(r)}{r} + 2 \mu_R \left[ E_{bound} - V(r) - \frac{L(L+1)}{2 \mu_R r^2} \right] u(r) = 0 \\
+    &u(r) \approx C_+ \ee^{k r} + C_- \ee^{-k r},\qquad k = \sqrt{2 \mu_R E}
+\end{align}
+
+Exponent with negative sign will vanish at infinity, but positive exponent will grow enormously. The only way how to suppres the growth --- put $C_+ = 0$. Both $C_+$ and $C_-$ are functions of binding energy, so equality of $C_+(E) = 0$ is a direct criterion for $E$ being an eigenvalue.
+
+The method uses information about wave function magnitude at infinity, so we have to be able to solve Shrodinger equation for any value of $E$ as a parameter. The equation is of the second order without first derivatiive. Gowell quadrature~\cite{deng-bot} comes in handy here, because to conduct the next step it doesn't need first derivative (which we don't know, but can only approximate with a first difference). Methods making use of the ``first difference'' usually worked well initially but failed at distant points, supposingly due to an error growth implied by inaccurate first derivative approximation. 
+
+To show the idea of how the process looks like on practice we provide a plot of $C_+$ as a function of mass of the state. Notice the sharp dip near the $M$ corresponding to the eigestate. Numerically it is hard to find exact zero of $C_+$, for that one needs am infinite precision. What we really look for --- damping of the value of $C_+$ by some factor. This factor is related to precision with which we know the eigenvalue. For example, in case of $\chi_{b0}(1P)$ we apply damping by factor $10^{10}$, and from width of dips one can estimate precision by order of magnitude. Roughly, each factor $10^{2}$ for $C_+$ corresponds to fixation of a digit in the value of the eigenvalue, after $10^{10}$ we expect precision to $100~KeV$:
+
+\begin{figure}[H]
+    \includegraphics[width=15cm]{chi_b0_1P-dip.eps}
+    \caption{Dependency of $C_+$ on mass in the screened potential for $\chi_{b0}(1P)$ (mass is directly related to the binding energy: $M = 2m_q + E_{binding}$). Damping used here is $10^{10}$} \label{fig:chib01P-dip}
+\end{figure}
+
+\begin{table}[H]
+    \input{assets/chi_b0_1P-dipcheck.tex}
+    \caption{Test of the accuracy ($\chi_{b0}(1P)$ with $10^{10}$ damping) in the screened potential} \label{tab:chib01P-dipcheck}
+\end{table}
+
+According to the method, value of $C_+$ should be evaluated at infinity. This is impossible in numerical calculations so cutoff has been introduced. To determine whether it is far enough we test how the eigenvalue depends on several of them. Different lines on~\cref{fig:chib01P-dip} are responsible for that. We also provide quantitative estimations for the same dip. As we assume, the highest cutoff provides the best result, we look at deviation from it. From the~\cref{tab:chic01P-dipcheck} it can be concluded, that accuracy is of order $\approx 10^{-10}~GeV = 0.1~eV$.
+
+For comparison we provide the same plots for charmonium in screened and linear potential.
+
+\begin{figure}[H]
+    \includegraphics[width=15cm]{chi_c0_1P-dip.eps}
+    \caption{Dependency of $C_+$ on mass in the screened potential for $\chi_{c0}(1P)$. Damping used here is $10^{10}$} \label{fig:chic01P-dip}
+\end{figure}
+
+\begin{table}[H]
+    \input{assets/chi_c0_1P-dipcheck.tex}
+    \caption{Test of the accuracy ($\chi_{c0}(1P)$ with $10^{10}$ damping) in the screened potential} \label{tab:chic01P-dipcheck}
+\end{table}
+
+\begin{figure}[H]
+    \includegraphics[width=15cm]{chi_c0_1P-lin-dip.eps}
+    \caption{Dependency of $C_+$ on mass in the linear potential for $\chi_{c0}(1P)$. Damping used here is $10^{4}$} \label{fig:chic01P-lin-dip}
+\end{figure}
+
+\begin{table}[H]
+    \input{assets/chi_c0_1P-lin-dipcheck.tex}
+    \caption{Test of the accuracy ($\chi_{c0}(1P)$ with $10^{4}$ damping) in the linear potential} \label{tab:chic01P-lin-dipcheck}
+\end{table}
+
+What is significant for linear potential, in spite of comparable accuracy (to screening potential) magnitude far from origin differs by powers of ten. The same happens to the cutoff distance. One should go four times farther to gain comparable precision.
+
+After the analysis of a particular state, we are ready to present big picture. We show Deng et al.~\cite{deng-charm,deng-bot} and our results show the same standard deviation compared to PDG~\cite{pdg}. There is nothing surprising here because we used parameters fitted by Deng.
+
+\begin{table}[H]
+    \caption{Bottomonium spectrum. Masses provided in $KeV$s. Standard deviation of Deng et al.~\cite{deng-bot} and our result from PDG~\cite{pdg} are comparable and $\approx 20KeV$. (Bottomonium provided as a test so states without experimental data were skipped. See entire table in appendix(\cref{sec:app:bot-spectrum}))}
+    \input{assets/bot-spectr.tex}
+\end{table}
+
+\begin{table} \begin{floatrow}
+\floatbox[\capbot]{table}[\FBwidth]
+    {\caption{Charmonium spectrum in screened potential. Masses provided in $KeV$s. Standard deviation of Deng et al.~\cite{deng-bot} and our result from PDG~\cite{pdg} are comparable and $\approx 43KeV$ }}
+    {\input{assets/charm-spectr.tex}}
+\hspace{1cm}
+\floatbox[\capbot]{table}[\FBwidth]
+    {\caption{Charmonium spectrum in linear potential. Masses provided in $KeV$s. Standard deviation of Deng et al.~\cite{deng-bot} and our reslut from PDG~\cite{pdg} are comparable and $\approx 24KeV$ }}
+    {\input{assets/charm-spectr-lin.tex}}
+\end{floatrow} \end{table}
+
+Having obtained mass spectrum of charmonium and bottomonium states it is interesting to compare wave functions. For qualitative presentation of the output we show our wave-functions overlayed onto plots presented by Deng et al.~\cite{deng-bot,deng-charm}:
+
+\begin{figure}[H] \begin{floatrow}
+    \ffigbox[\Xhsize]
+        {\caption{Bottomonium S-states. (background from~\cite{deng-bot})}}
+        {\includegraphics[width=10cm]{bot-s.eps}}
+\end{floatrow} \end{figure}
+ 
+For charmonium picture is the same:
+
+\begin{figure}[H] \begin{floatrow}
+    \ffigbox[\Xhsize]
+        {\caption{Charmonium S-states. (background from~\cite{deng-charm})}}
+        {\includegraphics[width=10cm]{charm-1s.eps}}
+\end{floatrow} \end{figure}
+
+Such an analysis is a convenient way to make sure that wave functions don't gain enormous error at infinity where they should be damped. Moreover, the fact that linear potential grows unlimitedly can be traced for states with high orbital momenta. One can notice dashed lines representing linear case are shifted closer to the origin:
+
+\begin{figure}[H] \begin{floatrow}
+\ffigbox[\Xhsize]
+    {\caption{Charmonium D-states. (background from~\cite{deng-charm})}}
+    {\includegraphics[width=10cm]{charm-3d.eps}}
+\end{floatrow} \end{figure}

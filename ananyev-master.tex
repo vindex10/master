@@ -7,9 +7,14 @@
 \graphicspath{{img/}{diags/}}
 \usepackage{amssymb}
 \usepackage{mathtools}
-\usepackage{float}
+\usepackage{bm}
+\usepackage{xcolor}
+%\usepackage{float}
+\usepackage{floatrow}
 \usepackage{physics}
 \usepackage{esint}
+\usepackage{newclude}
+\usepackage{epstopdf}
 \include{macros}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,7 +109,9 @@
 
 \mainmatter
 
-  \input{intro}
+  \include*{intro}
+  \include*{spectroscopy}
+  \include*{widths}
 
 % This ensures that the subsequent sections are being included as root
 % items in the bookmark structure of your PDF reader.
@@ -116,14 +123,16 @@
   \chapter{Appendix}
 
   \pagebreak
-  \input{app.crsc-width}
+  \include*{app.crsc-width}
   \pagebreak
-  \input{app.tensor-term}
+  \include*{app.tensor-term}
   \pagebreak
-  \input{app.tensor-operators}
+  \include*{app.tensor-operators}
   \pagebreak
-  \input{app.hint}
+  \include*{app.hint}
   \pagebreak
-  \input{app.hint-multipole}
+  \include*{app.hint-multipole}
+  \pagebreak
+  \include*{app.spectrum-tables}
 
 \end{document}
