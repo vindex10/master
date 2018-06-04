@@ -29,7 +29,7 @@ to express multipoles. Also, as we will need $\vec{A}(-\vec{r})$ as well, it is 
         &+\sum_{J=1} (-\xi\mathrm{i}) (\xi \mathrm{i})^J \sqrt{4 \pi (2J+1)} j_{J-1}(kr)
             <J \lambda|J-1~0 1 \lambda> \vec{Y}^\lambda_{J-1,J}
             \frac{\sqrt{2J-1}}{\sqrt{2J+1}} + \\
-        &+\sum_{J=0} (\xi \mathrm{i}) (\xi \mathrm{i})^J \sqrt{4 \pi (2J+1)} j_{J}(kr)
+        &+\sum_{J=0} (\xi \mathrm{i}) (\xi \mathrm{i})^J \sqrt{4 \pi (2J+1)} j_{J+1}(kr)
             <J \lambda|J+1~0 1 \lambda> \vec{Y}^\lambda_{J+1,J}
             \frac{\sqrt{2J+3}}{\sqrt{2J+1}}
     \end{split}\\
@@ -50,11 +50,10 @@ we arrive to the following expansion:
         &\vec{e}_{\lambda} \mathrm{e}^{\xi \mathrm{i} k z} =
             -\sqrt{2 \pi} \sum_{J=1}^{\infty} (\xi \mathrm{i})^J \sqrt{2J +1}
             \left\{ \lambda \vec{M}^{mag}_{J\lambda} + \xi \mathrm{i}
-            \left( \sqrt{\frac{J+1}{2J+1}} j_{J-1} \vec{Y}^\lambda_{J-1, J}
-            -\sqrt{\frac{J}{2J+1}} j_{J+1} \vec{Y}^\lambda_{J+1, J} \right)
-            \right\} =\\
-        &=\left| \vec{M}^{mag}_{J \lambda} = j_{J}(kr)
-            \vec{Y}^\lambda_{J J} \right| = -\sqrt{2 \pi} \sum_{J=1}^{\infty}
+            \left( \sqrt{\frac{J+1}{2J+1}} j_{J-1} \vec{Y}^\lambda_{J-1, J} \right. \right. \\
+            &\left. \left. -\sqrt{\frac{J}{2J+1}} j_{J+1} \vec{Y}^\lambda_{J+1, J} \right) \right\} = \left| \vec{M}^{mag}_{J \lambda} = j_{J}(kr)
+            \vec{Y}^\lambda_{J J} \right| = \\
+            &= -\sqrt{2 \pi} \sum_{J=1}^{\infty}
             (\xi \mathrm{i})^J \sqrt{2J +1} \left\{ \lambda \vec{M}^{mag}_{J \lambda}
             +\frac{\xi}{k} \left[ \vec{\nabla} \times
             \vec{M}^{mag}_{J \lambda} \right] \right\}
@@ -89,12 +88,18 @@ Expression without Pauli matrices can be transformed immediately:
 For spin matrices, it is possible to perform transformations assuming they are "sandwiched". Relevant matrix element has the following form:
 \begin{align}
     \begin{split}
-        &<J_f j_f L_f S_f| \vec{\sigma_{\overline{q}}} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> = \sum_{m_1, m_2, m_i, s_i, m_f, s_f} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> \times\\
-        &\qquad\times <L_f m_f| Y_{L}^{m_1} |L_i m_i>  <L_i m_i S_i s_i| J_i j_i> <S_f s_f| (-m_2\sqrt{2}) \hat{S}_{\overline{q}}^{m_2} |S_i s_i> = \\
-        &= \sum_{m_1, m_2, m_i, s_i, m_f, s_f, s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i>  <L_i m_i S_i s_i| J_i j_i> \times\\
-        &\qquad\times <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}>  (-m_2\sqrt{2}) <s^f_{q}|s^{i}_{q}> <s^f_{\overline{q}}| \hat{S}_{\overline{q}}^{m_2} |s^i_{\overline{q}}> <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> =\\
-        &= \sum_{m_1, m_2, m_i, s_i, m_f, s_f, s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i>  <L_i m_i S_i s_i| J_i j_i> \times\\
-        &\qquad\times <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}>  (-m_2\sqrt{2}) \delta_{s^f_{q}, s^{i}_{q}} \delta_{s^f_{\overline{q}} + m_2, s^i_{\overline{q}}} <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i>
+        &<J_f j_f L_f S_f| \vec{\sigma_{\overline{q}}} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> = \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> \times\\
+        &\qquad\times <L_f m_f| Y_{L}^{m_1} |L_i m_i>  <L_i m_i S_i s_i| J_i j_i> <S_f s_f| (-m_2\sqrt{2}) \hat{S}_{\overline{q}}^{m_2} |S_i s_i> =
+    \end{split} \\
+    \begin{split}
+        &= \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f,\\ s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i> \times \\
+        &\qquad\times <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> \times \\
+        &\qquad\times (-m_2\sqrt{2}) <s^f_{q}|s^{i}_{q}> <s^f_{\overline{q}}| \hat{S}_{\overline{q}}^{m_2} |s^i_{\overline{q}}> <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> =
+    \end{split} \\
+    \begin{split}
+        &= \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f,\\ s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i> \times \\
+        &\qquad\times <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> \times \\
+        &\qquad\times (-m_2\sqrt{2}) \delta_{s^f_{q}, s^{i}_{q}} \delta_{s^f_{\overline{q}} + m_2, s^i_{\overline{q}}} <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i>
     \end{split}
 \end{align}
 
@@ -120,7 +125,7 @@ Before we substitute this to $H_{int}$, let's have a look at another observation
     &E_f - E_i = k + \frac{k^2}{2 M_f}
 \end{align}
 
-Now, remembering the fact $\vec{r} \vec{Y}^\lambda_{J, J} = 0$ (Weissbluth, Ch. 7.2)[@weissbluth], let's assemble $H_{int}$ in its renewed incarnation. We also restored factor $\chi$ to distinguish emission and absorbtion:
+Now, remembering the fact $\vec{r} \vec{Y}^\lambda_{J, J} = 0$ (Weissbluth, Ch. 7.2)\cite{weissbluth}, let's assemble $H_{int}$ in its renewed incarnation.
 
 \begin{align}
     &H_{int}^{EJ} = \left[-(E_f - E_i) \mathrm{i} e \vec{r} \delta_{2 \nmid J} - \frac{\lambda k \mathrm{e}}{2 \mu} \delta_{2 \mid S_i + S_f + J} \vec{\sigma}_{q} \right] \vec{A}^{EJ}(\frac{\vec{r}}{2}) \\
@@ -140,14 +145,21 @@ First one is already familiar to us, let's do some more steps to simplify it:
 
 \begin{align}
     \begin{split}
-        &\sqrt{2L+1} C_{L, J}^\lambda = <J_f j_f L_f S_f| \vec{\sigma_{\overline{q}}} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> = \\
-        &= \sum_{m_1, m_2, m_i, s_i, m_f, s_f, s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i> \times \\
-        &\qquad\times <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}>  (-m_2\sqrt{2}) \delta_{s^f_{q}, s^{i}_{q}} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}} + m_2} <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> = \\
-        &= -\sqrt{2}\sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} <L_i 0 L 0 | L_f 0> \sum_{m_1, m_2, m_i, s_i, m_f, s_f, s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}} m_2 <J \lambda| L m_1 1 m_2> \times\\
+        &\sqrt{2L+1} C_{L, J}^\lambda = <J_f j_f L_f S_f| \vec{\sigma_{\overline{q}}} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> =
+    \end{split} \\
+    \begin{split}
+        &= \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f,\\ s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i> \times \\
+        &\times <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> (-m_2\sqrt{2}) \delta_{s^f_{q}, s^{i}_{q}} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}} + m_2} <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> = \\
+    \end{split} \\
+    \begin{split}
+        &= -\sqrt{2}\sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} <L_i 0 L 0 | L_f 0> \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f,\\ s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}}} m_2 <J \lambda| L m_1 1 m_2> \times\\
         &\qquad\times <J_f j_f| L_f m_f S_f s_f> <L_f m_f| L m_1 L_i m_i>  <L_i m_i S_i s_i| J_i j_i> \times\\
-        &\qquad\times <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> \delta_{s^f_{q}, s^{i}_{q}} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}}+m_2} = \\
+        &\qquad\times <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> \delta_{s^f_{q}, s^{i}_{q}} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}}+m_2} =
+    \end{split} \\
+    \begin{split}
     &= -\sqrt{2}\sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} <L_i 0 L 0 | L_f 0> \sum_{m_2, s_{q}, s_{\overline{q}}} m_2 <J \lambda| L (\lambda - m_2) 1 m_2> \times\\
-        &\qquad\times <J_f j_f| L_f (j_f-(s_q + s_{\overline{q}})) S_f (s_q + s_{\overline{q}})> <L_i (j_i - (s_q + s_{\overline{q}} + m_2)) S_i (s_q + s_{\overline{q}} + m_2)| J_i j_i> \times \\
+        &\qquad\times <J_f j_f| L_f (j_f-(s_q + s_{\overline{q}})) S_f (s_q + s_{\overline{q}})> \times \\
+        &\qquad\times <L_i (j_i - (s_q + s_{\overline{q}} + m_2)) S_i (s_q + s_{\overline{q}} + m_2)| J_i j_i> \times \\
         &\qquad\times <L_f (j_f - (s_q + s_{\overline{q}}))| L (\lambda - m_2) L_i (j_i - (s_q + s_{\overline{q}}+m_2))>  \times\\
         &\qquad\times <S_f (s_q + s_{\overline{q}})| \frac{1}{2} s_{q} \frac{1}{2} s_{\overline{q}}> <\frac{1}{2} s_{q} \frac{1}{2} (s_{\overline{q}} + m_2) |S_i (s_q + s_{\overline{q}} + m_2)>
     \end{split}
@@ -200,7 +212,8 @@ Let's write down explicit form of $<\vec{r}\vec{A}^{EJ}(\frac{\vec{r}}{2})>$ and
     \begin{split}
         &\vec{\sigma}_q \vec{A}^{EJ}(\frac{\vec{r}}{2}) = -\sqrt{2\pi} (- \mathrm{i})^{J+1} \sqrt{2J+1} \left( \sqrt{\frac{J+1}{2J+1}} j_{J-1}(\frac{kr}{2})<\vec{\sigma}_q \vec{Y}^{- \lambda}_{J-1, J}> - \right.\\
         &\left. -\sqrt{\frac{J}{2J+1}} j_{J+1}(\frac{kr}{2}) <\vec{\sigma}_q \vec{Y}_{J+1, J}^{- \lambda}> \right) = \\
-        &= -\sqrt{2\pi} (- \mathrm{i})^{J+1} \left( \sqrt{(J+1)(2J-1)} j_{J-1}(\frac{kr}{2}) C_{J-1, J}^{- \lambda} - \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) C_{J+1, J}^{- \lambda} \right)
+        &= -\sqrt{2\pi} (- \mathrm{i})^{J+1} \left( \sqrt{(J+1)(2J-1)} j_{J-1}(\frac{kr}{2}) C_{J-1, J}^{- \lambda} - \right.\nonumber \\
+        &\qquad \left.- \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) C_{J+1, J}^{- \lambda} \right)
     \end{split}
 \end{align}
 

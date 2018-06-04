@@ -149,3 +149,13 @@ scalar product in terms of matrices:
     \vec{A} \cdot \vec{B} = \vec{A}^\dagger (\vec{B}) = A_{ij}^\star B_{ij} = (A^T)^\star_{j i} B_{ij} = Tr(A^\dagger B)
 \end{align}
 
+\paragraph{Consistency}
+
+One can mention that acquired tensor operators are defined up to the prefactor common among family, so states of one family should have the same norm. Let's show that norm defined as above is independent on the member of the family.
+
+\begin{align}
+    &\sum_m \bra{J m} T^{(k) \dag}_q T^{(k)}_q \ket{J m} = \sum_{m, m^\prime} \bra{J m} T^{(k) \dag}_q \ket{J m^\prime}\bra{J m^\prime} T^{(k)}_q \ket{J m} = \\
+    &=  \sum_{m, m^\prime} \abs{ \bra{J m^\prime} T^{(k)}_q \ket{J m} }^2 = \abs{\bra{J} T^{(k) }\ket{J}}^2 \sum_{m, m^\prime} \braket{J m}{k q J m^\prime} \braket{k q J m^\prime}{J m} = \\
+    &= \abs{\bra{J} T^{(k) }\ket{J}}^2 \frac{2J+1}{2k + 1} \sum_{m, m^\prime} \braket{k (-q)}{J (-m) J m^\prime} \braket{J (-m) J m^\prime}{k (-q)} = \\
+    &= \frac{2J+1}{2k + 1} \abs{\bra{J} T^{(k) }\ket{J}}^2
+\end{align}
