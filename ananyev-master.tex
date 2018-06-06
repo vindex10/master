@@ -10,7 +10,7 @@
 \usepackage{bm}
 \usepackage{xcolor}
 %\usepackage{float}
-\usepackage{floatrow}
+\usepackage[font=small]{floatrow}
 \usepackage{physics}
 \usepackage{esint}
 \usepackage{newclude}
@@ -101,6 +101,7 @@
 \author{Victor Ananyev}
 \subtitle{Marc Vanderhaeghen}
 
+\floatplacement{table}{h}
 \begin{document}
 
 \frontmatter
@@ -112,6 +113,8 @@
   \include*{intro}
   \include*{spectroscopy}
   \include*{widths}
+  \include*{sr}
+  \include*{outro}
 
 % This ensures that the subsequent sections are being included as root
 % items in the bookmark structure of your PDF reader.
@@ -132,7 +135,5 @@
   \include*{app.hint}
   \pagebreak
   \include*{app.hint-multipole}
-  \pagebreak
-  \include*{app.tables}
 
 \end{document}
