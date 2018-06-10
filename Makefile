@@ -9,7 +9,11 @@ all: $(NAME).pdf
 view:
 	nohup zathura $(NAME).pdf 1>/dev/null 2>&1 &
 
-$(NAME).pdf: $(patsubst %.tex,%.pdf,$(wildcard $(DIAGS)/*.tex)) $(wildcard *.tex) literature.bib
+$(NAME).pdf: $(patsubst %.tex,%.pdf,$(wildcard $(DIAGS)/*.tex))\
+			 $(wildcard *.tex)\
+			 $(wildcard assets/*.tex)\
+			 $(wildcard img/*)\
+			 literature.bib
 	latexmk  -lualatex --synctex=1 $(NAME).tex
 
 diags: $(patsubst %.tex,%.pdf,$(wildcard $(DIAGS)/*.tex))
