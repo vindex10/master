@@ -121,14 +121,7 @@ One should assume integration over all final momenta. Then, lhs can be expressed
     & 2 E_{c.m.} p_{c.m.} \sigma_{tot}(in \rightarrow \forall) =  \Im \Mcal(in \rightarrow in) \label{eq:optical-th}
 \end{align}
 
-Another ingredient of sumrules ``cocktail'' is the analyticity of amplitudes. We assume that $\Mcal$ doesn't contain any poles except physical ones, which correspond to bound states of the system. Formally, this statement can be expressed by Cauchy's theorem. We use Schwartz principle to conduct analytical continuation of the amplitude. \iffalse See details in appendix~\cref{sec:app:alyt-ampl}.\fi As a result we obtain:
-
-\begin{align}
-    & \Mcal(s) = \frac{1}{\pi} \fint \frac{\Im \Mcal(s^\prime + \ii \epsilon)}{s^\prime - s} \dd{s^\prime} \\
-    & \Re \Mcal(s + \ii \epsilon) = \frac{1}{\pi} \fint \frac{\Im \Mcal(s^\prime + \ii \epsilon)}{s^\prime - s} \dd{s^\prime} \label{eq:disp-rel-gen}
-\end{align}
-
-In case of the forward scattering matrix element acquires a beautiful parity structure. It will help us to simplify the dispersion relation above. Parity relations involve helicities of initial and final photons, that is why working in terms of amplitudes with defined helicities is convenient.
+In case of the forward scattering matrix element acquires a beautiful parity structure. Parity relations involve helicities of initial and final photons, that is why working in terms of amplitudes with defined helicities is convenient.
 
 We denote $\Mcal_{\lambda^\prime_1 \lambda^\prime_2 \lambda_1 \lambda_2}$ an amplitude, where the first photon ($\gamma_1$) has helicity $\lambda_1$ in the initial state and $\lambda_1^\prime$ in the final state. The same holds for the second photon $\gamma_2$. As photons are virtual, possible values for $\lambda$ include $\lambda=0$ besides usual $\lambda=\pm1$.
 
@@ -151,7 +144,7 @@ Taking into account above symmetries, there are only eight independent amplitude
 
 To make use of crossing symmetry, it is convenient to parametrize amplitudes in terms of variable $\nu = \frac{1}{2} (s - u) = q_1 q_2$, which only changes sign under crossing transformation of one of the photons.
 
-For the sake of generality we'll use $f^{(+)}$ and $f^{(-)}$ for even and odd amplitudes correspondingly. Then, it is possible to simplify dispersion relation in \cref{eq:disp-rel-gen}:
+Another ingredient of sumrules ``cocktail'' is the analyticity of amplitudes. We assume that $\Mcal$ doesn't contain any poles except physical ones lying on the real axis, which correspond to production of particles in the scattering process. Formally, this statement can be expressed by Cauchy's theorem. We use Schwartz principle to conduct analytical continuation of the amplitude. See details in appendix (\cref{sec:app:alyt-sr}). For the sake of generality we'll use $f^{(+)}$ and $f^{(-)}$ for even and odd amplitudes correspondingly.
 
 \begin{align}
     \Re f^{(+)}(\nu + \ii \epsilon) = \frac{2}{\pi} \int_{\nu_0}^{\infty} \dd{\nu^\prime} \frac{\nu^\prime}{\nu^{\prime 2} - \nu^2} \Im f^{(+)}(\nu^\prime + \ii \epsilon) \\
@@ -165,7 +158,7 @@ Where we used crossing symmetry relation to map negative half-plane onto positiv
 \end{align}
 
 
-We introduced $\nu_0$, a threshold at which final particle state becomes forbidden.
+We introduced $\nu_0$, a threshold at which production of on-shell particles as a result of the scattering becomes possible.
 
 At this point we find out eight relations connecting real part of helicity amplitudes to their imaginary part, and according to the optical theorem~\cref{eq:optical-th} to corresponding helicity cross-sections. We'll focus on the odd amplitude $(\Mcal_{++,--} - \Mcal_{+-,+-})$, because there exists low energy theorem, an estimation for the value of $\frac{f^{(-)}(\nu)}{\nu}$ in the limit of $\nu \rightarrow \nu_0$. It turns out that the limit is exactly zero when initial charmonium state is space-like (which is not really of our interest) or time-like but lies under the threshold (a threshold at which decay is allowed by energy-momentum conservation). By analogy to GDH sumrule for the Compton scattering based on perturbation theory, value of the latter expression can be expressed in terms of anomalous magnetic moment ($a$) and mass ($m$) of the vector meson:
 
