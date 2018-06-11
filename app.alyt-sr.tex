@@ -30,29 +30,29 @@ We assume amplitudes are analytically continuated into complex plane with Shwart
 Expression for amplitude (\cref{eq:app:alyt-ampl-init}) can be simplified:
 \begin{align}
     \begin{split}
-        &2 \pi \ii f(\nu+\ii\delta) = \int_{\nu_0}^{\infty} \frac{f(\nu^\prime + \ii \epsilon)}{\nu^\prime + \ii \epsilon - \nu - \ii \delta} - \int_{\nu_0}^{\infty} \frac{f(\nu^\prime-\ii \epsilon)}{\nu^\prime - \ii \epsilon - \nu - \ii \delta} + \\
-        &\quad + \int_{\nu_0}^{\infty} \frac{f(-\nu^\prime+\ii \epsilon)}{-\nu^\prime + \ii \epsilon - \nu - \ii \delta} - \int_{\nu_0}^{\infty} \frac{f(-\nu^\prime-\ii \epsilon)}{-\nu^\prime - \ii \epsilon - \nu - \ii \delta} =
+        &2 \pi \ii f^{\pm}(\nu+\ii\delta) = \int_{\nu_0}^{\infty} \frac{f^{\pm}(\nu^\prime + \ii \epsilon)}{\nu^\prime + \ii \epsilon - \nu - \ii \delta} - \int_{\nu_0}^{\infty} \frac{f^{\pm}(\nu^\prime-\ii \epsilon)}{\nu^\prime - \ii \epsilon - \nu - \ii \delta} + \\
+        &\quad + \int_{\nu_0}^{\infty} \frac{f^{\pm}(-\nu^\prime+\ii \epsilon)}{-\nu^\prime + \ii \epsilon - \nu - \ii \delta} - \int_{\nu_0}^{\infty} \frac{f^{\pm}(-\nu^\prime-\ii \epsilon)}{-\nu^\prime - \ii \epsilon - \nu - \ii \delta} =
     \end{split} \\
     \begin{split}
-        &= \int_{\nu_0}^{\infty} \frac{f(\nu^\prime + \ii \epsilon)}{\nu^\prime + \ii \epsilon - \nu - \ii \delta} - \int_{\nu_0}^{\infty} \frac{f^\star(\nu^\prime+\ii \epsilon)}{\nu^\prime - \ii \epsilon - \nu - \ii \delta} +  \\
-        &\quad + \int_{\nu_0}^{\infty} \frac{\pm f^\star(\nu^\prime+\ii \epsilon)}{-\nu^\prime + \ii \epsilon - \nu - \ii \delta} - \int_{\nu_0}^{\infty} \frac{\pm f(\nu^\prime+\ii \epsilon)}{-\nu^\prime - \ii \epsilon - \nu - \ii \delta}
+        &= \int_{\nu_0}^{\infty} \frac{f^{\pm}(\nu^\prime + \ii \epsilon)}{\nu^\prime + \ii \epsilon - \nu - \ii \delta} - \int_{\nu_0}^{\infty} \frac{f^{\pm \star}(\nu^\prime+\ii \epsilon)}{\nu^\prime - \ii \epsilon - \nu - \ii \delta} +  \\
+        &\quad + \int_{\nu_0}^{\infty} \frac{\pm f^{\pm \star}(\nu^\prime+\ii \epsilon)}{-\nu^\prime + \ii \epsilon - \nu - \ii \delta} - \int_{\nu_0}^{\infty} \frac{\pm f^{\pm}(\nu^\prime+\ii \epsilon)}{-\nu^\prime - \ii \epsilon - \nu - \ii \delta}
     \end{split}
 \end{align}
 
 At this point we should neglect $\epsilon$ in comparison to $\delta$ because while $\epsilon$ represents the shore near the cut $\delta$ remains fixed shift of $\nu$.
 
 \begin{align}
-    &\pi f(\nu+\ii\delta) = \int_{\nu_0}^{\infty} \frac{\Im f(\nu^\prime + \ii \epsilon)}{\nu^\prime - (\nu+\ii \delta)} \pm \int_{\nu_0}^{\infty} \frac{\Im f(\nu^\prime+\ii \epsilon)}{\nu^\prime + (\nu+\ii\delta)} = \\
-    &f^{-}(\nu+\ii \delta) = \frac{2 (\nu+\ii \delta)}{\pi} \int_{\nu_0}^{\infty} \frac{\Im f(\nu^\prime + \ii \epsilon)}{(\nu + \nu^\prime + \ii \delta)(\nu - \nu^\prime - \ii \delta)} \\
-    &f^{+}(\nu+\ii \delta) = \frac{2}{\pi} \int_{\nu_0}^{\infty} \frac{\nu^\prime \Im f(\nu^\prime + \ii \epsilon)}{(\nu + \nu^\prime + \ii \delta)(\nu - \nu^\prime - \ii\delta)}
+    &\pi f^{\pm}(\nu+\ii\delta) = \int_{\nu_0}^{\infty} \frac{\Im f^{\pm}(\nu^\prime + \ii \epsilon)}{\nu^\prime - (\nu+\ii \delta)} \pm \int_{\nu_0}^{\infty} \frac{\Im f^{\pm}(\nu^\prime+\ii \epsilon)}{\nu^\prime + (\nu+\ii\delta)} = \\
+    &f^{+}(\nu+\ii \delta) = \frac{2}{\pi} \int_{\nu_0}^{\infty} \frac{\nu^\prime \Im f^{+}(\nu^\prime + \ii \epsilon)}{(\nu + \nu^\prime + \ii \delta)(\nu - \nu^\prime - \ii\delta)} \\
+    &f^{-}(\nu+\ii \delta) = \frac{2 (\nu+\ii \delta)}{\pi} \int_{\nu_0}^{\infty} \frac{\Im f^{-}(\nu^\prime + \ii \epsilon)}{(\nu + \nu^\prime + \ii \delta)(\nu - \nu^\prime - \ii \delta)}
 \end{align}
 
 Now we apply Sokhotski-Plemelj theorem to the pole at the positive side of the real axis ($\nu^\prime = \nu+\ii \delta$), because it is only one which lies inside of the integration range.
 
 \begin{align}
-    &\int \frac{\hl{f(x^\prime)}}{x^\prime - x + \ii \delta} \dd{x^\prime} = \fint \frac{\hl{f(x^\prime)}}{x^\prime - x} \dd{x^\prime} \mp \ii \pi f(x) \label{app:sokh-plem} \\[1cm]
-    &f^{-}(\nu+\ii \delta) = \frac{2 (\nu+\ii \delta)}{\pi} \fint_{\nu_0}^{\infty} \frac{\hl{Im f(\nu^\prime+\ii \epsilon)}}{\hl{(\nu^\prime + \nu + \ii \delta)}(\nu^\prime - \nu)} \dd{\nu^\prime} + \frac{2 (\nu+\ii \delta)}{\pi} \frac{\pi}{\hl{2 (\nu + \ii \delta)}} \hl{f^{-}(\nu + \ii \delta + \ii \epsilon)} \\
-    &f^{+}(\nu+\ii \delta) = \frac{2}{\pi} \fint_{\nu_0}^{\infty} \frac{\hl{\nu^\prime Im f(\nu^\prime+\ii \epsilon)}}{\hl{(\nu^\prime + \nu + \ii \delta)}(\nu^\prime - \nu)} \dd{\nu^\prime} + \frac{2}{\pi} \frac{\hl{(\nu + \ii \delta)} \pi}{\hl{2 (\nu + \ii \delta)}} \hl{f^{-}(\nu + \ii \delta + \ii \epsilon)}
+    &\int \frac{\hl{f(x^\prime)}}{x^\prime - x \pm \ii \delta} \dd{x^\prime} = \fint \frac{\hl{f(x^\prime)}}{x^\prime - x} \dd{x^\prime} \mp \ii \pi f(x) \label{app:sokh-plem} \\[1cm]
+    &f^{+}(\nu+\ii \delta) = \frac{2}{\pi} \fint_{\nu_0}^{\infty} \frac{\hl{\nu^\prime Im f^{+}(\nu^\prime+\ii \epsilon)}}{\hl{(\nu^\prime + \nu + \ii \delta)}(\nu^\prime - \nu)} \dd{\nu^\prime} + \frac{2}{\pi} \frac{\hl{(\nu + \ii \delta)} \pi}{\hl{2 (\nu + \ii \delta)}} \hl{f^{-}(\nu + \ii \delta + \ii \epsilon)} \\
+    &f^{-}(\nu+\ii \delta) = \frac{2 (\nu+\ii \delta)}{\pi} \fint_{\nu_0}^{\infty} \frac{\hl{Im f^{-}(\nu^\prime+\ii \epsilon)}}{\hl{(\nu^\prime + \nu + \ii \delta)}(\nu^\prime - \nu)} \dd{\nu^\prime} + \frac{2 (\nu+\ii \delta)}{\pi} \frac{\pi}{\hl{2 (\nu + \ii \delta)}} \hl{f^{-}(\nu + \ii \delta + \ii \epsilon)}
 \end{align}
 
 We highlighted objects corresponding to the function $f$ in general Sokhotski-Plemelj theorem(\cref{app:sokh-plem}). Finally: \\[1cm]
@@ -61,8 +61,8 @@ We highlighted objects corresponding to the function $f$ in general Sokhotski-Pl
     \parbox{12cm}{
         \centering
         \begin{align}
-            &\Re f^{-}(\nu+\ii \delta) = \frac{2 \nu}{\pi} \fint_{\nu_0}^{\infty} \frac{\Im f(\nu^\prime+\ii \epsilon)}{(\nu^{\prime 2} - \nu^2)} \dd{\nu^\prime} \\
-            &\Re f^{+}(\nu+\ii \delta) = \frac{2}{\pi} \fint_{\nu_0}^{\infty} \frac{\nu^\prime \Im f(\nu^\prime+\ii \epsilon)}{(\nu^{\prime 2} - \nu^2)} \dd{\nu^\prime}
+            &\Re f^{+}(\nu+\ii \delta) = \frac{2}{\pi} \fint_{\nu_0}^{\infty} \frac{\nu^\prime \Im f^{-}(\nu^\prime+\ii \epsilon)}{(\nu^{\prime 2} - \nu^2)} \dd{\nu^\prime} \\
+            &\Re f^{-}(\nu+\ii \delta) = \frac{2 \nu}{\pi} \fint_{\nu_0}^{\infty} \frac{\Im f^{-}(\nu^\prime+\ii \epsilon)}{(\nu^{\prime 2} - \nu^2)} \dd{\nu^\prime}
         \end{align}
     }
 }

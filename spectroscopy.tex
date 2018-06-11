@@ -40,7 +40,7 @@ The method of searching for binding energies is based on the fact that eigenfunc
 
 \begin{align}
     &\dv[2]{u(r)}{r} + 2 \mu_R \left[ E_{bound} - V(r) - \frac{L(L+1)}{2 \mu_R r^2} \right] u(r) = 0 \\
-    &u(r) \approx C_+ \ee^{k r} + C_- \ee^{-k r},\qquad k = \sqrt{2 \mu_R E}
+    &u(r) \approx C_+ \ee^{k r} + C_- \ee^{-k r},\qquad k = \sqrt{2 \mu_R E} \nonumber
 \end{align}
 
 Exponent with negative sign will vanish at infinity, but positive exponent will grow enormously. The only way how to suppres the growth --- put $C_+ = 0$. Both $C_+$ and $C_-$ are functions of binding energy, so equality of $C_+(E) = 0$ is a direct criterion for $E$ being an eigenvalue.
@@ -88,7 +88,7 @@ What is significant for linear potential, in spite of comparable accuracy (to sc
 After the analysis of a particular state, we are ready to present big picture. We show Deng et al.~\cite{deng-charm,deng-bot} and our results show the same standard deviation compared to PDG~\cite{pdg}. There is nothing surprising here because we used parameters fitted by Deng.
 
 \begin{table}[H]
-    \caption{Bottomonium spectrum. Masses provided in $MeV$s. Standard deviation of Deng et al.~\cite{deng-bot} and our result from PDG~\cite{pdg} are comparable and $\approx 20MeV$. (Bottomonium was provided as a test so states without experimental data were skipped)}
+    \caption{Bottomonium spectrum in screened potential. Masses provided in $MeV$s. Standard deviation of Deng et al.~\cite{deng-bot} and our result from PDG~\cite{pdg} are comparable and $\approx 20MeV$}
     \input{assets/bot-spectr.tex}
 \end{table}
 
