@@ -7,12 +7,13 @@
 \begin{tikzpicture}
     \begin{feynman}
         \diagram [horizontal=EEG to GCC,large] {
-            e [particle=\(e^-\)] -- [fermion] EEG -- [fermion] ebar [particle=\(e^+\)],
+            eint -- [photon] isr [particle=\(\gamma_{ISR}\)],
+            e [particle=\(e^-\)] -- [fermion] eint -- [fermion] EEG -- [fermion] ebar [particle=\(e^+\)],
             EEG -- [photon, edge label=\(\gamma\)] GCC,
             cbar [particle=\(\bar{c}\)] -- [fermion] GCC -- [fermion] c [particle=\(c\)],
         };
     \end{feynman}
 
-    \draw[dashed] (4.9cm,1.6cm) ellipse (0.5cm and 2cm);
+    \draw[dashed] (4.5cm,1cm) ellipse (0.5cm and 2cm);
 \end{tikzpicture}
 \end{document}

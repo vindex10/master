@@ -184,7 +184,8 @@ $s_0$ is a throshold described above ($\nu_0$), but expressed in terms of Mandel
 When we are looking at radiative transitions between charmonium bound states, the superconvergent relation~\cref{eq:sumrule-sigma} simplifies a lot. In the transition we actually have a process $2 \rightarrow 1$, which naturally can be expressed in terms of decay width $1 \rightarrow 2$. This unsual kind of cross-section has a remarkable property. It is zero as a function of energy almost everywhere except regions near bound states, where cross-section acquires sharp peaks. Relation between cross-section and decay width is easy to derive in center of mass frame (see the full derivation in Appendix~\cref{eq:app:crsc-dw}):
 
 \begin{align} \label{eq:crsc-dw}
-    \sigma_{\Lambda} = \frac{16 \pi^2 m_f^3}{(m_f^2 - m_i^2)^2} (2J_f + 1) \Gamma_{\Lambda} \delta(s - m_f^2)
+    \sigma_{2} = \frac{16 \pi^2 m_f^3}{(m_f^2 - m_i^2)^2} (2J_f + 1) \Gamma_{+-} \delta(s - m_f^2) \\
+    \sigma_{0} = \frac{16 \pi^2 m_f^3}{(m_f^2 - m_i^2)^2} (2J_f + 1) \Gamma_{++} \delta(s - m_f^2)
 \end{align}
 
 The expression is derived for specific final state, and one can notice a delta-function which expresses a sharp behavior near the bound state mass. Let's substitute this result into~\cref{eq:sumrule-sigma}, summing up over all possible final states:
@@ -344,7 +345,7 @@ The~\cref{eq:hint-nomult} can be shorten by half making use of parity. For furth
     &H_{int}^{MJ} = \left[ - \frac{\lambda_\gamma k e}{2 \mu_R} \delta_{2 \nmid S_i + S_f + J} \vec{\sigma}_q \right] \vec{A}^{MJ}(\frac{\vec{r}}{2}) 
 \end{align}
 
-Here we use $\delta_{2 \mid a}$, which equals $1$ when $a = 0 \mod 2$ and zero otherwise. Multipoles are expressed in terms of vector spherical harmonics $\vec{Y}^\lambda_{J, l}(\Omega)$. Further we omit argument $\Omega$ because after we applied Wigner rotation to decaying state the only angle which takes place here could be one between $\vec{k}$ and $\vec{r}$:
+Here we use $\delta_{2 \mid a}$, which equals $1$ when $a$ is even and zero otherwise. Multipoles are expressed in terms of vector spherical harmonics $\vec{Y}^\lambda_{J, l}(\Omega)$. Further we omit argument $\Omega$ because after we applied Wigner rotation to decaying state the only angle which takes place here could be one between $\vec{k}$ and $\vec{r}$:
 
 \begin{align}
     &\vec{A}^{EJ}(\frac{\vec{r}}{2}) = \sqrt{2\pi} (-\ii)^{J+1} \left[ \sqrt{\frac{J+1}{2J+1}} j_{J-1}(\frac{kr}{2}) \vec{Y}^{-\lambda_\gamma}_{J-1, J} - \sqrt{\frac{J}{2J+1}} j_{J+1}(\frac{kr}{2}) \vec{Y}^{-\lambda_\gamma}_{J+1, J} \right] \\

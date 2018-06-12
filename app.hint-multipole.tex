@@ -85,25 +85,22 @@ Expression without Pauli matrices can be transformed immediately:
     &\vec{A}^{MJ}(\frac{\vec{r}}{2}) + \vec{A}^{MJ}(-\frac{\vec{r}}{2}) = 2 \delta_{2 \mid J}
 \end{align}
 
-For spin matrices, it is possible to perform transformations assuming they are "sandwiched". Relevant matrix element has the following form:
+For spin matrices, it is possible to perform transformations assuming they are "sandwiched". See the proof below~(\cref{app:hint-mult:Ccoef-reduce}).
+
 \begin{align}
     \begin{split}
-        &<J_f j_f L_f S_f| \vec{\sigma_{\overline{q}}} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> = \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> \times\\
-        &\qquad\times <L_f m_f| Y_{L}^{m_1} |L_i m_i>  <L_i m_i S_i s_i| J_i j_i> <S_f s_f| (-m_2\sqrt{2}) \hat{S}_{\overline{q}}^{m_2} |S_i s_i> =
+        <J_f j_f L_f S_f| \vec{\sigma_q} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> =
     \end{split} \\
     \begin{split}
-        &= \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f,\\ s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i> \times \\
-        &\qquad\times <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> \times \\
-        &\qquad\times (-m_2\sqrt{2}) <s^f_{q}|s^{i}_{q}> <s^f_{\overline{q}}| \hat{S}_{\overline{q}}^{m_2} |s^i_{\overline{q}}> <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> =
-    \end{split} \\
-    \begin{split}
-        &= \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f,\\ s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i> \times \\
-        &\qquad\times <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> \times \\
-        &\qquad\times (-m_2\sqrt{2}) \delta_{s^f_{q}, s^{i}_{q}} \delta_{s^f_{\overline{q}} + m_2, s^i_{\overline{q}}} <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i>
+    &= \sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} < L_f 0 | L 0 L_i 0 > \sum_{s, s_{q}, s_{\overline{q}}} \frac{2 (-1)^{s}}{\sqrt{1+s^2}} <J \lambda| L (\lambda - s) 1 s> \times\\
+    &\qquad\times <J_f j_f| L_f (j_f-(s_q + s_{\overline{q}} + s)) S_f (s_q + s_{\overline{q}} + s)> \times \\
+        &\qquad\times <L_i (j_i - (s_q + s_{\overline{q}})) S_i (s_q + s_{\overline{q}})| J_i j_i> \times \\
+        &\qquad\times <L_f (j_f - (s_q + s_{\overline{q}} + s))| L (\lambda - s) L_i (j_i - (s_q + s_{\overline{q}}))>  \times\\
+        &\qquad\times <S_f (s_q + s_{\overline{q}} + s)| \frac{1}{2} (s_{q}+s) \frac{1}{2} s_{\overline{q}}> <\frac{1}{2} s_{q} \frac{1}{2} s_{\overline{q}} |S_i (s_q + s_{\overline{q}})>
     \end{split}
 \end{align}
 
-At this point we'll interchange $s^{i,f}_{q} \leftrightarrow s^{i,f}_{\overline{q}}$, because they are under summation sign. Afterwards we'll apply a parity property of Clebsch-Gordan coefficients to restore initial form of the matrix element:
+When $\vec{\sigma}_{\overline{q}}$ will be averaged, the difference will be only in the shifting of $s_{\overline{q}}$ instead of $s_q$. At this point we'll interchange $s^{i,f}_{q} \leftrightarrow s^{i,f}_{\overline{q}}$, because they are under summation sign. Afterwards we'll apply a parity property of Clebsch-Gordan coefficients to restore initial form of the matrix element:
 
 \begin{align}
     &<J_1 j_1 J_2 j_2 | J j> = (-1)^{j_1 + j_2 - J} <J_2 j_2 J_1 j_1 | J j> \\
@@ -137,31 +134,31 @@ Where we have used transversality relation to drop the first term in $H_{int}^{M
 Assuming $H_{int}$ "sandwiched", there are two constructions emerge:
 
 \begin{align}
-    &C_{L, J}^\lambda = <J_f j_f L_f S_f|\vec{\sigma}_{q} \vec{Y}^{\lambda}_{L, J}|J_i j_i L_i S_i> \\
+    &\sqrt{2L+1} C_{L, J}^\lambda = <J_f j_f L_f S_f|\vec{\sigma}_{q} \vec{Y}^{\lambda}_{L, J}|J_i j_i L_i S_i> \\
     &r Q_{L, J}^\lambda = <J_f j_f L_f S_f|\vec{r} \vec{Y}^{\lambda}_{L, J}|J_i j_i L_i S_i>
 \end{align}
 
-First one is already familiar to us, let's do some more steps to simplify it:
+First one is already familiar to us, let's do some steps to simplify it:
 
-\begin{align}
+\begin{align} \label{app:hint-mult:Ccoef-reduce}
     \begin{split}
-        &\sqrt{2L+1} C_{L, J}^\lambda = <J_f j_f L_f S_f| \vec{\sigma_{\overline{q}}} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> =
+        &\sqrt{2L+1} C_{L, J}^\lambda = <J_f j_f L_f S_f| \vec{\sigma_q} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> =
     \end{split} \\
     \begin{split}
         &= \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f,\\ s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i> \times \\
-        &\times <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> (-m_2\sqrt{2}) \delta_{s^f_{q}, s^{i}_{q}} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}} + m_2} <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> = \\
+        &\times <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> \frac{2 (-1)^{m_2}}{\sqrt{1+m_2^2}} \delta_{s^f_{q}, s^{i}_{q} + m_2} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}}} <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> = \\
     \end{split} \\
     \begin{split}
-        &= -\sqrt{2}\sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} <L_i 0 L 0 | L_f 0> \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f,\\ s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}}} m_2 <J \lambda| L m_1 1 m_2> \times\\
+        &= \sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} <L_i 0 L 0 | L_f 0> \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f,\\ s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}}} \frac{2 (-1)^{m_2}}{\sqrt{1+m_2^2}} <J \lambda| L m_1 1 m_2> \times\\
         &\qquad\times <J_f j_f| L_f m_f S_f s_f> <L_f m_f| L m_1 L_i m_i>  <L_i m_i S_i s_i| J_i j_i> \times\\
-        &\qquad\times <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> \delta_{s^f_{q}, s^{i}_{q}} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}}+m_2} =
+        &\qquad\times <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> \delta_{s^f_{q}, s^{i}_{q} + m_2} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}}} =
     \end{split} \\
     \begin{split}
-    &= -\sqrt{2}\sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} <L_i 0 L 0 | L_f 0> \sum_{m_2, s_{q}, s_{\overline{q}}} m_2 <J \lambda| L (\lambda - m_2) 1 m_2> \times\\
-        &\qquad\times <J_f j_f| L_f (j_f-(s_q + s_{\overline{q}})) S_f (s_q + s_{\overline{q}})> \times \\
-        &\qquad\times <L_i (j_i - (s_q + s_{\overline{q}} + m_2)) S_i (s_q + s_{\overline{q}} + m_2)| J_i j_i> \times \\
-        &\qquad\times <L_f (j_f - (s_q + s_{\overline{q}}))| L (\lambda - m_2) L_i (j_i - (s_q + s_{\overline{q}}+m_2))>  \times\\
-        &\qquad\times <S_f (s_q + s_{\overline{q}})| \frac{1}{2} s_{q} \frac{1}{2} s_{\overline{q}}> <\frac{1}{2} s_{q} \frac{1}{2} (s_{\overline{q}} + m_2) |S_i (s_q + s_{\overline{q}} + m_2)>
+    &= \sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} < L_f 0 | L 0 L_i 0 > \sum_{s, s_{q}, s_{\overline{q}}} \frac{2 (-1)^{s}}{\sqrt{1+s^2}} <J \lambda| L (\lambda - s) 1 s> \times\\
+    &\qquad\times <J_f j_f| L_f (j_f-(s_q + s_{\overline{q}} + s)) S_f (s_q + s_{\overline{q}} + s)> \times \\
+        &\qquad\times <L_i (j_i - (s_q + s_{\overline{q}})) S_i (s_q + s_{\overline{q}})| J_i j_i> \times \\
+        &\qquad\times <L_f (j_f - (s_q + s_{\overline{q}} + s))| L (\lambda - s) L_i (j_i - (s_q + s_{\overline{q}}))>  \times\\
+        &\qquad\times <S_f (s_q + s_{\overline{q}} + s)| \frac{1}{2} (s_{q}+s) \frac{1}{2} s_{\overline{q}}> <\frac{1}{2} s_{q} \frac{1}{2} s_{\overline{q}} |S_i (s_q + s_{\overline{q}})>
     \end{split}
 \end{align}
 
@@ -170,6 +167,8 @@ Here we made use of momentum projection conservation and Kronecker-deltas to eli
 \begin{align}
     \int Y^{\star}_{l m} Y_{l_1 m_1} Y_{l_2 m_2} \mathrm{d} \Omega = \sqrt{\frac{(2l_1+1)(2l_2+1)}{4 \pi (2l+1)}} <l_1 0 l_2 0 | l 0> <l_1 m_1 l_2 m_2 | l m>
 \end{align}
+
+One can notice strange expression $\frac{2 (-1)^s}{\sqrt{1+s^2}}$, it emerged from averaging spin tensor operator between it's eigenstates. Here $s$ can be $0, \pm1$, so it is an artificial representation of discrete function acquiring defined from averaging values.
 
 Much easier is to deal with $Q_{L, J}^\lambda$, there is no spin dependence in it. Moreover, it turns out, that $Q_{L, J}^{\lambda}$ depends on $L$ in a trivial way, so at the end we'll drop index $L$:
 
@@ -183,13 +182,13 @@ Much easier is to deal with $Q_{L, J}^\lambda$, there is no spin dependence in i
         &= r \delta_{S_i, S_f} \sqrt{\frac{2L+1}{2J+1}} <L 0 1 0 | J 0> \\
         &\qquad\sum_{m_i, s_i, m_f, s_f} <J_f j_f| L_f m_f S_f s_f> \times \\
         &\qquad\times <L_i m_i S_i s_i | J_i j_i> <L_f m_f| Y_J^\lambda |L_i m_i> \delta_{s_i, s_f} = \\
-        &= r \delta_{S_i, S_f} \sqrt{\frac{2L+1}{2J+1}} \sqrt{\frac{(2L_i+1)(2J+1)}{4 \pi (2L_f+1)}} <L_i 0 J 0 | L_f 0> <L 0 1 0 | J 0> \\
+        &= r \delta_{S_i, S_f} \sqrt{\frac{2L+1}{2J+1}} \sqrt{\frac{(2L_i+1)(2J+1)}{4 \pi (2L_f+1)}} <L_f 0 | J 0 L_i 0> <L 0 1 0 | J 0> \\
         &\qquad \sum_{m_i, s_i, m_f, s_f} <J_f j_f| L_f m_f S_f s_f> \times \\
         &\qquad\times <L_i m_i S_i s_i | J_i j_i> <L_f m_f| J \lambda L_i m_i> \delta_{s_i, s_f} = \\
-        &= r \delta_{S_i, S_f} \sqrt{\frac{(2L_i+1)(2L+1)}{4 \pi (2L_f+1)}} <L_i 0 J 0 | L_f 0> <L 0 1 0 | J 0> \\
+        &= r \delta_{S_i, S_f} \sqrt{\frac{(2L_i+1)(2L+1)}{4 \pi (2L_f+1)}} <L_f 0 | J 0 L_i 0> <L 0 1 0 | J 0> \\
         &\qquad \sum_{s} <J_f j_f| L_f (j_f - s) S_f s> \times \\
         &\qquad\times <L_i (j_i - s) S_i s | J_i j_i> <L_f (j_f - s)| J \lambda L_i (j_i - s)> = \\
-        &= r \delta_{S_i, S_f} \sqrt{\frac{(2L_i+1)(2L+1)}{4 \pi (2L_f+1)}} <L_i 0 J 0 | L_f 0> <L 0 1 0 | J 0> \\
+        &= r \delta_{S_i, S_f} \sqrt{\frac{(2L_i+1)(2L+1)}{4 \pi (2L_f+1)}} <L_f 0 | J 0 L_i 0> <L 0 1 0 | J 0> \\
         &\qquad \sum_{s} <J_f j_f| L_f (j_f - s) S_f s> \times \\
         &\qquad\times <L_i (j_i - s) S_i s | J_i j_i> <L_f (j_f - s)| J \lambda L_i (j_i - s)> = \\
         &=r \sqrt{2L+1} <L 0 1 0 | J 0> Q_{J}^{\lambda}
