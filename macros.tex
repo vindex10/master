@@ -10,3 +10,12 @@
 \newcommand{\lips}[1]{\frac{\dd[3]{#1}}{(2 \pi)^3 2 E_{#1}}}
 \DeclareMathOperator{\rot}{rot}
 \newcommand{\hl}[1]{\textcolor{PineGreen}{\bm{#1}}}
+
+\newcommand{\repeatit}[2]{%
+    \newcount\citer%
+    \citer0%
+    \loop\ifnum\the\citer<#1
+        #2%
+        \advance\citer by 1%
+    \repeat
+}
