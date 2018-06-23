@@ -354,7 +354,7 @@ The~\cref{eq:hint-nomult} can be shorten by half making use of parity. For furth
 Here we use $\delta_{2 \mid a}$, which equals $1$ when $a$ is even and zero otherwise. Multipoles are expressed in terms of vector spherical harmonics $\vec{Y}^\lambda_{J, l}(\Omega)$. Further we omit argument $\Omega$ because after we applied Wigner rotation to decaying state the only angle which takes place here could be one between $\vec{k}$ and $\vec{r}$:
 
 \begin{align}
-    &\vec{A}^{EJ}(\frac{\vec{r}}{2}) = \sqrt{2\pi} (-\ii)^{J+1} \left[ \sqrt{\frac{J+1}{2J+1}} j_{J-1}(\frac{kr}{2}) \vec{Y}^{-\lambda_\gamma}_{J-1, J} - \sqrt{\frac{J}{2J+1}} j_{J+1}(\frac{kr}{2}) \vec{Y}^{-\lambda_\gamma}_{J+1, J} \right] \\
+    &\vec{A}^{EJ}(\frac{\vec{r}}{2}) = \sqrt{2\pi} (-\ii)^{J+1} \left[ \sqrt{J+1} j_{J-1}(\frac{kr}{2}) \vec{Y}^{-\lambda_\gamma}_{J-1, J} - \sqrt{J} j_{J+1}(\frac{kr}{2}) \vec{Y}^{-\lambda_\gamma}_{J+1, J} \right] \\
     &\vec{A}^{MJ}(\frac{\vec{r}}{2}) = -\sqrt{2\pi} (-\ii)^J \sqrt{2J+1} \lambda_\gamma j_J(k r) \vec{Y}^{-\lambda_\gamma}_{J,J}
 \end{align}
 
@@ -369,11 +369,11 @@ In this terms, $\bra{J_f j_f L_f S_f} H_{int} \ket{J_i j_i L_i S_i}$ acquires th
 
 \begin{align}
     \begin{split}
-        &H_{int}^{EJ} = -\sqrt{2\pi} (- \mathrm{i})^{J+1} \left[ 2 \mathrm{i} e (E_f-E_i) \delta_{2 \nmid J} (2J+1) \sqrt{J(J+1)} \frac{Q_{J}^{- \lambda}}{k} j_{J}(\frac{kr}{2}) + \right.\\
-        &\qquad +  \frac{\lambda k e}{2 \mu} \delta_{2 \mid S_i + S_f + J} \left(  \sqrt{(J+1)(2J-1)} j_{J-1}(\frac{kr}{2}) C_{J-1, J}^{- \lambda} -\right. \\
-        &\qquad\qquad\left.\left.- \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) C_{J+1, J}^{- \lambda} \right) \right]
+        &H_{int}^{EJ} = -\sqrt{2\pi} \mathrm{i}^{J+1} \left[ 2 \mathrm{i} e (E_f-E_i) \delta_{2 \nmid J} (2J+1) \sqrt{J(J+1)} \frac{Q_{J}^{- \lambda}}{k} j_{J}(\frac{kr}{2}) + \right.\\
+        &\qquad + \frac{\lambda k e}{2 \mu} \delta_{2 \mid S_i + S_f + J} \left( \sqrt{(J+1)(2J-1)} j_{J-1}(\frac{kr}{2}) C_{J-1, J}^{- \lambda} - \right.\\
+        &\qquad -\left. \left. \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) C_{J+1, J}^{- \lambda} \right) \right]
     \end{split} \\
-    &H_{int}^{MJ} = \sqrt{2\pi} (- \mathrm{i})^{J} (2J+1) j_J(\frac{kr}{2}) \frac{k e}{2 \mu} \delta_{2 \nmid S_i + S_f +J} C_{J, J}^{- \lambda}
+    &H_{int}^{MJ} = \sqrt{2\pi} \mathrm{i}^{J} (2J+1) j_J(\frac{kr}{2}) \frac{k e}{2 \mu} \delta_{2 \nmid S_i + S_f +J} C_{J, J}^{- \lambda}
 \end{align}
 
 Notice the Kronecker-$\delta$s in the expressions above. For example in transition $\chi_{cJ}(nP) \rightarrow J/\psi$ configuration of spins is such that $2 \nmid (S_i=1) + (S_f=1) + (J=1)$, so a half of the hamiltonian $H^{E1}_{int}$ doesn't contribute. Later on we'll see that in this approximation radial dependence decouples from the angular one, and we can get $r^{0,2}$ coefficients straightforwardly as fractions of $Q$ and $C$ coefficients. On practice higher multipole contributions are suppressed, usually $E1$ (or $M1$ when $E1$ is not allowed) approximation is enough to reproduce major contribution to the transition matrix elements.

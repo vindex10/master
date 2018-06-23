@@ -92,10 +92,11 @@ For spin matrices, it is possible to perform transformations assuming they are "
         <J_f j_f L_f S_f| \vec{\sigma_q} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> =
     \end{split} \\
     \begin{split}
-        &= \sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} < L_f 0 | L 0 L_i 0 > \sum_{s, s_{q}, s_{\overline{q}}} (2 s_q \delta_{s = 0} - \sqrt{2} \delta_{s \neq 0}) <J \lambda| L (\lambda - s) 1 s> \times\\
+        &= \sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} < L_f 0 | L 0 L_i 0 > \sum_{s, s_{q}, s_{\overline{q}}} (2 s_q \delta_{s = 0} - \sqrt{2} s \delta_{s \neq 0}) \times \\
+    &\qquad\times <J \lambda| L (\lambda - s) 1 s> \times\\
     &\qquad\times <J_f j_f| L_f (j_f-(s_q + s_{\overline{q}} + s)) S_f (s_q + s_{\overline{q}} + s)> \times \\
         &\qquad\times <L_i (j_i - (s_q + s_{\overline{q}})) S_i (s_q + s_{\overline{q}})| J_i j_i> \times \\
-        &\qquad\times <L_f (j_f - (s_q + s_{\overline{q}} + s))| L (\lambda - s) L_i (j_i - (s_q + s_{\overline{q}}))>  \times\\
+        &\qquad\times <L_f (j_f - (s_q + s_{\overline{q}} + s))| L_i (j_i - (s_q + s_{\overline{q}})) L (\lambda - s)>  \times\\
         &\qquad\times <S_f (s_q + s_{\overline{q}} + s)| \frac{1}{2} (s_{q}+s) \frac{1}{2} s_{\overline{q}}> <\frac{1}{2} s_{q} \frac{1}{2} s_{\overline{q}} |S_i (s_q + s_{\overline{q}})>
     \end{split}
 \end{align}
@@ -110,8 +111,8 @@ When $\vec{\sigma}_{\overline{q}}$ will be averaged, the difference will be only
 Finally, expression for~\cref{eq:sigmaAJ} reduces as well:
 
 \begin{align}
-    &\vec{\sigma}_{q} \vec{A}^{EJ}(\frac{\vec{r}}{2}) - \vec{\sigma}_{\overline{q}} \vec{A}^{EJ}(-\frac{\vec{r}}{2}) = 2 \delta_{2 \nmid S_i + S_f + J} \vec{\sigma_{q}} \vec{A}^{EJ}(\frac{\vec{r}}{2}) \\
-    &\vec{\sigma}_{q} \vec{A}^{MJ}(\frac{\vec{r}}{2}) - \vec{\sigma}_{\overline{q}} \vec{A}^{MJ}(-\frac{\vec{r}}{2}) = 2 \delta_{2 \mid S_i + S_f + J} \vec{\sigma_{q}} \vec{A}^{MJ}(\frac{\vec{r}}{2}) \\
+    &\vec{\sigma}_{q} \vec{A}^{EJ}(\frac{\vec{r}}{2}) - \vec{\sigma}_{\overline{q}} \vec{A}^{EJ}(-\frac{\vec{r}}{2}) = 2 \delta_{2 \mid S_i + S_f + J} \vec{\sigma_{q}} \vec{A}^{EJ}(\frac{\vec{r}}{2}) \\
+    &\vec{\sigma}_{q} \vec{A}^{MJ}(\frac{\vec{r}}{2}) - \vec{\sigma}_{\overline{q}} \vec{A}^{MJ}(-\frac{\vec{r}}{2}) = 2 \delta_{2 \nmid S_i + S_f + J} \vec{\sigma_{q}} \vec{A}^{MJ}(\frac{\vec{r}}{2}) \\
 \end{align}
 
 Before we substitute this to $H_{int}$, let's have a look at another observation:
@@ -146,15 +147,18 @@ First one is already familiar to us, let's do some steps to simplify it:
     \end{split} \\
     \begin{split}
         &= \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f,\\ s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}}} <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> <L_f m_f| Y_{L}^{m_1} |L_i m_i> \times \\
-        &\times <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> (2 s_q^i \delta_{m_2 = 0} - \sqrt{2}\delta{m_2 \neq 0}) \delta_{s^f_{q}, s^{i}_{q} + m_2} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}}} <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> = \\
+        &\times <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> \times \\
+        &\times (2 s_q^i \delta_{m_2 = 0} - \sqrt{2} m_2 \delta_{m_2 \neq 0}) \delta_{s^f_{q}, s^{i}_{q} + m_2} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}}} <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> = \\
     \end{split} \\
     \begin{split}
-        &= \sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} <L_i 0 L 0 | L_f 0> \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f,\\ s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}}} (2 s_q^i \delta_{m_2 = 0} - \sqrt{2} \delta_{m_2 \neq 0}) <J \lambda| L m_1 1 m_2> \times\\
-        &\qquad\times <J_f j_f| L_f m_f S_f s_f> <L_f m_f| L m_1 L_i m_i>  <L_i m_i S_i s_i| J_i j_i> \times\\
+        &= \sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} <L_i 0 L 0 | L_f 0> \sum_{\substack{m_1, m_2, m_i,\\ s_i, m_f, s_f,\\ s^i_{q}, s^{i}_{\overline{q}}, s^{f}_{q}, s^{f}_{\overline{q}}}} (2 s_q^i \delta_{m_2 = 0} - \sqrt{2} m_2 \delta_{m_2 \neq 0}) \times \\
+        &\qquad\times <J \lambda| L m_1 1 m_2> <J_f j_f| L_f m_f S_f s_f> \times \\
+        &\qquad\times <L_f m_f| L m_1 L_i m_i>  <L_i m_i S_i s_i| J_i j_i> \times\\
         &\qquad\times <S_f s_f| \frac{1}{2} s^f_{q} \frac{1}{2} s^f_{\overline{q}}> <\frac{1}{2} s^i_{q} \frac{1}{2} s^i_{\overline{q}} |S_i s_i> \delta_{s^f_{q}, s^{i}_{q} + m_2} \delta_{s^f_{\overline{q}}, s^i_{\overline{q}}} =
     \end{split} \\
     \begin{split}
-        &= \sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} < L_f 0 | L 0 L_i 0 > \sum_{s, s_{q}, s_{\overline{q}}} (2 s_q \delta_{s = 0} - \sqrt{2} \delta_{s \neq 0}) <J \lambda| L (\lambda - s) 1 s> \times\\
+        &= \sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} < L_f 0 | L 0 L_i 0 > \sum_{s, s_{q}, s_{\overline{q}}} (2 s_q \delta_{s = 0} - \sqrt{2} s \delta_{s \neq 0}) \times \\
+    &\qquad\times <J \lambda| L (\lambda - s) 1 s> \times \\
     &\qquad\times <J_f j_f| L_f (j_f-(s_q + s_{\overline{q}} + s)) S_f (s_q + s_{\overline{q}} + s)> \times \\
         &\qquad\times <L_i (j_i - (s_q + s_{\overline{q}})) S_i (s_q + s_{\overline{q}})| J_i j_i> \times \\
         &\qquad\times <L_f (j_f - (s_q + s_{\overline{q}} + s))| L (\lambda - s) L_i (j_i - (s_q + s_{\overline{q}}))>  \times\\
@@ -167,8 +171,6 @@ Here we made use of momentum projection conservation and Kronecker-deltas to eli
 \begin{align}
     \int Y^{\star}_{l m} Y_{l_1 m_1} Y_{l_2 m_2} \mathrm{d} \Omega = \sqrt{\frac{(2l_1+1)(2l_2+1)}{4 \pi (2l+1)}} <l_1 0 l_2 0 | l 0> <l_1 m_1 l_2 m_2 | l m>
 \end{align}
-
-One can notice strange expression $\frac{2 (-1)^s}{\sqrt{1+s^2}}$, it emerged from averaging spin tensor operator between it's eigenstates. Here $s$ can be $0, \pm1$, so it is an artificial representation of discrete function acquiring defined from averaging values.
 
 Much easier is to deal with $Q_{L, J}^\lambda$, there is no spin dependence in it. Moreover, it turns out, that $Q_{L, J}^{\lambda}$ depends on $L$ in a trivial way, so at the end we'll drop index $L$:
 
@@ -229,7 +231,7 @@ Let's substitute these expressions into $H_{int}^{EJ, MJ}$:
     \begin{split}
         &H_{int}^{EJ} = -\sqrt{2\pi} \mathrm{i}^{J+1} \left[ 2 \mathrm{i} e (E_f-E_i) \delta_{2 \nmid J} (2J+1) \sqrt{J(J+1)} \frac{Q_{J}^{- \lambda}}{k} j_{J}(\frac{kr}{2}) + \right.\\
         &\qquad + \frac{\lambda k e}{2 \mu} \delta_{2 \mid S_i + S_f + J} \left( \sqrt{(J+1)(2J-1)} j_{J-1}(\frac{kr}{2}) C_{J-1, J}^{- \lambda} - \right.\\
-        &-\left. \left. \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) C_{J+1, J}^{- \lambda} \right) \right]
+        &\qquad -\left. \left. \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) C_{J+1, J}^{- \lambda} \right) \right]
     \end{split} \\
     &H_{int}^{MJ} = \sqrt{2\pi} \mathrm{i}^{J} (2J+1) j_J(\frac{kr}{2}) \frac{k e}{2 \mu} \delta_{2 \nmid S_i + S_f +J} C_{J, J}^{- \lambda}
 \end{align}
