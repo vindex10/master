@@ -9,48 +9,48 @@ It is possible to express corss-section $2 \rightarrow 1$ in terms of decay widt
 As cross-section $2 \rightarrow 1$ is unusual, we provide complete derivation from first principles:
 
 \begin{align}
-        &\sigma(2 \rightarrow 1) = \sum_{\lambda_f} \int \lips{\vec{p}_f} \frac{(2\pi)^4 \delta^{(4)}(p_i + p_\gamma - p_f)}{(2 \Ep{i}) (2 \Ep{\gamma}) j} \abs{\Mcal_{\lambda_i \lambda_\gamma, \lambda_f}(\vec{p}_i + \vec{p}_\gamma \rightarrow \vec{p}_f)}^2 = \\
-        &= \frac{2\pi}{8 \Ep{f} \Ep{i} \Ep{\gamma} j} \delta(\Ep{i} + \Ep{\gamma} - \Ep{f}) \sum_{\lambda_f} \abs{\Mcal_{\lambda_i \lambda_\gamma, \lambda_f}}^2 = \left| \Ep{i} \Ep{\gamma} j = E_{c.m.} \abs{\vec{p}_{c.m.}} \right| = \\
-        &= \left| \Ep{f} = E_{c.m.} = m_f \right| = \frac{\pi}{4 m_f^2 \abs{\vec{p}_{c.m.}}} \delta(\sqrt{s} - m_f) \sum_{\lambda_f} \abs{\Mcal_{\lambda_i \lambda_\gamma, \lambda_f}}^2 = \\
-        &= \frac{2 \pi \sqrt{s}}{4 m_f^2 \abs{\vec{p}_{c.m.}}} \delta(s - m_f^2) \sum_{\lambda_f} \abs{\Mcal_{\lambda_i \lambda_\gamma, \lambda_f}}^2 = \left| \abs{\vec{p}_{c.m.}} = \frac{m_f^2 - m_i^2}{2 m_f} \right| =\\
-        &= \frac{\pi}{m_f^2 - m_i^2} \delta(s - m_f^2) \sum_{\lambda_f} \abs{\Mcal_{\lambda_i \lambda_\gamma, \lambda_f}}^2
+        &\sigma(2 \rightarrow 1) = \sum_{\lambda_X} \int \lips{\vec{p}_X} \frac{(2\pi)^4 \delta^{(4)}(p_V + p_\gamma - p_X)}{(2 \Ep{V}) (2 \Ep{\gamma}) j} \abs{\Mcal_{\lambda_X, \lambda_V \lambda_\gamma}(\vec{p}_V + \vec{p}_\gamma \rightarrow \vec{p}_X)}^2 = \\
+        &= \frac{2\pi}{8 \Ep{X} \Ep{V} \Ep{\gamma} j} \delta(\Ep{V} + \Ep{\gamma} - \Ep{X}) \sum_{\lambda_X} \abs{\Mcal_{\lambda_X, \lambda_V \lambda_\gamma}}^2 = \left| \Ep{V} \Ep{\gamma} j = E_{c.m.} \abs{\vec{p}_{c.m.}} \right| = \\
+        &= \left| \Ep{X} = E_{c.m.} = m_X \right| = \frac{\pi}{4 m_X^2 \abs{\vec{p}_{c.m.}}} \delta(\sqrt{s} - m_X) \sum_{\lambda_X} \abs{\Mcal_{\lambda_X, \lambda_V \lambda_\gamma}}^2 = \\
+        &= \frac{2 \pi \sqrt{s}}{4 m_X^2 \abs{\vec{p}_{c.m.}}} \delta(s - m_X^2) \sum_{\lambda_X} \abs{\Mcal_{\lambda_X, \lambda_V \lambda_\gamma}}^2 = \left| \abs{\vec{p}_{c.m.}} = \frac{m_X^2 - m_V^2}{2 m_X} \right| =\\
+        &= \frac{\pi}{m_X^2 - m_V^2} \delta(s - m_X^2) \sum_{\lambda_X} \abs{\Mcal_{\lambda_X, \lambda_V \lambda_\gamma}}^2
 \end{align}
 
 \begin{align}
-        &\Gamma(1 \rightarrow 2) =  \frac{m_f^2 - m_i^2}{64 \pi^2 m_f^3} \int \dd{\Omega} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}(\vec{p}_f \rightarrow \vec{p}_i + \vec{p}_\gamma)}^2 = \\
-        &= \frac{m_f^2 - m_i^2}{64 \pi^2 m_f^3} \int \dd{\Omega} \sum_{\lambda_f^{\prime \star} \lambda_f^{\prime}} D^{J_f \star}_{\lambda^{\prime \star}_f \lambda_f}(\Omega) D^{J_f}_{\lambda^{\prime}_f \lambda_f}(\Omega) \Mcal^\star_{\lambda^{\prime \star}_f, \lambda_i \lambda_\gamma} \Mcal_{\lambda_f, \lambda_i \lambda_\gamma} = \\
-        &= \left| \int \dd{\Omega}D^{J_f \star}_{\lambda^{\prime \star}_f \lambda_f}(\Omega) D^{J_f}_{\lambda^{\prime}_f \lambda_f}(\Omega) = \frac{4 \pi}{2J_f + 1} \delta_{\lambda_f^\prime, \lambda_f^{\prime \star}}  \right| = \\
-        &= \frac{m_f^2 - m_i^2}{16 \pi m_f^3} \frac{1}{2J_f + 1} \sum_{\lambda_f} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2
+        &\Gamma(1 \rightarrow 2) =  \frac{m_X^2 - m_V^2}{64 \pi^2 m_X^3} \int \dd{\Omega} \abs{\Mcal_{\lambda_V \lambda_\gamma, \lambda_X}(\vec{p}_X \rightarrow \vec{p}_V + \vec{p}_\gamma)}^2 = \\
+        &= \frac{m_X^2 - m_V^2}{64 \pi^2 m_X^3} \int \dd{\Omega} \sum_{\lambda_X^{\prime \star} \lambda_X^{\prime}} D^{J_X \star}_{\lambda^{\prime \star}_X \lambda_X}(\Omega) D^{J_X}_{\lambda^{\prime}_X \lambda_X}(\Omega) \Mcal^\star_{\lambda_V \lambda_\gamma, \lambda^{\prime \star}_X} \Mcal_{\lambda_V \lambda_\gamma, \lambda_X} = \\
+        &= \left| \int \dd{\Omega}D^{J_X \star}_{\lambda^{\prime \star}_X \lambda_X}(\Omega) D^{J_X}_{\lambda^{\prime}_X \lambda_X}(\Omega) = \frac{4 \pi}{2J_X + 1} \delta_{\lambda_X^\prime, \lambda_X^{\prime \star}}  \right| = \\
+        &= \frac{m_X^2 - m_V^2}{16 \pi m_X^3} \frac{1}{2J_X + 1} \sum_{\lambda_X} \abs{\Mcal_{\lambda_V \lambda_\gamma, \lambda_X}}^2
 \end{align}
 
-Where $D$s stand for Wigner-D functions needed to align quantization axis of decaying particle along direction defined by products of the decay. It is convenient because then matrix element shows angular momentum conservation explicitly. Notice, that here we didn't sum up over final helicities (the process is still polarized), and averaging over $\lambda_f$ emerged from Wigner rotations automatically. $\lambda_f$ corresponds to helicities of final charmonium state $X$, but decay width has been computed assuming reversed process, where $X$ appears as a decaying particle. To prevent confusion we decided to keep it's helicity index as $\lambda_f$.
+Where $D$s stand for Wigner-D functions needed to align quantization axis of decaying particle ($X$) along direction defined by products of the decay ($V$ and $\gamma$). It is convenient because then matrix element shows angular momentum conservation explicitly. Notice, that here we didn't sum up over $X$ helicities (the process is still polarized), and averaging over $\lambda_X$ emerged from Wigner rotations automatically, that means decay width does not depend on $\lambda_X$.
 
 Finally, we can re-express cross-section in terms of decay width:
 
 \begin{align} \label{eq:app:crsc-dw}
-    \sigma_{\Lambda} = \frac{16 \pi^2 m_f^3}{(m_f^2 - m_i^2)^2} (2J_f + 1) \Gamma_{\Lambda} \delta(s - m_f^2),\quad \Lambda = \lambda_\gamma - \lambda_i
+    \sigma_{\lambda} = \frac{16 \pi^2 m_X^3}{(m_X^2 - m_V^2)^2} (2J_X + 1) \Gamma_{\lambda} \delta(s - m_X^2),\quad \lambda = \lambda_\gamma - \lambda_V
 \end{align}
 
-\paragraph{Subthreshold pole} Here we assumed final states being heavier then initial vector meson. If this is not true we get a modified expression for decay width, because we still want to keep it physical. Natural physical value corresponding to such a process is decay of vector meson into the bound state with photon emission. Actually, when comparing to previous formula it means interchanging of $m_i$ width $m_f$, $\lambda_i$ with $\lambda_f$, and $J_f$ with $J_i$:
+\paragraph{Subthreshold pole} Here we assumed final states being heavier then initial vector meson. If this is not true we get a modified expression for decay width, because we still want to keep it physical. Natural physical value corresponding to such a process is decay of vector meson into the bound state with photon emission. Actually, when comparing to previous formula it means interchanging of $m_V$ width $m_X$, $\lambda_V$ with $\lambda_X$, and $J_X$ with $J_V$:
 
 \begin{align}
-        \Gamma = \frac{m_i^2 - m_f^2}{16 \pi m_i^3} \frac{1}{2J_i + 1} \sum_{\lambda_i} \abs{\Mcal_{\lambda_i, \lambda_f \lambda_\gamma}}^2 \\
-        \sigma = \frac{\pi}{m_f^2 - m_i^2} \delta(s - m_f^2) \sum_{\lambda_f} \abs{\Mcal_{\lambda_i \lambda_\gamma, \lambda_f}}^2
+        \Gamma = \frac{m_V^2 - m_X^2}{16 \pi m_V^3} \frac{1}{2J_V + 1} \sum_{\lambda_V} \abs{\Mcal_{\lambda_X \lambda_\gamma, \lambda_V}}^2 \\
+        \sigma = \frac{\pi}{m_X^2 - m_V^2} \delta(s - m_X^2) \sum_{\lambda_X} \abs{\Mcal_{\lambda_V \lambda_\gamma, \lambda_X}}^2
 \end{align}
 
 At the first sight, one can notice that matrix element now contributes to decay width in a completely different way comparing to cross-section. We can reduce this difference by making use of crossing symmetry for photon:
 
 \begin{align}
-    &\text{Crossing $\gamma: in \leftrightarrow out$:}\qquad &\sum_{\lambda_i} \abs{\Mcal_{\lambda_i, \lambda_\gamma \lambda_f}}^2 \rightarrow \sum_{\lambda_i} \abs{\Mcal_{\lambda_i (-\lambda_\gamma), \lambda_f}}^2 \\
+    &\text{Crossing $\gamma: in \leftrightarrow out$:}\qquad &\sum_{\lambda_V} \abs{\Mcal_{\lambda_V, \lambda_\gamma \lambda_X}}^2 \rightarrow \sum_{\lambda_V} \abs{\Mcal_{\lambda_V (-\lambda_\gamma), \lambda_X}}^2 \\
 \end{align}
 
-We acquired flipping of photon helicity in comparison to matrix element contributing to the cross-section. It doesn't effect the correspondence because we sum up over total helicities.
+We acquired flipping of photon helicity in comparison to matrix element contributing to the cross-section. It doesn't affect the correspondence because we sum up over helicities of photon.
 
 \begin{align} \label{eq:app:crsc-dw-subthr}
-    \sigma = -\frac{16 \pi^2 m_f^3}{(m_i^2 - m_f^2)^2} (2J_i + 1) \Gamma \delta(s - m_f^2)
+    \sigma = -\frac{16 \pi^2 m_X^3}{(m_V^2 - m_X^2)^2} (2J_V + 1) \Gamma \delta(s - m_X^2)
 \end{align}
 
-One shouldn't worry about emerged $-$ sign, it will cancel with denominator of the sumrule: $\propto \frac{1}{s - m_i^2}$.
+One shouldn't worry about emerged $-$ sign, it will cancel with denominator of the sumrule: $\propto \frac{1}{s - m_V^2}$.
 
 \paragraph{Decay width with non-relativistic normalization of states} \label{par:app:dw-nr}
 The subject is useful for us because we obtain bound states of charmonium from quantum mechanics. Some definitions:
@@ -63,9 +63,9 @@ The subject is useful for us because we obtain bound states of charmonium from q
 We use covariant normalization for EM field and QM normalization for charmonium states. Then decay width looks as follows:
 
 \begin{align}
-    &\Gamma = \int \frac{\dd[3]{\vec{p}_i}}{(2\pi)^3} \lips{\vec{p_\gamma}}  (2\pi)^4 \delta^{(4)}(p_f - p_i - p_\gamma) \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2 = \\
-    &= \frac{1}{4 \pi^2} \int \frac{\dd[3]{\vec{p}_\gamma}}{2 \abs{\vec{p}_\gamma}} \delta(m_f - \sqrt{\vec{p}_\gamma^2 + m_i^2} - \abs{\vec{p}_\gamma}) \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2 = \\
-    &= \frac{1}{8\pi^2} \int \abs{\vec{p}_\gamma} \dd{\abs{\vec{p}_\gamma}} \delta(m_f - \sqrt{\vec{p}_\gamma^2 + m_i^2} - \abs{\vec{p}_\gamma}) \int \dd{\Omega}\abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2 = \\
-    &= \frac{1}{8 \pi^2} \frac{\vec{p}_\gamma \sqrt{\vec{p}_\gamma^2 + m_i^2}}{m_f} \frac{4 \pi}{2J_f + 1} \sum_{\lambda_f} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2 = \\
-    &= \frac{1}{8 \pi} \frac{m_f^4 - m_i^4}{m_f^3} \frac{1}{2J_f + 1} \sum_{\lambda_f} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2
+    &\Gamma = \int \frac{\dd[3]{\vec{p}_V}}{(2\pi)^3} \lips{\vec{p_\gamma}}  (2\pi)^4 \delta^{(4)}(p_X - p_V - p_\gamma) \abs{\Mcal_{\lambda_V \lambda_\gamma, \lambda_X}}^2 = \\
+    &= \frac{1}{4 \pi^2} \int \frac{\dd[3]{\vec{p}_\gamma}}{2 \abs{\vec{p}_\gamma}} \delta(m_X - \sqrt{\vec{p}_\gamma^2 + m_i^2} - \abs{\vec{p}_\gamma}) \abs{\Mcal_{\lambda_V \lambda_\gamma, \lambda_X}}^2 = \\
+    &= \frac{1}{8\pi^2} \int \abs{\vec{p}_\gamma} \dd{\abs{\vec{p}_\gamma}} \delta(m_X - \sqrt{\vec{p}_\gamma^2 + m_V^2} - \abs{\vec{p}_\gamma}) \int \dd{\Omega}\abs{\Mcal_{\lambda_V \lambda_\gamma, \lambda_X}}^2 = \\
+    &= \frac{1}{8 \pi^2} \frac{\vec{p}_\gamma \sqrt{\vec{p}_\gamma^2 + m_V^2}}{m_X} \frac{4 \pi}{2J_X + 1} \sum_{\lambda_X} \abs{\Mcal_{\lambda_V \lambda_\gamma, \lambda_X}}^2 = \\
+    &= \frac{1}{8 \pi} \frac{m_X^4 - m_V^4}{m_X^3} \frac{1}{2J_X + 1} \sum_{\lambda_X} \abs{\Mcal_{\lambda_V \lambda_\gamma, \lambda_X}}^2
 \end{align}

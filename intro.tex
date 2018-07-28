@@ -187,34 +187,40 @@ This is quite small number when comparing to magnitudes of partial decay width f
 $s_0$ is a throshold described above ($\nu_0$), but expressed in terms of Mandelstam variable $s$.
 
 \paragraph{Charmonium in the final state}
-When we are looking at radiative transitions between charmonium bound states, the superconvergent relation~\cref{eq:sumrule-sigma} simplifies a lot. In the transition we actually have a process $2 \rightarrow 1$, which naturally can be expressed in terms of decay width $1 \rightarrow 2$. This unsual kind of cross-section has a remarkable property. It is zero as a function of energy almost everywhere except regions near bound states, where cross-section acquires sharp peaks. Relation between cross-section and decay width is easy to derive in center of mass frame (see the full derivation in Appendix~\cref{eq:app:crsc-dw}):
+When we are looking at radiative transitions between charmonium bound states, the superconvergent relation~\cref{eq:sumrule-sigma} simplifies a lot. To introduce more intuitive labels for particles we remind the diagramm cut with optical theorem. Here we put one of the photons on-shell ($\gamma_2^\star \rightarrow \gamma$), and match another one with vector meson ($\gamma_1^\star \rightarrow V$). As a result of the optical theorem we expect major contribution from arbitrary quarkonium particles in the final state (denoted by $X$):
+
+\begin{figure}
+    \centering
+    \includegraphics[width=10cm]{lbl-scatt-cut.pdf}
+    \caption{Forward Light-by-Light scattering with assigned roles of initial and final states \label{fig:lbl-scatt-cut}}
+\end{figure}
+
+In the transition we actually have a process $2 \rightarrow 1$, which naturally can be expressed in terms of decay width $1 \rightarrow 2$. This unsual kind of cross-section has a remarkable property. It is zero as a function of energy almost everywhere except regions near bound states, where cross-section acquires sharp peaks. Relation between cross-section and decay width is easy to derive in center of mass frame (see the full derivation in Appendix~\cref{eq:app:crsc-dw}):
 
 \begin{align} \label{eq:crsc-dw}
-    \sigma_{2} = \frac{16 \pi^2 m_f^3}{(m_f^2 - m_i^2)^2} (2J_f + 1) \Gamma_{+-} \delta(s - m_f^2) \\
-    \sigma_{0} = \frac{16 \pi^2 m_f^3}{(m_f^2 - m_i^2)^2} (2J_f + 1) \Gamma_{++} \delta(s - m_f^2)
+    \sigma_{2} = \frac{16 \pi^2 m_X^3}{(m_X^2 - m_V^2)^2} (2J_X + 1) \Gamma_{+-} \delta(s - m_X^2) \\
+    \sigma_{0} = \frac{16 \pi^2 m_X^3}{(m_X^2 - m_V^2)^2} (2J_X + 1) \Gamma_{++} \delta(s - m_X^2)
 \end{align}
 
 The expression is derived for specific final state, and one can notice a delta-function which expresses a sharp behavior near the bound state mass. Let's substitute this result into~\cref{eq:sumrule-sigma}, summing up over all possible final states:
 
 \begin{align}
-    \sum_{m_f} \frac{16 \pi^2 m_f^3}{(m_f^2 - m_i^2)^3} (2J_f+1) \left\{ \Gamma_{+-}[m_f] - \Gamma_{++}[m_f] \right\} = 0
+    \sum_{m_X} \frac{16 \pi^2 m_X^3}{(m_X^2 - m_V^2)^3} (2J_X+1) \left\{ \Gamma_{+-}[m_X] - \Gamma_{++}[m_X] \right\} = 0
 \end{align}
 
-Here $\Gamma_{++}[m_f]$ corresponds to the process, where photon and vector meson have helicities $+$, and the bound state which emerge from unitarity has mass $m_f$ and helicity $0$, because total helicity is defined with a minus sign: $\Lambda = \lambda_\gamma - \lambda_i$. From the experimental point of view $\Gamma_{\Lambda=0}[m_f] = \Gamma_{++}[m_f] + \Gamma_{--}[m_f]$ makes more sense. The same holds for $\Lambda=2$: $\Gamma_{\Lambda=2}[m_f] = \Gamma_{-+}[m_f] + \Gamma_{+-}[m_f]$. Taking into account that both terms are equal due to symmetry under parity, the expression above acquires a factor $\frac{1}{2}$:
+Here $\Gamma_{++}[m_X]$ corresponds to the process, where photon and vector meson have helicities $+$, and the bound state which emerges from unitarity has mass $m_X$ and helicity $0$, because total helicity is defined with a minus sign: $\lambda = \lambda_\gamma - \lambda_V$. From the experimental point of view $\Gamma_{\Lambda=0}[m_X] = \Gamma_{++}[m_X] + \Gamma_{--}[m_X]$ makes more sense. The same holds for $\Lambda=2$: $\Gamma_{\Lambda=2}[m_X] = \Gamma_{-+}[m_X] + \Gamma_{+-}[m_X]$. From this point we will denote with $\lambda$ specific configuration of helicities ($++$ or $--$), but the quantity which includes all possible configurations of $\lambda$ we'll denote with capital $\Lambda$. Taking into account that both terms contributing to $\Gamma_{\Lambda}$ are equal due to symmetry under parity, the expression above acquires a factor $\frac{1}{2}$:
 
 
 \begin{align} \label{eq:sumrule-dw-nosub}
-    \sum_{m_f} \frac{8 \pi^2 m_f^3}{(m_f^2 - m_i^2)^3} (2J_f+1) \left\{\Gamma_{\Lambda=2}[m_f] - \Gamma_{\Lambda=0}[m_f] \right\} = 0
+    \sum_{m_X} \frac{8 \pi^2 m_X^3}{(m_X^2 - m_V^2)^3} (2J_X+1) \left\{\Gamma_{\Lambda=2}[m_X] - \Gamma_{\Lambda=0}[m_X] \right\} = 0
 \end{align}
 
-During the derivation we assumed all final states were heavier than the vector meson. But even for $J/\psi$ there exists charmonium state which lies underneath ($\eta_c$). In that case, we can keep notation meaning the decay happening in the reveresed direction: $\gamma \eta_c \leftarrow J/\psi$. Cross-section $\gamma + J/\psi \rightarrow \eta_c$ can be mapped to the corresponding decay width $J/\psi \rightarrow \eta_c + \gamma$ with crossing symmetry (see Appendix~\cref{eq:app:crsc-dw-subthr}). What is remarkable in such a mapping, it now can include helicity $\pm1$ amplitudes, because we have helicity of $\eta_c$ fixed to $\lambda_f = 0, 2$, but $\eta_c$ appears in the final state with a photon. Nevertheless, we still can introduce $r^{(0,2)}$ coefficients, meaning fixed helicities of $\eta_c$: $r^{(0,2)} = \frac{\Gamma(J/\psi \rightarrow \eta_c(\lambda_f = 0, 2) + \gamma)}{\Gamma_{tot}}$. Let's append subthreshold contributions into~\cref{eq:sumrule-dw-nosub}:
+During the derivation we assumed all final states were heavier than the vector meson. But even for $J/\psi$ there exists charmonium state which lies underneath ($\eta_c$). In that case, we can keep notation meaning the decay happening in the reveresed direction: $\gamma \eta_c \leftarrow J/\psi$. Cross-section $\gamma + J/\psi \rightarrow \eta_c$ can be mapped to the corresponding decay width $J/\psi \rightarrow \eta_c + \gamma$ with crossing symmetry (see Appendix~\cref{eq:app:crsc-dw-subthr}). What is remarkable in such a mapping, it now can include helicity $\pm1$ amplitudes, because we have helicity of $\eta_c$ fixed to $\lambda_f = 0, 2$, but $\eta_c$ appears in the final state with a photon. Nevertheless, we still can introduce $r^{(0,2)}$ coefficients, meaning fixed helicities of $\eta_c$: $r^{(0,2)} = \frac{\Gamma_{\Lambda_{\eta_c} = 0,2}(J/\psi \rightarrow \eta_c \gamma)}{\Gamma_{tot}}$. Let's append subthreshold contributions into~\cref{eq:sumrule-dw-nosub}:
 
 \begin{align} \label{eq:sumrule-dw}
-    &\sum_{m_f < m_i} \frac{8 \pi^2 m_i^3}{(m_i^2 - m_f^2)^3} (2J_i+1) \left\{\Gamma\left[V \rightarrow X_{\Lambda_f = 2} \gamma\right] - \Gamma\left[V \rightarrow X_{\Lambda_f = 0} \gamma\right] \right\} + \nonumber \\
-    &+ \sum_{m_f > m_i} \frac{8 \pi^2 m_f^3}{(m_f^2 - m_i^2)^3} (2J_f+1) \left\{\Gamma\left[X_{\Lambda_f=2} \rightarrow V \gamma \right] - \Gamma\left[X_{\Lambda_f = 0} \rightarrow V\gamma \right] \right\} = 0
+    &\sum_{m_X < m_V} \frac{8 \pi^2 m_V^3}{(m_V^2 - m_X^2)^3} (2J_V+1) \left\{\Gamma_{\Lambda_X = 2}\left[V \rightarrow X \gamma\right] - \Gamma_{\Lambda_X = 0}\left[V \rightarrow X \gamma\right] \right\} + \nonumber \\
+    &+ \sum_{m_X > m_V} \frac{8 \pi^2 m_X^3}{(m_X^2 - m_V^2)^3} (2J_X+1) \left\{\Gamma_{\Lambda_X=2}\left[X \rightarrow V \gamma \right] - \Gamma_{\Lambda_X = 0}\left[X \rightarrow V\gamma \right] \right\} = 0
 \end{align}
-
-We denoted by $X$ charmonium in the final state and $V$ --- vector initial state of charmonium.
 
 Notice that all bound states of charmonium contribute to the sum, so having information about radiative transitions at low energy levels we have direct estimate for contributions of the transitions from high-energy states. Another important remark is that to~\ref{eq:sumrule-dw} contribute decay widths of different helicities, at the same time at experiment people usually measure total decay widths. As we would like to use experimental data, we need to develop some way of distinguishing between helicity contributions. Formally we can introduce translating coefficients corresponding to relative contribution of each helicity to the total radiative decay width:
 
@@ -300,26 +306,28 @@ Finally, having binding energies and wavefunctions of charmonium states obtained
 We would like to start this chapter by reminding the main goal --- computation of $r^{(0,2)}$ coefficients for charmonium system. The general expression for decay width has been presented above, when we connected cross-section $2 \rightarrow 1$ with it. In assumption that all states follow covariant normalization, expression had the following form:
 
 \begin{align}
-    &\Gamma_{\Lambda} = \frac{m_f^2 - m_i^2}{16 \pi m_f^3} \frac{1}{2J_f + 1} \sum_{\lambda_f} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2, \quad \Lambda = \lambda_\gamma - \lambda_i
+    &\Gamma_{\lambda} = \frac{m_X^2 - m_V^2}{16 \pi m_X^3} \frac{1}{2J_X + 1} \sum_{\lambda_X} \abs{\Mcal_{\lambda_X, \lambda_V \lambda_\gamma}}^2, \quad \lambda = \lambda_\gamma - \lambda_i
 \end{align}
 
 For our purposes it will be convenient to use quantum mechanical normalization for initial and final charmonium states(see ~\cref{par:app:dw-nr}). We also pulled out electron charge from $H_{int}$ to combine it into the coupling constant $\alpha = \frac{e^2}{4 \pi}$: 
 
 \begin{align}
-    &\Gamma_{\Lambda} = \alpha \frac{m_f^4 - m_i^4}{2 m_f^3} \frac{1}{2J_f + 1} \sum_{\lambda_f} \abs{\Mcal_{\lambda_f, \lambda_i \lambda_\gamma}}^2 \label{eq:dw-nr} \\
-    &\Mcal_{\lambda_f, \lambda_i \lambda_\gamma} = \int \dd{r} \psi_f^\star(r) \bra{J_f j_f L_f S_f} H_{int}^{\lambda_\gamma} \ket{J_i j_i L_i S_i} \psi_i(r) \label{eq:mel-nr}
+    &\Gamma_{\lambda} = \alpha \frac{m_X^4 - m_V^4}{2 m_X^3} \frac{1}{2J_X + 1} \sum_{\lambda_X} \abs{\Mcal_{\lambda_V \lambda_\gamma, \lambda_X}}^2 \label{eq:dw-nr} \\
+    &\Mcal_{ \lambda_V \lambda_\gamma, \lambda_X } = \Mcal_{f, i} =  \int \dd{r} \psi_f^\star(r) \bra{J_f j_f L_f S_f} H_{int}^{\lambda_\gamma} \ket{J_i j_i L_i S_i} \psi_i(r) \label{eq:mel-nr}
 \end{align}
 
-We assume electromagnetic field being hardcoded into $H_{int}$, so instead of creation/annihilation operators hamiltonian acquires photon helicity index. Regarding helicities of initial and final state, they are encoded into angular momentum projections. To prevent confusiuon with states' labeling, we would like to highlight that we keep initial and final states as in the LbL scattering process ($V_{\lambda_i} + \gamma_{\lambda_\gamma} \rightarrow X_{\lambda_f}$), while relating corresponding matrix element to the process of decay $X_{\lambda_f} \rightarrow V_{\lambda_i} + \gamma_{\lambda_\gamma}$. In the center of mass frame decay products both have outgoing momenta, thus by orienting quantization axis along photon momentum, angular momenta can be translated into helicities with the following rule:
+Here to keep the notation in the derivation(\cref{par:app:dw-nr}) general we introduced ``initial'' and ``final'' states.
+
+We assume electromagnetic field being hardcoded into $H_{int}$, so instead of creation/annihilation operators hamiltonian acquires photon helicity index. Regarding helicities of initial and final state, they are encoded into angular momentum projections.  In the center of mass frame decay products both have outgoing momenta, thus by orienting quantization axis along photon momentum, angular momenta can be translated into helicities with the following rule:
 
 \begin{align}
-    j_f \leftrightarrow \lambda_f \qquad j_i \leftrightarrow -\lambda_i
+    j_f = j_V \leftrightarrow -\lambda_V \qquad j_i = j_X \leftrightarrow \lambda_X
 \end{align}
 
 Then angular momentum conservation can be reformulated in terms of helicities. This confirm that our matching respects notion of ``total helicity'' used in previous chapters.
 
 \begin{align}
-    j_f = j_i + \lambda_\gamma \leftrightarrow \lambda_f = \lambda_\gamma - \lambda_i
+    j_i = j_f + \lambda_\gamma \leftrightarrow \lambda_X = \lambda_\gamma - \lambda_V
 \end{align}
 
 In expressions~\cref{eq:dw-nr,eq:mel-nr} all quantities except $H_{int}$ we already know. The latter we'll derive based on Pauli equation for quark-antiquark system. Notice that when free of charges EM field in Coulomb gauge ($\nabla\cdot\vec{A} = 0$) respects $A_0 = 0$ as well (see lectures of David Tong for details~\cite{tong-qed}). We also ignore non-linearities, i.e. self-interaction of photons:
