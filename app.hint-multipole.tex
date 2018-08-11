@@ -92,16 +92,14 @@ For spin matrices, it is possible to perform transformations assuming they are "
         <J_f j_f L_f S_f| \vec{\sigma_q} \vec{Y}_{L, J}^\lambda |J_i j_i L_i S_i> =
     \end{split} \\
     \begin{split}
-        &= \sqrt{\frac{(2L_i + 1)(2L+1)}{4 \pi (2L_f + 1)}} < L_f 0 | L 0 L_i 0 > \sum_{s, s_{q}, s_{\overline{q}}} (2 s_q \delta_{s = 0} - \sqrt{2} s \delta_{s \neq 0}) \times \\
-    &\qquad\times <J \lambda| L (\lambda - s) 1 s> \times\\
-    &\qquad\times <J_f j_f| L_f (j_f-(s_q + s_{\overline{q}} + s)) S_f (s_q + s_{\overline{q}} + s)> \times \\
-        &\qquad\times <L_i (j_i - (s_q + s_{\overline{q}})) S_i (s_q + s_{\overline{q}})| J_i j_i> \times \\
-        &\qquad\times <L_f (j_f - (s_q + s_{\overline{q}} + s))| L_i (j_i - (s_q + s_{\overline{q}})) L (\lambda - s)>  \times\\
-        &\qquad\times <S_f (s_q + s_{\overline{q}} + s)| \frac{1}{2} (s_{q}+s) \frac{1}{2} s_{\overline{q}}> <\frac{1}{2} s_{q} \frac{1}{2} s_{\overline{q}} |S_i (s_q + s_{\overline{q}})>
+        &= <L_f|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
+        &\qquad\times \sum_{\substack{m, s, m_i,\\ s_i, m_f, s_f, \\s^{\overline{q}}, s_{f}^{q}, s_i^q}} <J \lambda| L m 1 s> <J_f j_f| L_f m_f S_f s_f> \times \\
+        &\qquad\times <L_f m_f| L m L_i m_i> <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s_f^{q} \frac{1}{2} s^{\overline{q}}> \times \\
+        &\qquad\times <\frac{1}{2} s_f^q| 1 s \frac{1}{2} s_i^q> <\frac{1}{2} s_i^{q} \frac{1}{2} s^{\overline{q}} |S_i s_i>
     \end{split}
 \end{align}
 
-When $\vec{\sigma}_{\overline{q}}$ will be averaged, the difference will be only in the shifting of $s_{\overline{q}}$ instead of $s_q$. At this point we'll interchange $s^{i,f}_{q} \leftrightarrow s^{i,f}_{\overline{q}}$, because they are under summation sign. Afterwards we'll apply a parity property of Clebsch-Gordan coefficients to restore initial form of the matrix element:
+When $\vec{\sigma}_{\overline{q}}$ will be averaged, we'll interchange $s^q_{i,f} \leftrightarrow s_{i,f}^{\overline{q}}$ as long as they are dummy. Afterwards we'll apply a parity property of Clebsch-Gordan coefficients to restore initial form of the matrix element:
 
 \begin{align}
     &<J_1 j_1 J_2 j_2 | J j> = (-1)^{j_1 + j_2 - J} <J_2 j_2 J_1 j_1 | J j> \\
@@ -150,47 +148,47 @@ First one is already familiar to us, let's do some steps to simplify it:
         &\qquad\times <\frac{1}{2} s_f^q| \vec{\sigma}_q \vec{\epsilon}_{s} |\frac{1}{2} s_i^q> \delta_{s_f^{\overline{q}}, s_i^{\overline{q}}} <\frac{1}{2} s_i^{q} \frac{1}{2} s_i^{\overline{q}} |S_i s_i> =
     \end{split} \\
     \begin{split}
-        &= <Lf|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
+        &= <L_f|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
         &\qquad\times \sum_{\substack{m, s, m_i,\\ s_i, m_f, s_f, \\s^{\overline{q}}, s_{f}^{q}, s_i^q}} <J \lambda| L m 1 s> <J_f j_f| L_f m_f S_f s_f> \times \\
         &\qquad\times <L_f m_f| L m L_i m_i> <L_i m_i S_i s_i| J_i j_i> <S_f s_f| \frac{1}{2} s_f^{q} \frac{1}{2} s^{\overline{q}}> \times \\
         &\qquad\times <\frac{1}{2} s_f^q| 1 s \frac{1}{2} s_i^q> <\frac{1}{2} s_i^{q} \frac{1}{2} s^{\overline{q}} |S_i s_i> =
     \end{split}\\
     \begin{split}
-        &= <Lf|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
+        &= <L_f|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
         &\qquad\times \sum_{\substack{m, s, m_i,\\ s_i, m_f, s_f}} <J \lambda| L m 1 s> <J_f j_f| L_f m_f S_f s_f> \times \\
         &\qquad\times <L_f m_f| L m L_i m_i> <L_i m_i S_i s_i| J_i j_i> \times \\
         &\qquad\times \sum_{s^{\overline{q}}, s_{f}^{q}, s_i^q} <S_f s_f| \frac{1}{2} s_f^{q} \frac{1}{2} s^{\overline{q}}> \times \\
         &\qquad\times <\frac{1}{2} s_f^q| 1 s \frac{1}{2} s_i^q> <\frac{1}{2} s_i^{q} \frac{1}{2} s^{\overline{q}} |S_i s_i> =
     \end{split}\\
     \begin{split}
-        &= <Lf|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
+        &= <L_f|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
         &\qquad\times \sum_{\substack{m, s, m_i,\\ s_i, m_f, s_f}} <J \lambda| L m 1 s> <J_f j_f| L_f m_f S_f s_f> \times \\
         &\qquad\times <L_f m_f| L m L_i m_i> <L_i m_i S_i s_i| J_i j_i> \times \\
         &\qquad\times \sum_{s^{\overline{q}}, s_{f}^{q}, s_i^q} (-1)^{s_f}\sqrt{2S_f+1} (-1)^{s_f^q + \frac{1}{2}}\sqrt{2 \cdot \frac{1}{2} + 1} (-1)^{s_i} \sqrt{2S_i + 1} \times \\
-        &\qquad\times \threeJ{\frac{1}{2}}{s_f^q}{\frac{1}{2}}{s_{\overline{q}}}{S_f}{-s_f} \threeJ{1}{s}{\frac{1}{2}}{s_i^q}{\frac{1}{2}}{-s_f^q} \threeJ{\frac{1}{2}}{s_i^q}{\frac{1}{2}}{s^{\overline{q}}}{S_i}{-s_i}  =
+        &\qquad\times \threeJ{\frac{1}{2}}{s_f^q}{\frac{1}{2}}{s^{\overline{q}}}{S_f}{-s_f} \threeJ{1}{s}{\frac{1}{2}}{s_i^q}{\frac{1}{2}}{-s_f^q} \threeJ{\frac{1}{2}}{s_i^q}{\frac{1}{2}}{s^{\overline{q}}}{S_i}{-s_i}  =
     \end{split}\\
     \begin{split}
-        &= <Lf|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
+        &= <L_f|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
         &\qquad\times \sum_{\substack{m, s, m_i,\\ s_i, m_f, s_f}} <J \lambda| L m 1 s> <J_f j_f| L_f m_f S_f s_f> \times \\
         &\qquad\times <L_f m_f| L m L_i m_i> <L_i m_i S_i s_i| J_i j_i> \times \\
         &\qquad\times \sum_{s^{\overline{q}}, s_{f}^{q}, s_i^q} (-1)^{s_f}\sqrt{2S_f+1} (-1)^{s_f^q + \frac{1}{2}}\sqrt{2 \cdot \frac{1}{2} + 1} (-1)^{s_i} \sqrt{2S_i + 1} \times \\
-        &\qquad\times \threeJ{\frac{1}{2}}{s_f^q}{\frac{1}{2}}{s_{\overline{q}}}{S_f}{-s_f} \threeJ{1}{s}{\frac{1}{2}}{s_i^q}{\frac{1}{2}}{-s_f^q} \threeJ{\frac{1}{2}}{s_i^q}{\frac{1}{2}}{s^{\overline{q}}}{S_i}{-s_i}  =
+        &\qquad\times \threeJ{\frac{1}{2}}{s_f^q}{\frac{1}{2}}{s^{\overline{q}}}{S_f}{-s_f} \threeJ{1}{s}{\frac{1}{2}}{s_i^q}{\frac{1}{2}}{-s_f^q} \threeJ{\frac{1}{2}}{s_i^q}{\frac{1}{2}}{s^{\overline{q}}}{S_i}{-s_i}  =
     \end{split}\\
     \begin{split}
-        &= <Lf|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
+        &= <L_f|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
         &\qquad\times \sum_{\substack{m, s, m_i,\\ s_i, m_f, s_f}} <J \lambda| L m 1 s> <J_f j_f| L_f m_f S_f s_f> \times \\
         &\qquad\times <L_f m_f| L m L_i m_i> <L_i m_i S_i s_i| J_i j_i> \times \\
         &\qquad\times (-1)^{s_f}\sqrt{2S_f+1} \sqrt{2} \sqrt{2S_i + 1} \sum_{s^{\overline{q}}, s_{f}^{q}, s_i^q} (-1)^{\frac{1}{2} + \frac{1}{2} + \frac{1}{2} - s^{\overline{q}} + s^q + s_i^q} \times \\
         &\qquad\times \threeJ{\frac{1}{2}}{s_{\overline{q}}}{S_f}{-s_f}{\frac{1}{2}}{s_f^q} \threeJ{\frac{1}{2}}{-s_f^q}{1}{s}{\frac{1}{2}}{s_i^q} \threeJ{\frac{1}{2}}{-s_i^q}{S_i}{s_i}{\frac{1}{2}}{-s^{\overline{q}}}  =
     \end{split}\\
     \begin{split}
-        &= <Lf|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \sqrt{2S_f+1} \sqrt{2} \sqrt{2S_i + 1} \times \\
+        &= <L_f|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \sqrt{2S_f+1} \sqrt{2} \sqrt{2S_i + 1} \times \\
         &\qquad\times \sum_{\substack{m, s, m_i,\\ s_i, m_f, s_f}} <J \lambda| L m 1 s> <J_f j_f| L_f m_f S_f s_f> \times \\
         &\qquad\times <L_f m_f| L m L_i m_i> <L_i m_i S_i s_i| J_i j_i> \times \\
         &\qquad\times (-1)^{s_f} \threeJ{S_f}{s_f}{1}{-s}{S_i}{-s_i} \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} =
     \end{split}\\
     \begin{split}
-        &= <Lf|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \times \\
+        &= <L_f|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \times \\
         &\qquad\times \sqrt{2S_f+1} \sqrt{2} \sqrt{2S_i + 1} \times \\
         &\qquad\times \sum_{\substack{m, s, m_i,\\ s_i, m_f, s_f}} (-1)^{L-1+\lambda} \sqrt{2J+1} \threeJ{L}{m}{1}{s}{J}{-\lambda} \times \\
         &\qquad\times (-1)^{L_f - S_f + j_f} \sqrt{2J_f+1} \threeJ{L_f}{m_f}{S_f}{m_f}{J_f}{-j_f} \times \\
@@ -199,31 +197,31 @@ First one is already familiar to us, let's do some steps to simplify it:
         &\qquad\times (-1)^{s_f} \threeJ{S_f}{s_f}{1}{-s}{S_i}{-s_i} =
     \end{split}\\
     \begin{split}
-        &= <Lf|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \times \\
+        &= <L_f|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \times \\
         &\qquad\times \sqrt{2S_f+1} \sqrt{2} \sqrt{2S_i + 1} \sqrt{2J+1} \sqrt{2J_f+1} \sqrt{2L_f+1} \sqrt{2J_i+1} \times \\
         &\qquad\times (-1)^{j_f+L_i+J-S_f-S_i} \sum_{\substack{m, s, m_i,\\ s_i, m_f, s_f}} (-1)^{S_f+L_f+L_i+S_i+1+L-s_f-m_f+m_i+s_i+m+s} \times \\
         &\qquad\times \threeJ{S_f}{m_f}{J_f}{-j_f}{L_f}{m_f} \threeJ{L_f}{-m_f}{L}{m}{L_i}{m_i} \threeJ{L_i}{-m_i}{J_i}{j_i}{S_i}{-s_i} \times \\
         &\qquad\times \threeJ{S_i}{s_i}{S_f}{-s_f}{1}{s} \threeJ{1}{-s}{J}{\lambda}{L}{-m} =
     \end{split}\\
     \begin{split}
-        &= <Lf|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \times \\
+        &= <L_f|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \times \\
         &\qquad\times \sqrt{2S_f+1} \sqrt{2} \sqrt{2S_i + 1} \sqrt{2J+1} \sqrt{2J_f+1} \sqrt{2L_f+1} \sqrt{2J_i+1} \times \\
         &\qquad\times (-1)^{j_f+L_i+J-S_f-S_i} (-1)^{L_i+J_i+S_i} \threeJ{J_f}{j_f}{J_i}{-j_i}{J}{-\lambda} \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{L} =
     \end{split}\\
     \begin{split}
-        &= <Lf|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
+        &= <L_f|| Y_L ||L_i> <\frac{1}{2}|| \vec{\sigma}\vec{\epsilon} ||\frac{1}{2}> \times \\
         &\qquad\times \sqrt{2S_f+1} \sqrt{2} \sqrt{2S_i + 1} \sqrt{2J+1} \sqrt{2L_f+1} \sqrt{2J_i+1} \times \\
-        &\qquad\times (-1)^{J + J_i + J_f - S_f} <J_f j_f| J \lambda J_i j_i> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{L} =
+        &\qquad\times (-1)^{S_f} <J_f j_f| J \lambda J_i j_i> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{L} =
     \end{split}\\
     \begin{split}
         &= \left[ \sqrt{\frac{(2L_i+1)(2L+1)}{4\pi (2L_f+1)}} <L_f 0 | L 0 L_i 0> \right] \left[ -\sqrt{3} \right] \times \\
         &\qquad\times \sqrt{2S_f+1} \sqrt{2} \sqrt{2S_i + 1} \sqrt{2J+1} \sqrt{2L_f+1} \sqrt{2J_i+1} \times \\
-        &\qquad\times (-1)^{J + J_i + J_f - S_f} <J_f j_f| J \lambda J_i j_i> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{L} =
+        &\qquad\times (-1)^{S_f} <J_f j_f| J \lambda J_i j_i> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{L} =
     \end{split}\\
     \begin{split}
         &= -\sqrt{6} \left[ \sqrt{\frac{(2L+1)}{4\pi}} <L_f 0 | L 0 L_i 0> \right] \times \\
         &\qquad\times \sqrt{2L_i+1} \sqrt{2S_f+1} \sqrt{2S_i + 1} \sqrt{2J+1} \sqrt{2J_i+1} \times \\
-        &\qquad\times (-1)^{J + J_i + J_f - S_f} <J_f j_f| J \lambda J_i j_i> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{L}
+        &\qquad\times (-1)^{S_f} <J_f j_f| J \lambda J_i j_i> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{L}
     \end{split}
 \end{align}
 
@@ -257,30 +255,35 @@ Much easier is to deal with $Q_{L, J}^\lambda$, there is no spin dependence in i
     \end{split} \\
     \begin{split}
         &= r \delta_{S_i, S_f} \sqrt{\frac{(2L+1) (2L_i + 1)}{4 \pi (2L_f+1)}} <L_f 0  | J 0 L_i 0> <L 0 1 0 | J 0> \times \\
-        &\qquad\times \sum_{m_i, m_f, s} (-1)^{L_f-S + j_f} \sqrt{2J_f+1} \threeJ{L_f}{m_f}{S}{s}{J_f}{-j_f} \times \\
-        &\qquad\times (-1)^{L_i - S + j_i} \sqrt{2J_i+1} \threeJ{L_i}{m_i}{S}{s}{J_i}{-j_i} \times \\
+        &\qquad\times \sum_{m_i, m_f, s} (-1)^{L_f-S_f + j_f} \sqrt{2J_f+1} \threeJ{L_f}{m_f}{S_f}{s}{J_f}{-j_f} \times \\
+        &\qquad\times (-1)^{L_i - S_i + j_i} \sqrt{2J_i+1} \threeJ{L_i}{m_i}{S_i}{s}{J_i}{-j_i} \times \\
         &\qquad\times (-1)^{J - L_i + m_f} \sqrt{2L_f+1} \threeJ{J}{\lambda}{L_i}{m_i}{L_f}{-m_f}
     \end{split} \\
     \begin{split}
         &= r \delta_{S_i, S_f} \sqrt{\frac{(2L+1)(2L_i+1)(2L_f+1)(2J_i+1)(2J_f+1)}{4\pi (2L_f+1)}} \times \\
         &\qquad\times <L_f 0 | J 0 L_i 0> <L 0 1 0 | J 0> \times \\
-        &\qquad\times \sum_{m_i, m_f, s} (-1)^{L_f - m_f + J + j_f + j_i} \threeJ{S}{s}{J_f}{-j_f}{L_f}{m_f} \times \\
-        &\qquad\times \threeJ{L_f}{-m_f}{J}{\lambda}{L_i}{m_i} \threeJ{L_i}{-m_i}{J_i}{j_i}{S}{-s} =
+        &\qquad\times \sum_{m_i, m_f, s} (-1)^{L_f - m_f + J + j_f + j_i} \threeJ{S_f}{s}{J_f}{-j_f}{L_f}{m_f} \times \\
+        &\qquad\times \threeJ{L_f}{-m_f}{J}{\lambda}{L_i}{m_i} \threeJ{L_i}{-m_i}{J_i}{j_i}{S_f}{-s} =
     \end{split} \\
     \begin{split}
         &= r \delta_{S_i, S_f} \sqrt{\frac{(2L+1)(2L_i+1)(2L_f+1)(2J_i+1)(2J_f+1)}{4\pi (2L_f+1)}} \times \\
-        &\qquad\times <L_f 0 | J 0 L_i 0> <L 0 1 0 | J 0> (-1)^{J_f-j_f + S + L_i} \times \\
-        &\qquad\times \sum_{m_i, m_f, s} (-1)^{L_f - m_f} \threeJ{S}{s}{J_f}{-j_f}{L_f}{m_f} \times \\
-        &\qquad\times (-1)^{L_i - m_i} \threeJ{L_f}{-m_f}{J}{\lambda}{L_i}{m_i} (-1)^{S - s}\threeJ{L_i}{-m_i}{J_i}{j_i}{S}{-s} =
+        &\qquad\times <L_f 0 | J 0 L_i 0> <L 0 1 0 | J 0> (-1)^{J-j_f + S_f + L_i} \times \\
+        &\qquad\times \sum_{m_i, m_f, s} (-1)^{L_f - m_f} \threeJ{S_f}{s}{J_f}{-j_f}{L_f}{m_f} \times \\
+        &\qquad\times (-1)^{L_i - m_i} \threeJ{L_f}{-m_f}{J}{\lambda}{L_i}{m_i} (-1)^{S_f - s}\threeJ{L_i}{-m_i}{J_i}{j_i}{S_i}{-s} =
     \end{split} \\
     \begin{split}
         &= r \delta_{S_i, S_f} \sqrt{\frac{(2L+1)(2L_i+1)(2L_f+1)(2J_i+1)(2J_f+1)}{4\pi (2L_f+1)}} \times \\
-        &\qquad\times <L_f 0 | J 0 L_i 0> <L 0 1 0 | J 0> (-1)^{J_f-j_f + S + L_i} \times \\
-        &\qquad\times \threeJ{J_f}{j_f}{J}{-\lambda}{J_i}{-j_i} \sixJ{J_f}{J}{J_i}{L_i}{S}{L_f} =
+        &\qquad\times <L_f 0 | J 0 L_i 0> <L 0 1 0 | J 0> (-1)^{J - j_f + S_f + L_i} \times \\
+        &\qquad\times \threeJ{J_f}{j_f}{J}{-\lambda}{J_i}{-j_i} \sixJ{J_f}{J}{J_i}{L_i}{S_f}{L_f} =
     \end{split} \\
     \begin{split}
-        &= r (-1)^{ S + L_i} \delta_{S_i, S_f} \sqrt{\frac{(2L+1)(2L_i+1)(2J_i+1)}{4\pi}} <J_f j_f | J \lambda J_i j_i> \times \\
-        &\qquad\times <L_f 0 | J 0 L_i 0> <L 0 1 0 | J 0> \sixJ{J_f}{J}{J_i}{L_i}{S}{L_f} =
+        &= r \delta_{S_i, S_f} \sqrt{\frac{(2L+1)(2L_i+1)(2L_f+1)(2J_i+1)}{4\pi (2L_f+1)}} \times \\
+        &\qquad\times <L_f 0 | J 0 L_i 0> <L 0 1 0 | J 0> (-1)^{J - j_f + S_f + L_i} (-1)^{J + J_i + J_f} (-1)^{J-J_i+j_f} \times \\
+        &\qquad\times \sqrt{2J_f + 1} (-1)^{J-J_i+j_f} \threeJ{J}{\lambda}{J_i}{j_i}{J_f}{-j_f} \sixJ{J_f}{J}{J_i}{L_i}{S_f}{L_f} =
+    \end{split} \\
+    \begin{split}
+        &= r (-1)^{S_f + J_f + L_i + J} \delta_{S_i, S_f} \sqrt{\frac{(2L+1)(2L_i+1)(2J_i+1)}{4\pi}} <J_f j_f | J \lambda J_i j_i> \times \\
+        &\qquad\times <L_f 0 | J 0 L_i 0> <L 0 1 0 | J 0> \sixJ{J_f}{J}{J_i}{L_i}{S_f}{L_f} =
     \end{split} \\
     \begin{split}
         &=r \sqrt{\frac{2L+1}{4 \pi}} <L 0 1 0 | J 0> Q_{J}^{\lambda}
@@ -302,9 +305,9 @@ Let's write down explicit form of $<\vec{r}\vec{A}^{EJ}(\frac{\vec{r}}{2})>$ and
         &= \sqrt{2} \mathrm{i}^{J+1} (2J+1) \sqrt{J (J+1)}  \frac{Q_{J}^{- \lambda}}{k} j_J(\frac{k r}{2}) =
     \end{split}\\
     \begin{split}
-        &= \delta_{S_i, S_f} \sqrt{2} (-1)^{ S + L_i} \mathrm{i}^{J+1} (2J+1) \frac{j_J(\frac{k r}{2})}{k} <J_f j_f | J (-\lambda) J_i j_i> \times \\
+        &= \delta_{S_i, S_f} \sqrt{2} (-1)^{S_f + J_f + L_i + J} \mathrm{i}^{J+1} (2J+1) \frac{j_J(\frac{k r}{2})}{k} <J_f j_f | J (-\lambda) J_i j_i> \times \\
         &\qquad\times \sqrt{J (J+1)} \sqrt{(2L_i+1)(2J_i+1)} \times \\
-        &\qquad\times <L_f 0 | J 0 L_i 0> \sixJ{J_f}{J}{J_i}{L_i}{S}{L_f}
+        &\qquad\times <L_f 0 | J 0 L_i 0> \sixJ{J_f}{J}{J_i}{L_i}{S_f}{L_f}
     \end{split}
 \end{align}
 
@@ -318,7 +321,7 @@ Let's write down explicit form of $<\vec{r}\vec{A}^{EJ}(\frac{\vec{r}}{2})>$ and
         &\qquad \left.- \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) C_{J+1, J}^{- \lambda} \right) =
     \end{split}\\
     \begin{split}
-        &= -\sqrt{3} (-1)^{J + J_i + J_f - S_f} \mathrm{i}^{J+1} <J_f j_f| J (-\lambda) J_i j_i> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \times \\
+        &= -\sqrt{3} (-1)^{S_f} \mathrm{i}^{J+1} <J_f j_f| J (-\lambda) J_i j_i> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \times \\
         &\qquad\times \sqrt{2L_i+1} \sqrt{2S_f+1} \sqrt{2S_i + 1} \sqrt{2J+1} \sqrt{2J_i+1} \times \\
         &\qquad\times \left( \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{J-1} <L_f 0 | (J-1) 0 L_i 0> \sqrt{(J+1)(2J-1)} j_{J-1}(\frac{kr}{2}) - \right.\nonumber \\
         &\qquad \left.- \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{J+1} <L_f 0 | (J+1) 0 L_i 0> \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) \right) =
@@ -331,7 +334,7 @@ Let's write down explicit form of $<\vec{r}\vec{A}^{EJ}(\frac{\vec{r}}{2})>$ and
         &= -\frac{1}{\sqrt{2}} \mathrm{i}^J (2J + 1) \lambda j_J(\frac{kr}{2}) C_{J, J}^{- \lambda} =
     \end{split}\\
     \begin{split}
-        &= \sqrt{3} (-1)^{J + J_i + J_f - S_f} \mathrm{i}^J (2J + 1) \lambda j_J(\frac{kr}{2}) <J_f j_f| J (-\lambda) J_i j_i> \times \\
+        &= \sqrt{3} (-1)^{S_f} \mathrm{i}^J (2J + 1) \lambda j_J(\frac{kr}{2}) <J_f j_f| J (-\lambda) J_i j_i> \times \\
         &\qquad\times \sqrt{2L_i+1} \sqrt{2S_f+1} \sqrt{2S_i + 1} \sqrt{2J+1} \sqrt{2J_i+1} \times \\
         &\qquad\times <L_f 0 | J 0 L_i 0> \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{J}
     \end{split}
@@ -340,9 +343,11 @@ Let's write down explicit form of $<\vec{r}\vec{A}^{EJ}(\frac{\vec{r}}{2})>$ and
 First of all, we would like to remind the general expression for Hamiltonian we've got above:
 
 \begin{align}
-    &H_{int}^{EJ} = \left[(m_i - m_f) \mathrm{i} e \vec{r} \delta_{2 \nmid J} - \frac{\lambda k \mathrm{e}}{2 \mu} \delta_{2 \mid S_i + S_f + J} \vec{\sigma}_{q} \right] \vec{A}^{EJ}(\frac{\vec{r}}{2}) \\
-    &H_{int}^{MJ} = \left[ -\frac{\lambda k \mathrm{e}}{2 \mu} \delta_{2 \nmid S_i + S_f + J} \vec{\sigma}_{q} \right] \vec{A}^{MJ}(\frac{\vec{r}}{2})
+    &H_{int}^{non-phys (EJ)} = \left[(m_i - m_f) \mathrm{i} e \vec{r} \delta_{2 \nmid J} - \frac{\lambda k \mathrm{e}}{2 \mu} \delta_{2 \mid S_i + S_f + J} \vec{\sigma}_{q} \right] \vec{A}^{EJ}(\frac{\vec{r}}{2}) \\
+    &H_{int}^{non-phys (MJ}) = \left[ -\frac{\lambda k \mathrm{e}}{2 \mu} \delta_{2 \nmid S_i + S_f + J} \vec{\sigma}_{q} \right] \vec{A}^{MJ}(\frac{\vec{r}}{2})
 \end{align}
+
+Superscript ``non-phys'' means that electric and magnetic hamiltonians do not transform in the way as corresponding multipoles do. Later on we'll discuss this issue in more detailed way.
 
 Before we show the entire Hamiltonian, let's investigate long wave limit $k \rightarrow 0$. Apart of importance in itself, the limit will help us to match terms in Hamiltonian with electric and magnetic transitions. In the longwave limit only $E1$ term stays alive, and from simple power counting it corresponds to $\vec{r}\vec{A}^{E1}$ term in $H_{int}$:
 
@@ -351,7 +356,7 @@ Before we show the entire Hamiltonian, let's investigate long wave limit $k \rig
         <H_{int}^{E1}>_{\Omega} = (m_i-m_f)\mathrm{i}e\delta_{2 \nmid J} <\vec{r}\vec{A}^{E1}(\frac{\vec{r}}{2})>_{\Omega} =
     \end{split}\\
     \begin{split}
-        &= -\ii e \delta_{S_i, S_f} 6 (m_i-m_f) (-1)^{ S_i + L_i} \frac{j_1(\frac{k r}{2})}{k} <J_f j_f | 1 (-\lambda) J_i j_i> \times \\
+        &= -\ii e \delta_{S_i, S_f} 6 (m_i-m_f) (-1)^{S_f + J_f + L_i + 1} \frac{j_1(\frac{k r}{2})}{k} <J_f j_f | 1 (-\lambda) J_i j_i> \times \\
         &\qquad\times \sqrt{(2L_i+1)(2J_i+1)} <L_f 0 | 1 0 L_i 0> \sixJ{J_f}{1}{J_i}{L_i}{S_{i}}{L_f}
     \end{split}
 \end{align}
@@ -393,14 +398,14 @@ Now we are ready to present $H_{int}^{EJ, MJ}$. As we have already determined $\
 
 \begin{align}
     \begin{split}
-            &<H_{int}^{phys (EJ)}>_\Omega = -e \mathrm{i}^{J} \frac{j_J(\frac{k r}{2})}{k} \sqrt{2J_i + 1} <J_f j_f | J (-\lambda) J_i j_i> \times \\
-        &\qquad\times \sqrt{2L_i + 1} <L_f 0 | J 0 L_i 0> \times \\
-        &\qquad\times \bigg[ \delta_{2 \nmid J} (-1)^{S_f+L_i} \delta_{S_i, S_f} \sqrt{2}(m_i - m_f) \sqrt{J(J+1)} \sixJ{J_f}{J}{J_i}{L_i}{S_i}{L_f} +\\
-        &\qquad\qquad+ \delta_{2 \nmid S_i + S_f + J} (-1)^{J+J_i+J_f + S_f} \frac{\sqrt{3} k^2}{2 \mu} \sqrt{2J+1} \times \\
+        &<H_{int}^{phys (EJ)}>_\Omega = -e (-1)^{S_f} \mathrm{i}^{J} \frac{j_J(\frac{k r}{2})}{k} (2J+1) \times \\
+        &\qquad\times \sqrt{2L_i + 1} <L_f 0 | J 0 L_i 0> \sqrt{2J_i + 1} <J_f j_f | J (-\lambda) J_i j_i> \times \\
+        &\qquad\times \bigg[ -\delta_{2 \nmid J} (-1)^{J_f + L_i} \delta_{S_i, S_f} \sqrt{2}(m_i - m_f) \sqrt{J(J+1)} \sixJ{J_f}{J}{J_i}{L_i}{S_i}{L_f} +\\
+        &\qquad\qquad+ \delta_{2 \nmid S_i + S_f + J} \frac{\sqrt{3} k^2}{2 \mu} \sqrt{2J+1} \times \\
         &\qquad\qquad\times \sqrt{2S_f+1} \sqrt{2S_i+1} \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{J} \bigg]
     \end{split} \\
     \begin{split}
-        &<H_{int}^{phys (MJ)}>_\Omega = e \ii^{J+1} \delta_{2 \mid S_i+S_f+J} \frac{\sqrt{3} \lambda k}{2 \mu} (-1)^{J+J_i+J_f-S_f} <J_f j_f | J (-\lambda) J_i j_i> \times \\
+        &<H_{int}^{phys (MJ)}>_\Omega = e \ii^{J+1} \delta_{2 \mid S_i+S_f+J} \frac{\sqrt{3} \lambda k}{2 \mu} (-1)^{S_f} <J_f j_f | J (-\lambda) J_i j_i> \times \\
         &\qquad\times \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \sqrt{2L_i+1} \sqrt{2S_f+1} \sqrt{2S_i+1} \sqrt{2J+1} \sqrt{2J_i + 1} \times\\
         &\qquad\times \bigg[ \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{J-1} <L_f 0 | (J-1) 0 L_i 0> \sqrt{(J+1)(2J-1)} j_{J-1}(\frac{kr}{2}) - \\
         &\qquad\qquad- \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{J+1} <L_f 0 | (J+1) 0 L_i 0> \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) \bigg]
@@ -415,17 +420,17 @@ Sometimes $E1$ transitions are not allowed by selection rules, and $M1$ transiti
 
 \begin{align}
     \begin{split}
-        &<H_{int}^{phys (M1)}>_\Omega = -e \delta_{2 \nmid S_i + S_f} \frac{\sqrt{3} \lambda k}{2 \mu} (-1)^{1+J_i+J_f - S_f} <J_f j_f | 1 (-\lambda) J_i j_i> \times \\
+        &<H_{int}^{phys (M1)}>_\Omega = -e \delta_{2 \nmid S_i + S_f} \frac{\sqrt{3} \lambda k}{2 \mu} (-1)^{S_f} <J_f j_f | 1 (-\lambda) J_i j_i> \times \\
         &\qquad\times \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \sqrt{2L_i + 1} \sqrt{2S_f + 1} \sqrt{2S_i+1} \sqrt{3} \sqrt{2J_i + 1} \times \\
         &\qquad\times \nineJ{J_f}{J_i}{1}{S_f}{S_i}{1}{L_f}{L_i}{0} \bigg[ <L_f 0 | 0 0 L_i 0> \bigg] \sqrt{2} j_{0}(\frac{kr}{2}) = 
     \end{split} \\
     \begin{split}
-        &= -e \delta_{2 \nmid S_i + S_f} \frac{3 \lambda k}{\sqrt{2} \mu} (-1)^{1+J_i+J_f - S_f} <J_f j_f | 1 (-\lambda) J_i j_i> \times \\
+        &= -e \delta_{2 \nmid S_i + S_f} \frac{3 \lambda k}{\sqrt{2} \mu} (-1)^{S_f} <J_f j_f | 1 (-\lambda) J_i j_i> \times \\
         &\qquad\times \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \sqrt{2L_i + 1} \sqrt{2S_f + 1} \sqrt{2S_i+1} \sqrt{2J_i + 1} \times \\
         &\qquad\times \bigg\{ \delta_{L_f, L_i} \frac{(-1)^{1+J_i+S_f+L_f}}{\sqrt{2 \cdot 1+1}\sqrt{2L_i + 1}} \sixJ{J_f}{J_i}{1}{S_i}{S_f}{L_f} \bigg\} \bigg[ \delta_{L_f, L_i} \bigg] j_{0}(\frac{kr}{2}) =
     \end{split} \\
     \begin{split}
-        &= -e \delta_{L_f, L_i} \delta_{2 \nmid S_i + S_f} \frac{\sqrt{3} \lambda k}{\sqrt{2} \mu} (-1)^{J_f + L_f} j_{0}(\frac{kr}{2}) <J_f j_f | 1 (-\lambda) J_i j_i> \times \\
+        &= -e \delta_{L_f, L_i} \delta_{2 \nmid S_i + S_f} \frac{\sqrt{3} \lambda k}{\sqrt{2} \mu} (-1)^{1+J_i+L_f} j_{0}(\frac{kr}{2}) <J_f j_f | 1 (-\lambda) J_i j_i> \times \\
         &\qquad\times \sqrt{2S_f + 1} \sqrt{2S_i+1} \sqrt{2J_i + 1} \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \sixJ{J_f}{J_i}{1}{S_i}{S_f}{L_f}
     \end{split}
 \end{align}

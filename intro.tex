@@ -355,33 +355,35 @@ Notice $k \lambda_\gamma$ emerged instead of $\rot$. As far as photons are repre
 The~\cref{eq:hint-nomult} can be shorten by half making use of parity. For further analysis it will be convenient to expand EM field into multipole series. Each multipole transforms in a defined way under parity, so $H_{int}$ acquires simpler form:
 
 \begin{align} \label{hint-mult-nobrak}
-    &H_{int}^{EJ} = \left[ -(E_f - E_i) \ii e \vec{r} \delta_{2 \nmid J} - \frac{\lambda_\gamma k e}{2 \mu_R} \delta_{2 \mid S_i + S_f + J} \vec{\sigma}_q \right] \vec{A}^{EJ}(\frac{\vec{r}}{2}) \\
-    &H_{int}^{MJ} = \left[ - \frac{\lambda_\gamma k e}{2 \mu_R} \delta_{2 \nmid S_i + S_f + J} \vec{\sigma}_q \right] \vec{A}^{MJ}(\frac{\vec{r}}{2}) 
+    &H_{int}^{non-phys (EJ)} = \left[(m_i - m_f) \mathrm{i} e \vec{r} \delta_{2 \nmid J} - \frac{\lambda k \mathrm{e}}{2 \mu} \delta_{2 \mid S_i + S_f + J} \vec{\sigma}_{q} \right] \vec{A}^{EJ}(\frac{\vec{r}}{2}) \\
+    &H_{int}^{non-phys (MJ)} = \left[ -\frac{\lambda k \mathrm{e}}{2 \mu} \delta_{2 \nmid S_i + S_f + J} \vec{\sigma}_{q} \right] \vec{A}^{MJ}(\frac{\vec{r}}{2})
 \end{align}
 
-Here we use $\delta_{2 \mid a}$, which equals $1$ when $a$ is even and zero otherwise. Multipoles are expressed in terms of vector spherical harmonics $\vec{Y}^\lambda_{J, l}(\Omega)$. Further we omit argument $\Omega$ because after we applied Wigner rotation to decaying state the only angle which takes place here could be one between $\vec{k}$ and $\vec{r}$:
+Here we use $\delta_{2 \mid a}$, which equals $1$ when $a$ is even and zero otherwise. Superscript ``non-phys'' means that electric and magnetic hamiltonians do not transform in the way as corresponding multipoles do. Later on we'll solve this issue by introducing ``phys'' ones. Multipoles are expressed in terms of vector spherical harmonics $\vec{Y}^\lambda_{J, l}(\Omega)$. Further we omit argument $\Omega$ because after we applied Wigner rotation to decaying state the only angle which takes place here could be one between $\vec{k}$ and $\vec{r}$:
 
 \begin{align}
     &\vec{A}^{EJ}(\frac{\vec{r}}{2}) = \sqrt{2\pi} (-\ii)^{J+1} \left[ \sqrt{J+1} j_{J-1}(\frac{kr}{2}) \vec{Y}^{-\lambda_\gamma}_{J-1, J} - \sqrt{J} j_{J+1}(\frac{kr}{2}) \vec{Y}^{-\lambda_\gamma}_{J+1, J} \right] \\
     &\vec{A}^{MJ}(\frac{\vec{r}}{2}) = -\sqrt{2\pi} (-\ii)^J \sqrt{2J+1} \lambda_\gamma j_J(k r) \vec{Y}^{-\lambda_\gamma}_{J,J}
 \end{align}
 
-Assuming $H_{int}$ is under brackets $\bra{J_f j_f L_f S_f} H_{int} \ket{J_i j_i L_i S_i}$  we introduce $Q$ and $C$ symbols carrying all information about angular structure of the process:
-
-\begin{align}
-    &\sqrt{2L+1} C^\lambda_{L, J} = \bra{J_f j_j L_f S_f} \vec{\sigma}_q \vec{Y}^{\lambda}_{L, J} \ket{J_i j_i L_i S_i} \\
-    &r Q^{\lambda}_{L, J} = \bra{J_f j_j L_f S_f} \vec{r} \vec{Y}^{\lambda}_{L, J} \ket{J_i j_i L_i S_i} = r \sqrt{2L+1} \braket{L010}{J0} Q^\lambda_J
-\end{align}
-
-In this terms, $\bra{J_f j_f L_f S_f} H_{int} \ket{J_i j_i L_i S_i}$ acquires the following form, which we'll directly use in our numerical computations (for complete derivation see~\cref{sec:app:hint-multipole}):
+Assuming $H_{int}$ is under brackets $\bra{J_f j_f L_f S_f} H_{int} \ket{J_i j_i L_i S_i}$ we'll get the final expression. We also regroup terms to respect parity transformation properties (actually we match first electric multipole to one which survives in the long-wave limit $k \rightarrow 0$). Under these assumptions $\bra{J_f j_f L_f S_f} H_{int} \ket{J_i j_i L_i S_i}$ acquires the following form, which we'll directly use in our numerical computations (for complete derivation see~\cref{sec:app:hint-multipole}):
 
 \begin{align}
     \begin{split}
-        &H_{int}^{EJ} = -\sqrt{2\pi} \mathrm{i}^{J+1} \left[ 2 \mathrm{i} e (E_f-E_i) \delta_{2 \nmid J} (2J+1) \sqrt{J(J+1)} \frac{Q_{J}^{- \lambda}}{k} j_{J}(\frac{kr}{2}) + \right.\\
-        &\qquad + \frac{\lambda k e}{2 \mu} \delta_{2 \mid S_i + S_f + J} \left( \sqrt{(J+1)(2J-1)} j_{J-1}(\frac{kr}{2}) C_{J-1, J}^{- \lambda} - \right.\\
-        &\qquad -\left. \left. \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) C_{J+1, J}^{- \lambda} \right) \right]
+        &<H_{int}^{phys (EJ)}>_\Omega = -e (-1)^{S_f} \mathrm{i}^{J} \frac{j_J(\frac{k r}{2})}{k} (2J+1) \times \\
+        &\qquad\times \sqrt{2L_i + 1} <L_f 0 | J 0 L_i 0> \sqrt{2J_i + 1} <J_f j_f | J (-\lambda) J_i j_i> \times \\
+        &\qquad\times \bigg[ -\delta_{2 \nmid J} (-1)^{J_f + L_i} \delta_{S_i, S_f} \sqrt{2}(m_i - m_f) \sqrt{J(J+1)} \sixJ{J_f}{J}{J_i}{L_i}{S_i}{L_f} +\\
+        &\qquad\qquad+ \delta_{2 \nmid S_i + S_f + J} \frac{\sqrt{3} k^2}{2 \mu} \sqrt{2J+1} \times \\
+        &\qquad\qquad\times \sqrt{2S_f+1} \sqrt{2S_i+1} \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{J} \bigg]
     \end{split} \\
-    &H_{int}^{MJ} = \sqrt{2\pi} \mathrm{i}^{J} (2J+1) j_J(\frac{kr}{2}) \frac{k e}{2 \mu} \delta_{2 \nmid S_i + S_f +J} C_{J, J}^{- \lambda}
+    \begin{split}
+        &<H_{int}^{phys (MJ)}>_\Omega = e \ii^{J+1} \delta_{2 \mid S_i+S_f+J} \frac{\sqrt{3} \lambda k}{2 \mu} (-1)^{S_f} <J_f j_f | J (-\lambda) J_i j_i> \times \\
+        &\qquad\times \sixJ{S_f}{1}{S_i}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}} \sqrt{2L_i+1} \sqrt{2S_f+1} \sqrt{2S_i+1} \sqrt{2J+1} \sqrt{2J_i + 1} \times\\
+        &\qquad\times \bigg[ \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{J-1} <L_f 0 | (J-1) 0 L_i 0> \sqrt{(J+1)(2J-1)} j_{J-1}(\frac{kr}{2}) - \\
+        &\qquad\qquad- \nineJ{J_f}{J_i}{J}{S_f}{S_i}{1}{L_f}{L_i}{J+1} <L_f 0 | (J+1) 0 L_i 0> \sqrt{J(2J+3)} j_{J+1}(\frac{kr}{2}) \bigg]
+    \end{split}
 \end{align}
 
-Notice the Kronecker-$\delta$s in the expressions above. For example in transition $\chi_{cJ}(nP) \rightarrow J/\psi$ configuration of spins is such that $2 \nmid (S_i=1) + (S_f=1) + (J=1)$, so a half of the hamiltonian $H^{E1}_{int}$ doesn't contribute. Later on we'll see that in this approximation radial dependence decouples from the angular one, and we can get $r^{0,2}$ coefficients straightforwardly as fractions of $Q$ and $C$ coefficients. On practice higher multipole contributions are suppressed, usually $E1$ (or $M1$ when $E1$ is not allowed) approximation is enough to reproduce major contribution to the transition matrix elements.
+Notice ``phys'' superscript here, which means true electric and magnetic properties.
+
+As a useful observation we would like to mention the fact that in $E1$ case radial dependence decouples from the angular one, and we can get $r^{0,2}$ coefficients straightforwardly as fractions of Clebsch-Gordan coefficients. On practice higher multipole contributions are suppressed, usually $E1$ (or $M1$ when $E1$ is not allowed) approximation is enough to reproduce major contribution to the transition matrix elements.
