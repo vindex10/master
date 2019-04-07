@@ -14,13 +14,13 @@ $(NAME).pdf: $(patsubst %.tex,%.pdf,$(wildcard $(DIAGS)/*.tex))\
 			 $(wildcard assets/*.tex)\
 			 $(wildcard img/*)\
 			 literature.bib
-	latexmk  -lualatex --synctex=1 $(NAME).tex
+	latexmk -latex=lualatex -pdf -pdflatex=lualatex --synctex=1 $(NAME).tex
 
 diags: $(patsubst %.tex,%.pdf,$(wildcard $(DIAGS)/*.tex))
 	echo $<
 
 $(DIAGS)/%.pdf: $(DIAGS)/%.tex
-	latexmk -lualatex -cd $<
+	latexmk -latex=lualatex -pdf -pdflatex=lualatex -cd $<
 
 bw: $(NAME).pdf
 	mkdir -p bw
